@@ -107,26 +107,12 @@ module.exports = function(grunt){
           }
         }
       },
-      ghost: {
-        test: {
-          files:[{
-            src: ['/*_test.js']
-          }]
-        },
-        options: {
-          args: {
-            baseUrl: 'http://localhost:' +
-              '<%= connect.www.options.port %>/build/'
-          },
-          direct: false,
-          logLevel: 'error',
-          printCommand: false,
-          printFilePaths: true
-        }
+      casperjs: {
+        files: ['tests/*_test.js']
       }
     });
 
-    grunt.registerTask('test', ['clean:initial', 'copy', 'compile-handlebars', 'bake','htmlhint', 'jshint', 'connect', 'ghost']);
+    grunt.registerTask('test', ['clean:initial', 'copy', 'compile-handlebars', 'bake','htmlhint', 'jshint', 'connect', 'casperjs']);
     grunt.registerTask('generate', ['clean:initial', 'copy','compile-handlebars','bake', 'htmlhint', 'jshint', 'concat', 'autoprefixer', 'clean:tidyup']);
     grunt.registerTask('generate-production', ['clean:initial','compile-handlebars', 'htmlhint', 'jshint', 'copy', 'concat', 'uglify', 'autoprefixer','cssmin', 'clean:tidyup']);
 };
