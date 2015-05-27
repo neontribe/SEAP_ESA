@@ -102,8 +102,8 @@ module.exports = function(grunt){
       connect: {
         www: {
           options: {
-            base: 'build',
-            port: 9001
+            port: 9001,
+            //keepalive: true
           }
         }
       },
@@ -112,7 +112,7 @@ module.exports = function(grunt){
       }
     });
 
-    grunt.registerTask('test', ['clean:initial', 'copy', 'compile-handlebars', 'bake','htmlhint', 'jshint', 'connect', 'casperjs']);
+    grunt.registerTask('test', ['clean:initial', 'copy', 'compile-handlebars', 'bake','htmlhint', 'jshint', 'concat', 'autoprefixer', 'clean:tidyup', 'connect', 'casperjs']);
     grunt.registerTask('generate', ['clean:initial', 'copy','compile-handlebars','bake', 'htmlhint', 'jshint', 'concat', 'autoprefixer', 'clean:tidyup']);
     grunt.registerTask('generate-production', ['clean:initial','compile-handlebars', 'htmlhint', 'jshint', 'copy', 'concat', 'uglify', 'autoprefixer','cssmin', 'clean:tidyup']);
 };

@@ -1,6 +1,6 @@
-casper.test.begin('Title page', 3, function suite(test) {
-    casper.start("http://localhost:9001/build", function() {
-      this.test.comment('bum'+this.getCurrentUrl());
+casper.test.begin('Title page', 2, function suite(test) {
+    casper.start("http://localhost:9001/build/index.html", function() {
+      this.test.comment(this.getCurrentUrl());
       this.test.assertHttpStatus(200, 'SEAP is up');
       test.assertTitle("My ESA Assessment", "ESA page title is the one expected");
         //test.assertExists('form[action="/search"]', "main form is found");
