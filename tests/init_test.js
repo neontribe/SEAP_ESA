@@ -1,4 +1,4 @@
-var url = 'http://localhost:9001:/build';
+var url = 'http://localhost:9001/build';
 casper.test.begin('Title page', 3, function suite(test) {
     casper.start(url, function() {
       this.test.comment(this.getCurrentUrl());
