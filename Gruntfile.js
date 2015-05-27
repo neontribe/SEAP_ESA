@@ -126,7 +126,7 @@ module.exports = function(grunt){
       }
     });
 
-    grunt.registerTask('test', ['clean:initial', 'copy', 'compile-handlebaars', 'bake','htmlhint', 'jshint', 'connect', 'ghost']);
+    grunt.registerTask('test', ['clean:initial', 'copy', 'compile-handlebars', 'bake','htmlhint', 'jshint', 'connect', 'ghost']);
     grunt.registerTask('generate', ['clean:initial', 'copy','compile-handlebars','bake', 'htmlhint', 'jshint', 'concat', 'autoprefixer', 'clean:tidyup']);
     grunt.registerTask('generate-production', ['clean:initial','compile-handlebars', 'htmlhint', 'jshint', 'copy', 'concat', 'uglify', 'autoprefixer','cssmin', 'clean:tidyup']);
 };
