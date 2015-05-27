@@ -23,6 +23,6 @@ cp -r build/* .
 git add .
 git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages"
 git remote rm origin
-git remote add origin https://neontribe:${GH_TOKEN}@github.com/neontribe/SEAP_ESA.git
+git remote add origin https://katjam:${GH_TOKEN}@github.com/neontribe/SEAP_ESA.git
 git push origin gh-pages
 fi
