@@ -110,7 +110,7 @@ module.exports = function(grunt){
       ghost: {
         test: {
           files:[{
-            src: ['tests/*_test.js']
+            src: ['../tests/*_test.js']
           }]
         },
         options: {
