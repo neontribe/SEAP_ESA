@@ -23,6 +23,8 @@ git remote add origin https://katjam:9e0e2d43e5b1c07ee6da44d25e46840795da1e9f@gi
 git fetch
 git checkout gh-pages
 cp -r build/* .
+rm -r build
+rm -r node_modules
 git add .
 git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages"
 git pull origin gh-pages
