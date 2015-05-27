@@ -18,9 +18,11 @@ echo -e "Git Hub token"
 echo -e "$GH_TOKEN"
 
 #checkout gh_pages branch and update with contents of build folder
-git checkout gh-pages
+git checkout -b gh-pages
 cp -r build/* .
 git add .
 git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages"
+git remote rm origin
+git remote add origin https://neontribe:${GH_TOKEN}@github.com/neontribe/SEAP_ESA.git
 git push origin gh-pages
 fi
