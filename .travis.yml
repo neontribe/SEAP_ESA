@@ -7,3 +7,5 @@ before_install:
 before_script:  
   - phantomjs --version
   - casperjs --version
+after_success:
+  - bash deploy.sh
