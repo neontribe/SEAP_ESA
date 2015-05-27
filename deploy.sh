@@ -19,7 +19,7 @@ echo -e "$GH_TOKEN"
 
 #checkout gh_pages branch and update with contents of build folder
 git checkout gh-pages
-cp build/* .
+cp -r build/* .
 git add .
 git commit -m "Travis build $TRAVIS_BUILD_NUMBER pushed to Github Pages"
 git push origin gh-pages
