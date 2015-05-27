@@ -1,0 +1,593 @@
+{
+	"questions": [
+		{		
+			"question": "Can you move around and use steps without difficulty?",
+			"hint": null,
+			"category": "Moving around and using steps",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": "Question text of follow-up question (string)"
+				}
+			]
+		},
+		{		
+			"question": "What is the furthest you can move safely on level ground without needing to stop?",
+			"hint": "Answer this question even if you need a walking stick, manual wheelchair or other aid to help you.",
+			"category": "Moving around and using steps",
+			"answers": [
+				{
+					"label": "0 - 50 metres",
+					"value": 16
+				},
+				{
+					"label": "51 - 100 metres",
+					"value": 9
+				},
+				{
+					"label": "101 - 200 metres",
+					"value": 6
+				},
+				{
+					"label": "More than 200 metres",
+					"value": 0
+				}
+			]
+		},
+		{		
+			"question": "After moving once, how far can you move again within a short time without it causing you significant discomfort or exhaustion?",
+			"hint": null,
+			"category": "Moving around and using steps",
+			"answers": [
+				{
+					"label": "0 - 50 metres",
+					"value": 16
+				},
+				{
+					"label": "51 - 100 metres",
+					"value": 9
+				},
+				{
+					"label": "101 - 200 metres",
+					"value": 6
+				},
+				{
+					"label": "More than 200 metres",
+					"value": 0
+				}
+			]
+		},
+		{		
+			"question": "Can you go up or down two steps without being helped by another person even with the support of a handrail?",
+			"hint": null,
+			"category": "Moving around and using steps",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 9
+				},
+				{
+					"label": "It varies",
+					"value": null
+				}
+			]
+		},
+		{		
+			"question": "Can you stand and sit without difficulty?",
+			"hint": null,
+			"category": "Sitting and standing",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": "Question text of follow-up question (string)"
+				},
+				{
+					"label": "It varies",
+					"value": null
+				}				
+			]
+		},
+		{		
+			"question": "If two seats are placed next to each other could you move from one to the other without help from someone else?",
+			"hint": null,
+			"category": "Sitting and standing",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 16
+				},
+				{
+					"label": "It varies",
+					"value": null
+				}				
+			]
+		},
+		{		
+			"question": "How long could you either sit or stand or both at a workstation for the majority of time without help from someone else before it caused you significant discomfort or exhaustion and you had to move away?",
+			"hint": null,
+			"category": "Sitting and standing",
+			"answers": [
+				{
+					"label": "0 - 30 mins",
+					"value": 6
+				},
+				{
+					"label": "30 mins to 1 hour",
+					"value": 9
+				},
+				{
+					"label": "Over an hour",
+					"value": 0
+				},
+				{
+					"label": "It varies",
+					"value": null
+				}					
+			]
+		},
+		{		
+			"question": "Can you reach up with both your arms without difficulty?",
+			"hint": null,
+			"category": "Picking up and moving things",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": "Question text of the follow-up question (string)"
+				}					
+			]
+		},
+		{		
+			"question": "Can you pick up and move things without any difficulty?",
+			"hint": null,
+			"category": "Picking up and moving things",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": "Question text of the follow-up question (string)"
+				},
+				{
+					"label": "It varies",
+					"value": null
+				}						
+			]
+		},
+		{		
+			"question": "Can you pick up and move a half litre (pint) carton of liquid?",
+			"hint": null,
+			"category": "Picking up and moving things",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 16
+				},
+				{
+					"label": "It varies",
+					"value": null
+				}						
+			]
+		},
+		{		
+			"question": "Can you pick up and move a litre (2 pint) carton of liquid?",
+			"hint": null,
+			"category": "Picking up and moving things",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 9
+				},
+				{
+					"label": "It varies",
+					"value": null
+				}						
+			]
+		},
+		{		
+			"question": "Can you pick up and move a light but bulky object like an empty cardboard box?",
+			"hint": null,
+			"category": "Picking up and moving things",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 6
+				},
+				{
+					"label": "It varies",
+					"value": null
+				}						
+			]
+		},
+		{		
+			"question": "Can you use one hand to press a button, for example on a telephone key pad?",
+			"hint": null,
+			"category": "Using your hands",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 16
+				},
+				{
+					"label": "It varies",
+					"value": null
+				}						
+			]
+		},
+		{		
+			"question": "Can you turn the pages of a book with one or both hands?",
+			"hint": null,
+			"category": "Using your hands",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 16
+				},
+				{
+					"label": "It varies",
+					"value": null
+				}						
+			]
+		},
+		{		
+			"question": "Can you pick up a pound coin (or something similar) with one hand?",
+			"hint": null,
+			"category": "Using your hands",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 15
+				},
+				{
+					"label": "It varies",
+					"value": null
+				}						
+			]
+		},
+		{		
+			"question": "Can you use one hand to operate a computer keyboard or mouse (it does not matter whether or not it has been specially adapted for you or you know how to use a computer)?",
+			"hint": null,
+			"category": "Using your hands",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 9
+				},
+				{
+					"label": "It varies",
+					"value": null
+				}						
+			]
+		},
+		{		
+			"question": "Can you communicate with other people without any difficulty?",
+			"hint": null,
+			"category": "Making yourself understood",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": "Question text of the follow-up question (string)"
+				}						
+			]
+		},
+		{		
+			"question": "Can you make yourself understood through speaking, writing, typing, or any other means you normally use, without help from another person?",
+			"hint": null,
+			"category": "Making yourself understood",
+			"answers": [
+				{
+					"label": "All of the time",
+					"value": "Question text of the follow-up question (string)"
+				},
+				{
+					"label": "Most of the time",
+					"value": "Question text of the follow-up question (string)"
+				},
+				{
+					"label": "Sometimes",
+					"value": "Question text of the follow-up question (string)"
+				},
+				{
+					"label": "Not very often",
+					"value": "Question text of the follow-up question (string)"
+				},
+				{
+					"label": "Never",
+					"value": 16
+				}
+			]
+		},
+		{		
+			"question": "Can you give a simple message to someone such as a message explaining how dangerous something is?",
+			"hint": null,
+			"category": "Making yourself understood",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 16
+				},
+				{
+					"label": "It varies",
+					"value": null
+				}
+			]
+		},
+		{		
+			"question": "How difficult would you find it to pass a simple message to a stranger?",
+			"hint": null,
+			"category": "Making yourself understood",
+			"answers": [
+				{
+					"label": "Too difficult",
+					"value": 15
+				},
+				{
+					"label": "Very difficult",
+					"value": 15
+				},
+				{
+					"label": "Somewhat difficult",
+					"value": 6
+				},
+				{
+					"label": "Not difficult",
+					"value": 0
+				},
+				{
+					"label": "It varies",
+					"value": null
+				}
+			]
+		},
+		{		
+			"question": "Can you understand other people without any difficulty?",
+			"hint": null,
+			"category": "Understanding verbal communication",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": "Question text of the follow-up question (string)"
+				},
+				{
+					"label": "It varies",
+					"value": null
+				}
+			]
+		},
+		{		
+			"question": "Which of these best describes how well you can understand a simple message such as the location of a fire escape?",
+			"hint": null,
+			"category": "Understanding verbal communication",
+			"answers": [
+				{
+					"label": "I can't understand at all due to hearing/sight difficulties",
+					"value": 16
+				},
+				{
+					"label": "Very difficult to understand due to hearing/sight difficulties",
+					"value": 15
+				},
+				{
+					"label": "Quite difficult to understand due to hearing/sight difficulties",
+					"value": 6
+				},
+				{
+					"label": "None of these apply to me",
+					"value": 0
+				}
+			]
+		},
+		{		
+			"question": "Can you cross the road on your own, without needing help from someone else whether or not you need to use a guide dog or other aid?",
+			"hint": null,
+			"category": "Navigation and maintaining safety",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 15
+				}
+			]
+		},
+		{		
+			"question": "Can you move around an unfamiliar place without help from someone else whether or not you need to use a guide dog or other aid?",
+			"hint": null,
+			"category": "Navigation and maintaining safety",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 15
+				}
+			]
+		},
+		{		
+			"question": "Can you move around a familiar place without help from someone else whether or not you need to use a guide dog or other aid?",
+			"hint": null,
+			"category": "Navigation and maintaining safety",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 9
+				}
+			]
+		},
+		{		
+			"question": "Can you learn to do everyday tasks without any difficulty?",
+			"hint": null,
+			"category": "Learning tasks",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": "Question text of the follow-up question (string)"
+				}
+			]
+		},
+		{		
+			"question": "Which of these best describes whether you can learn to do a simple task such as setting an alarm clock?",
+			"hint": null,
+			"category": "Learning tasks",
+			"answers": [
+				{
+					"label": "I would not have a problem learning a task like this",
+					"value": 0
+				},
+				{
+					"label": "I can sometimes learn some simple tasks",
+					"value": null
+				},
+				{
+					"label": "I do not know",
+					"value": null
+				},
+				{
+					"label": "I would never be able to learn how to complete a task like this",
+					"value": 15
+				},
+				{
+					"label": "I would never be able to learn how to complete a task like this because I have learning difficulties or mental health impairments",
+					"value": 16
+				}		
+			]
+		},
+		{		
+			"question": "Can you learn something complex such as how to use a washing machine?",
+			"hint": null,
+			"category": "Learning tasks",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 9
+				},
+				{
+					"label": "It varies",
+					"value": "Question text of the follow-up question (string)"
+				}
+			]
+		},
+		{		
+			"question": "Can you learn something more complicated than how to use a washing machine?",
+			"hint": null,
+			"category": "Learning tasks",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 6
+				},
+				{
+					"label": "It varies",
+					"value": "Question text of the follow-up question (string)"
+				}
+			]
+		}
+	],
+	"advice": [
+		{
+			"title": "Answering assessment questions",
+			"description": "Whether on the medical questionnaire, or in the face to face assessment, never answer a question before thinking carefully about what it actually means.",
+			"tips": [
+				"If you don't understand the question, ask the assessor to repeat or explain it.",
+				"If you can do an activity but it is painful, stressful or exhausting to do, make sure you say so.",
+				"You need to make clear how the impact of your health condition or disability varies day to day.",
+				"You should make sure that anyone providing written evidence to support your claim includes information about how your condition varies.",
+				"If an activity causes you pain, make sure you explain where it affects you, what type of pain it is, and how severe it is.",
+				"When thinking about any difficulties standing up, use an example of how you feel in a specific situation, for example boiling a kettle.",
+				"When talking about communication and understanding, be clear about the barriers that you face to being understood.",
+				"If you can only swing on crutches rather than walk with the help of crutches you are assessed as if you can’t walk.",
+				"If you struggle with balance when you are walking or standing, make that clear."
+			]
+		},
+		{
+			"title": "Travel",
+			"description": "The ESA medical assessment must take place in person, so you will need to travel to the venue. Here are some suggestions to help you prepare your travel arrangements.",
+			"tips": [
+				"Try to arrive at your assessment ten minutes early",
+				"Plan your route to the assessment in advance",
+				"Keep hold of your bus / train tickets to claim the money back later"
+			]
+		}
+	]
+}
