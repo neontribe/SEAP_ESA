@@ -102,8 +102,8 @@ module.exports = function(grunt){
       connect: {
         www: {
           options: {
-            base: 'source',
-            port: 4545
+            base: 'build',
+            port: 9001
           }
         }
       },
