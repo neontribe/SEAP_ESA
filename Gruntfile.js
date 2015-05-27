@@ -116,7 +116,7 @@ module.exports = function(grunt){
         options: {
           args: {
             baseUrl: 'http://localhost:' +
-              '<%= connect.www.options.port %>/'
+              '<%= connect.www.options.port %>/build/'
           },
           direct: false,
           logLevel: 'error',
