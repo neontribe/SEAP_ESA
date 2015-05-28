@@ -367,34 +367,36 @@ function qualify() {
 
 	var total = tally();
 
+	console.log('total', total);
+
 	if (total >= 15) {
 
 		// if an end question was set to promote from low to high
 		if (db.get('ass.promote')) {
-
-			// record that low qualification is possible
-			db.set('ass.low', true);
-			// AND record that high qualification is possible
-			db.set('ass.high', true);
 
 			//don't show the slide if you have already
 			if (!db.get('ass.high') && !db.get('ass.low')) {
 
 				loadSlide('qualify-high');
 
-			}			
-
-		} else {
+			}
 
 			// record that low qualification is possible
 			db.set('ass.low', true);
+			// AND record that high qualification is possible
+			db.set('ass.high', true);
+
+		} else {
 
 			//don't show the slide if you have already
 			if (!db.get('ass.high') && !db.get('ass.low')) {
 
 				loadSlide('qualify-low');
 
-			}				
+			}
+
+			// record that low qualification is possible
+			db.set('ass.low', true);		
 
 		}
 
