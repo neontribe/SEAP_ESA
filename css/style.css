@@ -541,6 +541,14 @@ nav li + li::before {
 	border-radius: 0.1875em;
 }
 
+#categories-content {
+	margin: 0 10%;
+}
+
+.category-list {
+	font-size: 0.66em;
+}
+
 .green {
 	border-color: #0a8f60;
 }
@@ -807,41 +815,8 @@ footer a {
 		font-size: 18px;
 	}
 
-}
-
-@media (max-width: 650px) {
-
-	body {
-		font-size: 17px;
-	}
-
-	[aria-label$="menu"] li {
-		display: block;
-	}
-
-	[aria-label$="menu"] button {
-		width: 100%;
-		margin: 0.25em 0;
-	}
-
-	[role="banner"] {
-		text-align: center;
-	}
-
-	.to-main-menu {
-		text-align: center;
-		float: none;
-		display: inline-block;
-	}
-
-	.box {
-		margin: 0 0.5em;
-		padding: 1em 0.5em 0.5em;
-	}
-
-	footer p {
-		text-align: center;
-		padding-right: 0;
+	.category-list li {
+		min-width: 50% !important;
 	}
 
 }
@@ -880,25 +855,83 @@ footer a {
 		width: 50%;
 	}
 
-	.category-list {
-		font-size: 0.66em;
-	}
-
-	/*.category-list ul {
+	.category-list ul {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
 		display: flex;
-		align-items: stretch;
+		-webkit-box-align: stretch;
+		-webkit-align-items: stretch;
+		    -ms-flex-align: stretch;
+		        align-items: stretch;
 	}
 
 	.category-list li {
-		flex: 1 0;
-		min-width: 50%;
+		-webkit-box-flex: 1;
+		-webkit-flex: 1 0;
+		    -ms-flex: 1 0;
+		        flex: 1 0;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-flow: column;
+		    -ms-flex-flow: column;
+		        flex-flow: column;
+		min-width: 33.333%;
 	}
 
 	.category-list li button {
 		height: 100%;
-	}*/
+		-webkit-box-flex: 1;
+		-webkit-flex: 1 0;
+		    -ms-flex: 1 0;
+		        flex: 1 0;
+	}
 
 }
+
+@media (max-width: 650px) {
+
+	body {
+		font-size: 17px;
+	}
+
+	[aria-label$="menu"] li {
+		display: block;
+	}
+
+	[aria-label$="menu"] button {
+		width: 100%;
+		margin: 0.25em 0;
+	}
+
+	[role="banner"] {
+		text-align: center;
+	}
+
+	.to-main-menu {
+		text-align: center;
+		float: none;
+		display: inline-block;
+	}
+
+	.box {
+		margin: 0 0.5em;
+		padding: 1em 0.5em 0.5em;
+	}
+
+	footer p {
+		text-align: center;
+		padding-right: 0;
+	}
+
+	.category-list li {
+		min-width: 100% !important;
+	}
+
+}
+
 
 @media (max-width: 500px) {
 
