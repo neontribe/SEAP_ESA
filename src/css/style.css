@@ -225,10 +225,6 @@ a.nav-link:active, button.nav-link:active {
 	margin: 0.25em;
 }
 
-.category-list {
-	font-size: 0.66em;
-}
-
 nav {
 	float: right;
 }
@@ -588,7 +584,7 @@ img + h1 {
 	font-size: 0.75em;
 }
 
-.tick::after {
+.tick::after, .ticks li::before {
 	margin-left: 0.25em;
 	content: '\0020\2713';
 	color: #dcf0fd;
@@ -599,6 +595,21 @@ img + h1 {
 	width: 1.5em;
 	text-align: center;
 	font-size: 0.85em;
+}
+
+.ticks li {
+	list-style: none;
+}
+
+.ticks li + li {
+	margin-top: 0.25em;
+	padding-top: 0.25em;
+	border-top: 1px solid #79bde9;
+}
+
+.ticks li::before {
+	margin-left: 0;
+	margin-right: 0.25em;
 }
 
 /* transitions
@@ -699,43 +710,6 @@ img + h1 {
 	margin-top: 0;
 }
 
-/* things to remember
----------------------------------------------*/
-
-.things-to-remember {
-	padding: 1.5em;
-	background: #6fe9bf;
-}
-
-.things-to-remember ul {
-	font-size: 1.25em;
-	list-style: none;
-	margin-left: 0;
-}
-
-label span {
-	cursor: pointer;
-}
-
-.things-to-remember li {
-	padding: 0.125em 0
-}
-
-.things-to-remember [type="checkbox"] + span::before {
-	content: '+\0020';
-	font-weight: bold;
-}
-
-.things-to-remember [type="checkbox"]:checked + span {
-	color: #006541;
-}
-
-.things-to-remember [type="checkbox"]:checked + span::before {
-	content: '\2713\0020';
-	font-weight: bold;
-	color: #006541;
-}
-
 /* expandies
 ---------------------------------------------*/
 
@@ -744,9 +718,10 @@ h2 [aria-controls] {
 	background: none;
 	padding: 0;
 	margin: 0;
-	font-size: 0.85em;
+	font-size: 0.75em;
 	box-shadow: none;
 	position: static !important;
+	text-align: left;
 }
 
 h2 [aria-controls]:hover, 
@@ -871,6 +846,24 @@ footer a {
 	[aria-label="menu options"] .half {
 		width: 50%;
 	}
+
+	.category-list {
+		font-size: 0.66em;
+	}
+
+	/*.category-list ul {
+		display: flex;
+		align-items: stretch;
+	}
+
+	.category-list li {
+		flex: 1 0;
+		min-width: 50%;
+	}
+
+	.category-list li button {
+		height: 100%;
+	}*/
 
 }
 
