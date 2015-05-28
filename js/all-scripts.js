@@ -14649,19 +14649,19 @@ Handlebars.registerHelper('accuracy', function(array) {
 
 Handlebars.registerHelper('qualifyHigh', function() {
 	if (db.get('ass.high') && !db.get('ass.low')) {
-		return "<p>You may qualify for the highest allowance, placing you in the Support Group.</p>";
+		return '<p>You may qualify for the highest allowance, placing you in what&#x2019;s called the Support Group. Remember to show your assessor the questions marked <span class="warn">VERY IMPORTANT</span> (below) by printing this page or opening it on your phone. These are the questions that indicate you qualify.</p>';
 	}
 });
 
 Handlebars.registerHelper('qualifyLow', function() {
 	if (!db.get('ass.high') && db.get('ass.low')) {
-		return "<p>You may qualify for the standard allowance, placing you in what&#x2019;s called the Work Related Activity Group.</p>";
+		return '<p>You may qualify for the standard ESA allowance, placing you in what&#x2019;s called the Work Related Activity Group. Remember to show your assessor the questions marked <span class="warn amber">IMPORTANT</span> (below) by printing this page or opening it on your phone. These are the questions that indicate you qualify.</p>';
 	}
 });
 
 Handlebars.registerHelper('qualifyEither', function() {
 	if (db.get('ass.high') && db.get('ass.low')) {
-		return "<p>It looks like you'll qualify for the standard allowance (placing you in what&#x2019;s called the Work Related Activity Group) or possibly the higher allowance (Support Group).</p>";
+		return '<p>It looks like you&#x2019;ll qualify for the standard allowance (placing you in what&#x2019;s called the Work Related Activity Group) or possibly the higher allowance (Support Group). Remember to show your assessor the <strong>Important Questions</strong> (below) by printing this page or opening it on your phone. These are the questions that indicate you qualify.</p>';
 	}
 });
 
