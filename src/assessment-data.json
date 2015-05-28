@@ -76,7 +76,7 @@
 				},
 				{
 					"label": "It varies",
-					"value": null
+					"value": 0
 				}
 			]
 		},
@@ -95,7 +95,7 @@
 				},
 				{
 					"label": "It varies",
-					"value": null
+					"value": 0
 				}				
 			]
 		},
@@ -114,7 +114,7 @@
 				},
 				{
 					"label": "It varies",
-					"value": null
+					"value": 0
 				}				
 			]
 		},
@@ -137,7 +137,7 @@
 				},
 				{
 					"label": "It varies",
-					"value": null
+					"value": 0
 				}					
 			]
 		},
@@ -171,7 +171,7 @@
 				},
 				{
 					"label": "It varies",
-					"value": null
+					"value": 0
 				}						
 			]
 		},
@@ -190,7 +190,7 @@
 				},
 				{
 					"label": "It varies",
-					"value": null
+					"value": 0
 				}						
 			]
 		},
@@ -209,7 +209,7 @@
 				},
 				{
 					"label": "It varies",
-					"value": null
+					"value": 0
 				}						
 			]
 		},
@@ -228,7 +228,7 @@
 				},
 				{
 					"label": "It varies",
-					"value": null
+					"value": 0
 				}						
 			]
 		},
@@ -247,7 +247,7 @@
 				},
 				{
 					"label": "It varies",
-					"value": null
+					"value": 0
 				}						
 			]
 		},
@@ -266,7 +266,7 @@
 				},
 				{
 					"label": "It varies",
-					"value": null
+					"value": 0
 				}						
 			]
 		},
@@ -285,7 +285,7 @@
 				},
 				{
 					"label": "It varies",
-					"value": null
+					"value": 0
 				}						
 			]
 		},
@@ -304,7 +304,7 @@
 				},
 				{
 					"label": "It varies",
-					"value": null
+					"value": 0
 				}						
 			]
 		},
@@ -365,7 +365,7 @@
 				},
 				{
 					"label": "It varies",
-					"value": null
+					"value": 0
 				}
 			]
 		},
@@ -392,7 +392,7 @@
 				},
 				{
 					"label": "It varies",
-					"value": null
+					"value": 0
 				}
 			]
 		},
@@ -411,7 +411,7 @@
 				},
 				{
 					"label": "It varies",
-					"value": null
+					"value": 0
 				}
 			]
 		},
@@ -509,11 +509,11 @@
 				},
 				{
 					"label": "I can sometimes learn some simple tasks",
-					"value": null
+					"value": 0
 				},
 				{
 					"label": "I do not know",
-					"value": null
+					"value": 0
 				},
 				{
 					"label": "I would never be able to learn how to complete a task like this",
