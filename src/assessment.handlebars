@@ -16,7 +16,7 @@
 			<nav role="navigation" class="to-main-menu">
 				<ul>
 					<li>
-						<a href="javascript:void(0)" data-action="menu">Main Menu</a> 
+						<a href="#main-menu" data-action="menu">Main Menu</a> 
 					</li>
 					<li>
 						<a href="javascript:void(0)" data-action="stats">My Assessment</a>
@@ -48,7 +48,7 @@
 						<button data-followup="#{{followUp}}" class="nav-link pick" data-action="pick">Ask me another</button>
 					</li>
 					<li>
-						<button class="nav-link stats" data-action="stats">My assessment so far</button>
+						<button class="nav-link stats" data-action="stats" role="link">My assessment so far</button>
 					</li>
 					<li>
 						<button class="nav-link break" data-action="break">I need a break</button>
@@ -93,10 +93,10 @@
 						<button class="nav-link" data-action="pick">Another question</button>
 					</li>
 					<li>
-						<button class="nav-link" data-action="stats">My assessment so far</button>
+						<button class="nav-link" data-action="stats" role="link">My assessment so far</button>
 					</li>
 					<li>
-						<button class="nav-link" data-action="menu">Main menu</button>
+						<button class="nav-link" data-action="menu" role="link">Main menu</button>
 					</li>
 				</ul>
 			</div>
@@ -113,10 +113,10 @@
 						<button class="nav-link" data-action="pick">Another question</button>
 					</li>
 					<li>
-						<button class="nav-link" data-action="stats">My assessment so far</button>
+						<button class="nav-link" data-action="stats" role="link">My assessment so far</button>
 					</li>
 					<li>
-						<button href="#main-menu" class="nav-link">Main menu</button>
+						<button href="#main-menu" class="nav-link" role="link">Main menu</button>
 					</li>
 				</ul>
 			</div>
@@ -131,7 +131,7 @@
 						<button class="nav-link" data-action="resume">Continue</button>
 					</li>
 					<li>
-						<button class="nav-link" data-action="menu">Main menu</button>
+						<button class="nav-link" data-action="menu" role="link">Main menu</button>
 					</li>
 				</ul>
 			</div>
@@ -142,7 +142,7 @@
 				<p>All of your assessment data has been successfully deleted from your computer.</p>
 				<ul aria-label="menu">
 					<li>
-						<button class="nav-link" data-action="menu">Main menu</button>
+						<button class="nav-link" data-action="menu" role="link">Main menu</button>
 					</li>
 				</ul>
 			</div>
@@ -160,10 +160,10 @@
 				<p>You&#x2019;ve seen all the questions (so you&#x2019;re pretty familiar with the assessment now!) but you skipped some. What would you like to do?</p>
 				<ul aria-label="menu">
 					<li>	
-						<button class="nav-link" data-action="skipped">Skipped questions</button>
+						<button class="nav-link" data-action="skipped">Answer skipped questions</button>
 					</li>
 					<li>
-						<button class="nav-link" data-action="stats">My assessment so far</button>
+						<button class="nav-link" data-action="stats" role="link">My assessment so far</button>
 					</li>
 				</ul>
 			</div>
@@ -174,13 +174,13 @@
 				<p>You&#x2019;ve answered all the practice questions available, so you&#x2019;re pretty well versed now. What would you like to do next?</p>
 				<ul aria-label="menu">
 					<li>
-						<button class="nav-link" data-action="stats">How did my assessment go?</button>
+						<button class="nav-link" data-action="stats" role="link">How my assessment went</button>
 					</li>
 					<li>
 						<button class="nav-link" data-action="restart">Practise again</button>
 					</li>
 					<li>
-						<button class="nav-link" data-action="menu">Main Menu</button>
+						<button class="nav-link" data-action="menu" role="link">Main Menu</button>
 					</li>
 				</ul>
 			</div>
@@ -194,7 +194,7 @@
 						<button class="nav-link" data-action="resume">Continue</button>
 					</li>
 					<li>
-						<button class="nav-link" data-action="clean-up">Main menu</button>
+						<button class="nav-link" data-action="clean-up" role="link">Main menu</button>
 					</li>
 				</ul>
 			</div>
@@ -294,10 +294,10 @@
 					</div>
 					<ul aria-label="menu">
 						<li>
-							<button class="nav-link" data-action="start-or-resume">Practise some assessment questions</button>
+							<button class="nav-link" data-action="start-or-resume" role="link">Practise some assessment questions</button>
 						</li>
 						<li>
-							<button class="nav-link" data-action="menu">Main menu</button>
+							<button class="nav-link" data-action="menu" role="link">Main menu</button>
 						</li>
 					</ul>					
     			</div>
@@ -310,13 +310,13 @@
 				<div role="toolbar" aria-label="menu options">
 					<ul>
 						<li class="half">
-							<button data-action="about-esa">A Quick Guide To ESA <span>and your assessment</span></button>
+							<button data-action="about-esa" role="link">A Quick Guide To ESA <span>and your assessment</span></button>
 						</li>
 						<li>
 							<button data-action="start-or-resume"><i aria-hidden="true">&#x2605;</i> Practise <i aria-hidden="true">&#x2605;</i> <span>by assessing yourself</span></button>
 						</li>
 						<li>
-							<button data-action="stats">My Assessment <span>and how it&#x2019;s going so far</span></button>
+							<button data-action="stats" role="link">My Assessment <span>and how it&#x2019;s going so far</span></button>
 						</li>
 						<!--<li class="half">
 							<button data-action="answering-questions">Answering <span>questions the right way</span></button>
@@ -334,13 +334,13 @@
 				<p>You&#x2019;ve seen all the practise questions about <strong id="this-activity">this activity</strong>. What would you like to look at next?</p>
 				<ul aria-label="menu">
 					<li>
-						<button class="nav-link" data-action="categories">A new activity</button>
+						<button class="nav-link" data-action="categories" role="link">A new activity</button>
 					</li>
 					<li>
-						<button class="nav-link" data-action="stats">My assessment so far</button>
+						<button class="nav-link" data-action="stats" role="link">My assessment so far</button>
 					</li>
 					<li>
-						<button class="nav-link" data-action="menu">Main menu</button>
+						<button class="nav-link" data-action="menu" role="link">Main menu</button>
 					</li>
 				</ul>				
 			</div>
@@ -355,10 +355,10 @@
 						<button class="nav-link red" data-action="delete-data">I'm done! Delete my stuff</button>
 					</li>
 					<li>
-						<button class="nav-link" data-action="stats">I want to see my data first</button>
+						<button class="nav-link" data-action="stats" role="link">I want to see my data first</button>
 					</li>
 					<li>
-						<button class="nav-link" data-action="menu">Main menu</button>
+						<button class="nav-link" data-action="menu" role="link">Main menu</button>
 					</li>
 				</ul>
 			</div>

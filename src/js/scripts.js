@@ -78,6 +78,9 @@ function getCatQuestions(slug) {
 		// Remove seen questions from 
 		var all = [];
 
+		// Empty "remaining categories"
+		db.set('ass.remainingCategories', []);
+
 		$.each(window.allQuestions, function(i, v) {
 			
 			// make an array of all questions
@@ -117,7 +120,7 @@ function loadSlide(id, type) {
 	if (id === 'stats') {
 
 		// if you ran out of unseen questions and didn't skip any
-		if (_.isEmpty(db.get('ass.unseenQuestions')) && _.isEmpty(db.get('ass.skippedQuestions')) && db.get('ass.started')) {
+		if (_.isEmpty(db.get('ass.unseenQuestions')) && _.isEmpty(db.get('ass.skippedQuestions')) && _.isEmpty(db.get('ass.remainingCategories')) && db.get('ass.started')) {
 			db.set('ass.incomplete', false);
 		}
 
