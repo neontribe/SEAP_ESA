@@ -43,7 +43,7 @@ function initAss() {
 			return cat.toLowerCase()
 					  .replace(/[^\w ]+/g,'')
 					  .replace(/ +/g,'-'); }), // the categories not yet viewed*/
-		remainingCategories: _.uniq(window.allCategories),
+		remainingCategories: _.uniq(_.without(window.allCategories, "followup")),
 		started: false, // whether a practise has been started
 		answeredOne: false, // Whether any questions have been answered at all 
 		context: null, // the jQuery object for the slide in hand
@@ -79,7 +79,13 @@ function getCatQuestions(slug) {
 		var all = [];
 
 		$.each(window.allQuestions, function(i, v) {
-			all.push(v.question);
+			
+			// make an array of all questions
+			// excluding followup questions
+			if (v.category !== 'followup') {
+				all.push(v.question);
+			}
+
 		});		
 
 		var seen = db.get('ass.seenQuestions');
@@ -484,27 +490,6 @@ function divideAnswers() {
 
 }
 
-function checkReminders(context) {
-
-	$('.things-to-remember [type="checkbox"]', '#' + context).each(function() {
-
-		var slug = $(this).attr('data-tip-id');
-
-		var reminders = db.get('ass.reminders');
-
-		// find if the reminder has already been set
-		// ie. exists in the reminders db property
-		if (_.find(reminders, function(reminder) { return reminder.slug === slug; })) {
-
-			// IF SO, CHECK THE CORRESPONDING CHECKBOX
-			$(this).attr('checked', 'checked');
-
-		}
-
-	});
-
-}
-
 /**********************************************************************
 HELPERS
 **********************************************************************/
@@ -576,6 +561,15 @@ Handlebars.registerHelper('sluggify', function(words) {
 		.replace(/ +/g,'-');
 	return slug;
 });
+
+function sluggify(string) {
+
+	return string
+		.toLowerCase()
+		.replace(/[^\w ]+/g,'')
+		.replace(/ +/g,'-');
+
+}
 
 /**********************************************************************
 EVENTS
@@ -754,42 +748,7 @@ $('body').on('change','[type="radio"]', function() {
 	var answer = $(':checked + span', '#' + context).text();
 
 
-	if (isNumeric(points)) {
-
-		// cast to real integer
-		points = +points;
-
-	}
-
-	// initialize the answer object
-	var answerObject = {
-		question: question,
-		answer: answer,
-		points: points
-	};
-
-	// check if the category object exists
-	// and, if not, set it
-	if (!db.isSet('ass.answers.' + category)) {
-		db.set('ass.answers.' + category, category);
-	}
-
-	// set the new points for this question in this category
-	db.set('ass.answers.' + category + '.' + context, answerObject);
-
-	if (points === 16) {
-
-		if (!db.get('ass.high')) {
-
-			// record that the high qualification is true
-			db.set('ass.high', true);
-
-			// no need to add up, just tell the user
-			loadSlide('qualify-high');
-
-		}
-		
-	} else {
+	if (!isNumeric(points)) {
 
 		// if it is an asterisk end question, make sure a score
 		// of 15+ promotes the user's qualification to high
@@ -797,12 +756,60 @@ $('body').on('change','[type="radio"]', function() {
 
 			db.set('ass.promote', true);
 
+			// fire the adding up function
+			// to see if there are enough points to qualify
+			qualify();			
+
+		} else {
+
+			// turn the followup question into a slug
+			var followupSlug = 'question-'+sluggify(points);
+			// load the followup slide
+			loadSlide(followupSlug);
+
 		}
 
-		// fire the adding up function
-		// to see if there are enough points to qualify
-		qualify();
+	} else {
 
+		// cast to real integer
+		points = +points;
+
+		// initialize the answer object
+		var answerObject = {
+			question: question,
+			answer: answer,
+			points: points
+		};
+
+		// check if the category object exists
+		// and, if not, set it
+		if (!db.isSet('ass.answers.' + category)) {
+			db.set('ass.answers.' + category, category);
+		}
+
+		// set the new points for this question in this category
+		db.set('ass.answers.' + category + '.' + context, answerObject);
+
+		if (points === 16) {
+
+			if (!db.get('ass.high')) {
+
+				// record that the high qualification is true
+				db.set('ass.high', true);
+
+				// no need to add up, just tell the user
+				loadSlide('qualify-high');
+
+			}
+			
+		} else {
+
+			// fire the adding up function
+			// to see if there are enough points to qualify
+			qualify();			
+
+		}
+		
 	}
 
 });
@@ -810,29 +817,6 @@ $('body').on('change','[type="radio"]', function() {
 $('body').on('click','[data-action="categories"]', function() { 
 
 	loadSlide('categories');
-
-});
-
-$('body').on('change','.checklist [type="checkbox"]', function() {
-
-	// get the id
-	var slug = $(this).attr('id');
-
-	var reminders = db.get('ass.reminders');
-
-	var reminder = _.findWhere(reminders, {slug: slug});
-
-	if ($(this).is(':checked')) {
-
-		reminder.done = true;
-
-	} else {
-
-		reminder.done = false;
-
-	}
-
-	db.set('ass.reminders', reminders);
 
 });
 

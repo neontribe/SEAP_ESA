@@ -11,7 +11,7 @@
 				},
 				{
 					"label": "No",
-					"value": "Question text of follow-up question (string)"
+					"value": "Can you climb short flights of stairs AT ALL?"
 				}
 			]
 		},
@@ -1130,6 +1130,25 @@
 				{
 					"label": "No",
 					"value": "*"
+				},
+				{
+					"label": "It varies",
+					"value": 0
+				}
+			]
+		},
+		{		
+			"question": "Can you climb short flights of stairs AT ALL?",
+			"hint": null,
+			"category": "followup",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 16
 				},
 				{
 					"label": "It varies",
