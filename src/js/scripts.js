@@ -139,7 +139,7 @@ function loadSlide(id, type) {
 
 	$('.slide > *').removeClass('loaded');
 
-
+	console.log('type', type);
 	// set type in local storage or reset to null
 	if (type) {
 		db.set('ass.slideType', type);
@@ -186,7 +186,7 @@ function pickQuestion() {
 	db.set('ass.started', true);
 
 	// the type of the previous slide if any
-	var type = db.get('ass.slideType');
+	var typeOfSlide = db.get('ass.slideType');
 	// the last slide seen
 	var context = db.get('ass.context');
 	// get mode (unseen or skipped)
@@ -194,7 +194,7 @@ function pickQuestion() {
 
 	console.log(window.answered);
 
-	if (type === 'question' && !window.answered && mode === 'unseenQuestions') {
+	if (typeOfSlide === 'question' && !window.answered && mode === 'unseenQuestions') {
 
 		// put the unanswered question into the array of skipped questions
 		var skipped = db.get('ass.skippedQuestions');
@@ -845,7 +845,7 @@ $('body').on('click','[data-action="set-cat"]', function() {
 
 });
 
-$(window).on('hashchange', function(e) {
+/*$(window).on('hashchange', function(e) {
 
 	// add hash to history
 	window.hashHistory.push(window.location.hash);
@@ -861,4 +861,4 @@ $(window).on('hashchange', function(e) {
 		}
 	}
 
-});
+});*/
