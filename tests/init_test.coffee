@@ -9,5 +9,5 @@ casper.test.begin 'Title page', 4, ->
     @test.assertElementCount 'header nav li a', 3, '3 header menu links'
     # 3 buttons
     @test.assertElementCount '.flow.loaded button', 3, '3 buttons in view'
-  casper.run ->
-    @exit()
+casper.run ->
+  @test.done()
