@@ -1,4 +1,4 @@
-url = 'http://localhost:9001/build/#main_menu'
+url = 'http://localhost:9001/build'
 
 casper.test.begin 'Title page', 4, (test)->
   casper
@@ -8,6 +8,10 @@ casper.test.begin 'Title page', 4, (test)->
       test.assertTitle 'My ESA Assessment', 'ESA page title is the one expected'
       # 3 Menu links in header
       test.assertElementCount 'header nav li a', 3, '3 header menu links'
+      # make sure we aren't on the resume message
+      if @getCurrentUrl().search 'resume' != -1 then
+      @click 'a[data-action="menu"]'
+    .then ->
       # 3 buttons
       test.assertElementCount '.flow.loaded button', 3, '3 buttons in view'
     .run ->
