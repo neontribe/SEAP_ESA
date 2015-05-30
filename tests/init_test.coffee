@@ -1,4 +1,4 @@
-url = 'http://localhost:9001/build'
+url = 'http://localhost:9001/build/#main_menu'
 
 casper.test.begin 'Title page', 4, (test)->
   casper
