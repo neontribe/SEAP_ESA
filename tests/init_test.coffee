@@ -1,3 +1,9 @@
+# Check site is serving
+# Check title is My ESA Assessment
+# Check count 3 menu links in main nav (Main Menu, my assessment, my data)
+# Make sure we aren't on resume screen, then
+# Check count 3 option buttons - (guide, practise, my assessment)
+
 url = 'http://localhost:9001/build'
 
 casper.test.begin 'Title page', 4, (test)->
