@@ -2,6 +2,7 @@
 # Check there are expandable divs containing h2 button
 # Check theat clicking h2 button unhides and expands
 # Check that clicking h2 button with visable content hides and collapses
+# Todo - check external links - make sure they open in new tab
 # Todo - count elements
 # Todo - check for practise and menu links at bottom
 # Todo - check for pdf guide link
@@ -38,8 +39,8 @@ casper.test.begin 'ESA Guide', 4, (test) ->
       test.assertExists guideSectionSelector
       # check if any sections are open and return count
       data.startOpen = countOpen guideSectionSelector
-      @echo data.startOpen + ' Guide sections opened at start'
-      @echo 'Click ' + guideSection + ' to open'
+      test.comment data.startOpen + ' Guide sections opened at start'
+      test.comment 'Click ' + guideSection + ' to open'
       @thenClick guideSectionSelector + '[aria-controls="' + guideSection+'"]'
     .then (data) ->
       # verify that more sections are now open
@@ -47,7 +48,7 @@ casper.test.begin 'ESA Guide', 4, (test) ->
       test.assert openGuideSections > data.startOpen,
         openGuideSections + ' sections now open'
       # click again to close
-      @echo 'Click ' + guideSection + ' to close'
+      test.comment 'Click ' + guideSection + ' to close'
       @thenClick guideSectionSelector + '[aria-controls="' + guideSection+'"]'
     .then (data) ->
       # check if any sections are open and return count
