@@ -43,6 +43,15 @@ clearData = (test) ->
   casper.thenClick 'button[data-action="menu"]'
   true
 
+# TODO figure out what this function should take and return to replace 73-81
+answerQuestion = (value) ->
+  question = casper.fetchText '.question-container.loaded h2 em'
+  hasValue = false
+  hasValue = casper.exists '.question-container.loaded input[value="'+value+'"]'
+  casper
+    .thenClick '.question-container.loaded input[value="'+value+'"]' if hasValue
+  question
+
 casper.test.begin 'Practice add remove important question', 4, (test) ->
   # Start at home, clear data, return to home, click start-or-resume
   casper
