@@ -1140,7 +1140,7 @@
 		{		
 			"question": "Can you climb short flights of stairs AT ALL?",
 			"hint": null,
-			"category": "followup",
+			"category": null,
 			"answers": [
 				{
 					"label": "Yes",
