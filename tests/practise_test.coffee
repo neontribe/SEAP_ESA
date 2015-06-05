@@ -45,12 +45,11 @@ clearData = (test) ->
 
 # TODO figure out what this function should take and return to replace 73-81
 answerQuestion = (value) ->
-  question = casper.fetchText '.question-container.loaded h2 em'
   hasValue = false
   hasValue = casper.exists '.question-container.loaded input[value="'+value+'"]'
   casper
     .thenClick '.question-container.loaded input[value="'+value+'"]' if hasValue
-  question
+  hasValue
 
 casper.test.begin 'Practice add remove important question', 4, (test) ->
   # Start at home, clear data, return to home, click start-or-resume
@@ -60,7 +59,9 @@ casper.test.begin 'Practice add remove important question', 4, (test) ->
       @thenClick 'button[data-action="' + startHash + '"]'
       test.comment this.getCurrentUrl()
     .then (data) ->
-    # Correct url appears for activity start
+      #set empty answer obj
+      data['answered'] = {}
+      # Correct url appears for activity start
       test.assertUrlMatch url + '/#start',
         'Button press Navigated to ' + @getCurrentUrl()
       @thenClick 'button[data-action="categories"]'
@@ -71,15 +72,21 @@ casper.test.begin 'Practice add remove important question', 4, (test) ->
       test.assertExists activitySelector
       @thenClick activitySelector
     .then (data) ->
-      question = @fetchText '.question-container.loaded h2 em'
-      test.comment question
-      # verify there is a 0 value option if not, ask another
-      hasZero = false
-      hasZero = @exists '.question-container.loaded input[value="0"]'
-      @thenClick '.question-container.loaded input[value="0"]' if hasZero
-      data[question] = 0
-      @echo 'Answered Yes 0'
-      @thenClick '.question-container.loaded button[data-action="pick"]'
+      isNext = @exists '.question-container.loaded button[data-action="pick"]'
+
+      while isNext
+        question = @fetchText '.question-container.loaded h2 em'
+        test.comment question
+        # verify there is a 0 value option if not, ask another
+        if answerQuestion(0) then data['answered'][question] = 0
+        #@echo JSON.stringify(data)
+        @thenClick '.question-container.loaded button[data-action="pick"]'
+        @waitForSelectorTextChange '.question-container.loaded h2 em'
+        @echo @fetchText '.question-container.loaded h2 em'
+        # @exists doesn't ever evaluate false - sticks on same question.
+        isNext = @exists '.lquestion-container.loaded'
+        @echo isNext
+        break unless isNext
     .then (data) ->
       test.comment @fetchText '.question-container.loaded h2 em'
       #TODO run through all questions recording answer given and then
