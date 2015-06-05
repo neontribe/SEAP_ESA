@@ -37,11 +37,14 @@
 					<em>{{question}}</em>
 				</h2>
 				<div class="answers" aria-label="choose an answer">
-					{{#each answers}}
-					<label>
-			            <input type="radio" value="{{value}}" name="{{sluggify ../category}}"> <span>{{label}}</span>
-			        </label>
-					{{/each}}
+					<fieldset>
+						<legend class="vh">Your answer</legend>
+						{{#each answers}}
+						<label>
+				            <input type="radio" value="{{value}}" name="{{sluggify ../category}}"> <span>{{label}}</span>
+				        </label>
+						{{/each}}
+					</fieldset>
 				</div>
 				<ul aria-label="menu">
 					<li>

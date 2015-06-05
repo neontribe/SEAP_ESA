@@ -358,6 +358,7 @@ function resume() {
 }
 
 function tally() {
+	
 	// get all the answers
 	var answers = db.get('ass.answers');
 
