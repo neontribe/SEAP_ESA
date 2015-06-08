@@ -28,20 +28,27 @@
 			</nav>
 		</header>
 		{{#each questions}}
-		<div class="slide question" id="question-{{sluggify question}}" data-category="{{sluggify category}}">
+		<div class="slide question" id="question-{{sluggify question}}" {{#if category}}data-category="{{sluggify category}}"{{/if}}>
 			<div class="question-container">
 				<!--<img src="path/to/question-icon.svg" alt="" />-->
 				<h2 class="question-text" tabindex="-1">
-					<span class="activity">Activity: {{category}}</span>
+					{{#if category}}
+						<span class="activity">Activity: {{category}}</span>
+					{{else}}
+						<span class="activity"><strong>Follow up question:</strong></span>
+					{{/if}}
 					<span class="vh">Question:</span>
 					<em>{{question}}</em>
 				</h2>
 				<div class="answers" aria-label="choose an answer">
-					{{#each answers}}
-					<label>
-			            <input type="radio" value="{{value}}" name="{{sluggify ../category}}"> <span>{{label}}</span>
-			        </label>
-					{{/each}}
+					<fieldset>
+						<legend class="vh">Your answer</legend>
+						{{#each answers}}
+						<label>
+				            <input type="radio" value="{{value}}" {{#if category}}name="{{sluggify ../category}}"{{/if}}> <span>{{label}}</span>
+				        </label>
+						{{/each}}
+					</fieldset>
 				</div>
 				<ul aria-label="menu">
 					<li>
@@ -372,7 +379,7 @@
 		</footer>
 		<script>
 			window.allQuestions = [{{#each questions}}{ question: 'question-{{sluggify question}}', category: '{{category}}' },{{/each}}];
-			window.allCategories = ['Moving around and using steps'];
+			window.allCategories = [{{#each questions}}'{{category}}',{{/each}}];
 		</script>
 		<script src="js/all-scripts.js"></script>
 		<script id="stats-template" type="text/x-handlebars-template">
