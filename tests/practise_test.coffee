@@ -1,21 +1,36 @@
+# REUSED
 # Clear data
 # Go to practice page
 # Click choose an activity
+
+# TEST 1 - answer all in category
 # Select 'Moving around and using steps'
-# Answer 0 value 'yes' (if no 0 value option, try another question)
+# Answer 0 value 'yes' (if no 0 value option, stop)
 # remember value of 'yes' for later
 # Select ask me another
-# TODO after this
 # Repeat until end of section reached
-# Verify 'well done' message
-# Select 'Sitting and standing'
-# Answer no (if no 'no' option, try another)
-# Verify 'support group qualifier' message
+# Verify category complete page for 'Moving around and using steps'
+
+# TEST 2 - instant qualify high with 16 value answer
+# Select 'Using your hands'
+# Answer no (value 16)
 # Click select another question
-# Verify in section 'sitting and standing'
-# Select 'most negative outcome'
+# Verify 'support group qualifier' message
+
+# TEST 3 - instant qualify low with
+# Select 'Awareness'
+# Answer Yes (value 0)
+# Click select another question
+# Verify in section 'Awareness'
+# Select All the time (value 15)
 # Verify 'section complete'
-# Click My assessment so far
+# Click select another question
+# Verify 'Work Related Activity group' message
+
+# TEST 4 - qualify high with 15 + *
+
+# TODO move to another file?After test 3 ?without clearing -
+# Click My Assessment...
 # Verify that 'important' types of questions are displayed
 # Count questions
 # Select a question
@@ -27,10 +42,10 @@
 
 url = 'http://localhost:9001/build'
 startHash = 'start-or-resume'
-categoriesSectionSelector = '.loaded#categories-content'
-activityName = 'Moving around and using steps'
-activitySelector =
-  categoriesSectionSelector+' button[data-category="'+activityName+'"]'
+
+# Helper to get selector for category
+getCategorySectionSelector = (activityName) ->
+  '.loaded#categories-content button[data-category="'+activityName+'"]'
 
 # Helper to clear data from session and return home
 clearData = (test) ->
@@ -43,46 +58,120 @@ clearData = (test) ->
   casper.thenClick 'button[data-action="menu"]'
   true
 
-# TODO figure out what this function should take and return to replace 73-81
+# Helper to clear session and start practice in category
+clearAndStartPractise = (test, activityName) ->
+  clearData(test)
+  casper.thenClick 'button[data-action="' + startHash + '"]'
+  test.comment casper.getCurrentUrl()
+  casper.then (data) ->
+    #set empty answer obj
+    data['answered'] = {}
+    # Correct url appears for activity start
+    test.assertUrlMatch url + '/#start',
+      'Button press Navigated to ' + @getCurrentUrl()
+    casper.thenClick 'button[data-action="categories"]'
+    # visible loaded categories-content
+  casper.then (data) ->
+    test.assertExists '.loaded#categories-content',
+      'Found categories content'
+    # verify activity button exists
+    activitySelector = getCategorySectionSelector activityName
+    test.assertExists activitySelector,
+      'Found "' + activityName + '" button.'
+    casper.thenClick activitySelector
+    true
+
+# Answer question with given value
+# returns false if value is not valid option
 answerQuestion = (value) ->
-  question = casper.fetchText '.question-container.loaded h2 em'
   hasValue = false
   hasValue = casper.exists '.question-container.loaded input[value="'+value+'"]'
   casper
-    .thenClick '.question-container.loaded input[value="'+value+'"]' if hasValue
-  question
+    .click '.question-container.loaded input[value="'+value+'"]' if hasValue
+  hasValue
 
-casper.test.begin 'Practice add remove important question', 4, (test) ->
+###############################
+# TEST Answer all in category #
+###############################
+activityName1 = 'Moving around and using steps'
+
+casper.test.begin 'Answer all questions using: ' + activityName1, 6, (test) ->
   # Start at home, clear data, return to home, click start-or-resume
   casper
     .start url, ->
-      clearData(test)
-      @thenClick 'button[data-action="' + startHash + '"]'
-      test.comment this.getCurrentUrl()
+      clearAndStartPractise test, activityName1
     .then (data) ->
-    # Correct url appears for activity start
-      test.assertUrlMatch url + '/#start',
-        'Button press Navigated to ' + @getCurrentUrl()
-      @thenClick 'button[data-action="categories"]'
-      # visible loaded categories-content
+      isNext = @exists '.question-container.loaded button[data-action="pick"]'
+      test.comment 'Answer all 0'
+      while isNext
+        question = @fetchText '.question-container.loaded h2 em'
+        @echo question
+        # verify there is a 0 value option if not, ask another
+        if answerQuestion(0) then data['answered'][question] = 0
+        #@echo JSON.stringify(data)
+        @click '.question-container.loaded button[data-action="pick"]'
+        isNext = @exists '.question-container.loaded'
+        test.comment 'Another question in category:'+isNext
+        break unless isNext
     .then (data) ->
-      test.assertExists categoriesSectionSelector
-      # verify activity button exists
-      test.assertExists activitySelector
-      @thenClick activitySelector
+      # verify we are on the category-finished page
+      test.assertUrlMatch url + '/#category-finished',
+        'Landed on category finished page'
+      # verify category name as expected
+      test.assertSelectorHasText '.box.loaded p strong',
+        activityName1.toLowerCase(),
+        'Category name matches "' + activityName1 + '"'
+    .run ->
+      test.done()
+
+##########################################
+# Test Qualify High with value 16 answer #
+##########################################
+activityName2 = 'Using your hands'
+
+casper.test.begin 'Qualify high with : ' + activityName2, 5, (test) ->
+  # Start at home, clear data, return to home, click start-or-resume
+  casper
+    .start url, ->
+      clearAndStartPractise test, activityName2
     .then (data) ->
       question = @fetchText '.question-container.loaded h2 em'
       test.comment question
-      # verify there is a 0 value option if not, ask another
-      hasZero = false
-      hasZero = @exists '.question-container.loaded input[value="0"]'
-      @thenClick '.question-container.loaded input[value="0"]' if hasZero
-      data[question] = 0
-      @echo 'Answered Yes 0'
-      @thenClick '.question-container.loaded button[data-action="pick"]'
+      # verify and click option value 16
+      if answerQuestion(16) then data['answered'][question] = 16
+      # click ask me another
+      @click '.question-container.loaded button[data-action="pick"]'
+      # verify Support Group Qualifier message
+      test.assertSelectorHasText '.box.loaded h1 strong',
+        'Support Group',
+        'Clicking value 16 answer instantly qualifies high'
+    .run ->
+      test.done()
+
+##############################################
+# Test Qualify Low with value 15 answer #
+##############################################
+activityName3= 'Awareness'
+
+casper.test.begin 'Qualify low with : ' + activityName3, 5, (test) ->
+  # Start at home, clear data, return to home, click start-or-resume
+  casper
+    .start url, ->
+      clearAndStartPractise test, activityName3
     .then (data) ->
-      test.comment @fetchText '.question-container.loaded h2 em'
-      #TODO run through all questions recording answer given and then
-      # check 'My Assessment page is as expected
+      question = @fetchText '.question-container.loaded h2 em'
+      test.comment question
+      # verify and click option value 0
+      if answerQuestion(0) then data['answered'][question] = 0
+      # click ask me another
+      @click '.question-container.loaded button[data-action="pick"]'
+      # verify and click value 15
+      if answerQuestion(15) then data['answered'][question] = 15
+      # click ask me another
+      @click '.question-container.loaded button[data-action="pick"]'
+      # verify Support Group Qualifier message
+      test.assertSelectorHasText '.box.loaded h1 strong',
+        'Work Related Activity Group',
+        'Clicking value 15 answer instantly qualifies low'
     .run ->
       test.done()
