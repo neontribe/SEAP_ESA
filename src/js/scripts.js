@@ -182,12 +182,21 @@ function loadSlide(id, type) {
 // show a random unseen question
 function pickQuestion() {
 
+	// If the next question was a followup, load it
+	if (db.get('ass.followupSlug')) {
+		loadSlide(db.get('ass.followupSlug'));
+		db.set('ass.followupSlug', null);
+		return;
+	}
+
+	// If we need to alert user of qualification, do it
 	if (db.get('ass.show-low')) {
 		loadSlide('qualify-low');
 		db.set('ass.show-low', false);
 		return;
 	}
 
+	// same for high qualification
 	if (db.get('ass.show-high')) {
 		loadSlide('qualify-high');
 		db.set('ass.show-high', false);
@@ -784,10 +793,8 @@ $('body').on('change','[type="radio"]', function() {
 
 		} else {
 
-			// turn the followup question into a slug
-			var followupSlug = 'question-'+sluggify(points);
-			// load the followup slide
-			loadSlide(followupSlug);
+			// turn the followup question into a slug ready to use
+			db.set('ass.followupSlug', 'question-'+sluggify(points));
 
 		}
 
