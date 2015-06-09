@@ -1,8 +1,7 @@
 # Go to categories page
 # Check the visable title is Choose an activity
 # Check for li button data category and count equals button count
-# Check that clicking li button goes to question in that category
-# Todo - loop through all to make sure they work
+# Check that clicking each li button goes to a question in that category
 
 baseurl = 'http://localhost:9001/build'
 hash = 'categories'
@@ -12,12 +11,12 @@ numOfCats = 17
 
 # Helper to get back to categories list
 navToHash = (hash) ->
- casper.click 'a[data-action="data"]'
- casper.click 'button[data-action="delete-data"]'
- casper.click 'button[data-action="menu"]'
- casper.click 'a[data-action="start-or-resume"]'
- casper.click 'button[data-action="' + hash + '"]'
- currentUrl = casper.getCurrentUrl()
+  casper.click 'a[data-action="data"]'
+  casper.click 'button[data-action="delete-data"]'
+  casper.click 'button[data-action="menu"]'
+  casper.click 'a[data-action="start-or-resume"]'
+  casper.click 'button[data-action="' + hash + '"]'
+  currentUrl = casper.getCurrentUrl()
 
 casper.test.begin 'ESA Choose an Activity', numOfCats, (test) ->
   # Start go straight to categories page
@@ -45,7 +44,7 @@ casper.test.begin 'ESA Choose an Activity', numOfCats, (test) ->
         catCount++
         @echo cat
         if cat && cat != 'i-dont-know'
-          @click '.box.loaded li button[data-category="'+cat+'"]' 
+          @click '.box.loaded li button[data-category="'+cat+'"]'
           h2Activity = @fetchText '.loaded h2 span.activity'
           test.assertEquals h2Activity, 'Activity: ' + cat
           navToHash hash
@@ -53,18 +52,5 @@ casper.test.begin 'ESA Choose an Activity', numOfCats, (test) ->
       # number of categories matches number of buttons
       # TODO this test fails because follow-up question creating blank category
       #SKIP FOR NOW test.assertElementCount '.box.loaded li button', catCount
-      # click one of the buttons 
-    #.then (data) ->
-      # verify that more sections are now open
-      #openGuideSections = countOpen guideSectionSelector
-      #test.assert openGuideSections > data.startOpen,
-        #openGuideSections + ' sections now open'
-      # click again to close
-      #test.comment 'Click ' + guideSection + ' to close'
-      #@thenClick guideSectionSelector + '[aria-controls="' + guideSection+'"]'
-    #.then (data) ->
-      # check if any sections are open and return count
-      #nowOpen = countOpen guideSectionSelector
-      #test.assert nowOpen == data.startOpen, nowOpen + ' sections now open'
     .run ->
       test.done()
