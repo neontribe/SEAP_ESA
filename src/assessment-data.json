@@ -1140,7 +1140,7 @@
 		{		
 			"question": "Can you climb short flights of stairs AT ALL?",
 			"hint": null,
-			"category": null,
+			"category": "*Moving around and using steps",
 			"answers": [
 				{
 					"label": "Yes",
