@@ -46,7 +46,8 @@ casper.test.begin 'ESA Choose an Activity', numOfCats, (test) ->
         if cat && cat != 'i-dont-know'
           @click '.box.loaded li button[data-category="'+cat+'"]'
           h2Activity = @fetchText '.loaded h2 span.activity'
-          test.assertEquals h2Activity, 'Activity: ' + cat
+          test.assertEquals h2Activity, 'Activity: ' + cat,
+            'Clicking button displays question from: ' + cat
           navToHash hash
  
       # number of categories matches number of buttons
