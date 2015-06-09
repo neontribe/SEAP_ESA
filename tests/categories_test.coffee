@@ -7,7 +7,6 @@ baseurl = 'http://localhost:9001/build'
 hash = 'categories'
 url = baseurl + '/#' + hash
 sectionTitle = 'Choose an activity'
-numOfCats = 17
 
 # Helper to get back to categories list
 navToHash = (hash) ->
@@ -18,7 +17,7 @@ navToHash = (hash) ->
   casper.click 'button[data-action="' + hash + '"]'
   currentUrl = casper.getCurrentUrl()
 
-casper.test.begin 'ESA Choose an Activity', numOfCats, (test) ->
+casper.test.begin 'ESA Choose an Activity', 18, (test) ->
   # Start go straight to categories page
   casper
     .start url, ->
@@ -46,11 +45,11 @@ casper.test.begin 'ESA Choose an Activity', numOfCats, (test) ->
         if cat && cat != 'i-dont-know'
           @click '.box.loaded li button[data-category="'+cat+'"]'
           h2Activity = @fetchText '.loaded h2 span.activity'
-          test.assertEquals h2Activity, 'Activity: ' + cat
+          test.assertEquals h2Activity, 'Activity: ' + cat,
+            'Clicking button displays question from: ' + cat
           navToHash hash
  
       # number of categories matches number of buttons
-      # TODO this test fails because follow-up question creating blank category
-      #SKIP FOR NOW test.assertElementCount '.box.loaded li button', catCount
+      test.assertElementCount '.box.loaded li button', catCount
     .run ->
       test.done()
