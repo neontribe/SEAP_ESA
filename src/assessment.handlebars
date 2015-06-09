@@ -40,12 +40,13 @@
 					<span class="vh">Question:</span>
 					<em>{{question}}</em>
 				</h2>
-				<div class="answers" aria-label="choose an answer">
+				<div class="answers">
 					<fieldset>
 						<legend class="vh">Your answer</legend>
 						{{#each answers}}
 						<label>
-				            <input type="radio" value="{{value}}" {{#if category}}name="{{sluggify ../category}}"{{/if}}> <span>{{label}}</span>
+				            <input type="radio" value="{{value}}" name="{{../category}}"> 
+				            <span>{{label}}</span>
 				        </label>
 						{{/each}}
 					</fieldset>

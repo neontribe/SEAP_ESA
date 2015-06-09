@@ -39,11 +39,11 @@ function initAss() {
 		unseenQuestions: [],
 		seenQuestions: [],
 		skippedQuestions: [], // the questions which have been viewed but not answered
-		/*remainingCategories: _.map(_.uniq(window.allCategories), function(cat) { 
-			return cat.toLowerCase()
-					  .replace(/[^\w ]+/g,'')
-					  .replace(/ +/g,'-'); }), // the categories not yet viewed*/
-		remainingCategories: _.uniq(_.without(window.allCategories, "followup")),
+		remainingCategories: _.uniq(_.reject(window.allCategories, 
+			function(cat) { 
+				return cat.charAt(0) === '*'; 
+			}
+		)),
 		started: false, // whether a practise has been started
 		answeredOne: false, // Whether any questions have been answered at all 
 		context: null, // the jQuery object for the slide in hand
@@ -85,7 +85,7 @@ function getCatQuestions(slug) {
 			
 			// make an array of all questions
 			// excluding followup questions
-			if (v.category !== 'followup') {
+			if (v.category.charAt(0) !== '*') {
 				all.push(v.question);
 			}
 
@@ -181,6 +181,18 @@ function loadSlide(id, type) {
 
 // show a random unseen question
 function pickQuestion() {
+
+	if (db.get('ass.show-low')) {
+		loadSlide('qualify-low');
+		db.set('ass.show-low', false);
+		return;
+	}
+
+	if (db.get('ass.show-high')) {
+		loadSlide('qualify-high');
+		db.set('ass.show-high', false);
+		return;
+	}
 
 	// We've started practicing
 	db.set('ass.started', true);
@@ -387,7 +399,7 @@ function qualify() {
 			//don't show the slide if you have already
 			if (!db.get('ass.high') && !db.get('ass.low')) {
 
-				loadSlide('qualify-high');
+				db.set('ass.show-high', true);
 
 			}
 
@@ -401,7 +413,7 @@ function qualify() {
 			//don't show the slide if you have already
 			if (!db.get('ass.high') && !db.get('ass.low')) {
 
-				loadSlide('qualify-low');
+				db.set('ass.show-low', true);
 
 			}
 
@@ -751,6 +763,12 @@ $('body').on('change','[type="radio"]', function() {
 	var question = $('h2 em', '#' + context).text();
 	var answer = $(':checked + span', '#' + context).text();
 
+	// remove followup '*' cipher if present from category name
+	if (category.charAt(0) === '*') {
+
+		category = category.substr(1);
+
+	}
 
 	if (!isNumeric(points)) {
 
@@ -802,7 +820,7 @@ $('body').on('change','[type="radio"]', function() {
 				db.set('ass.high', true);
 
 				// no need to add up, just tell the user
-				loadSlide('qualify-high');
+				db.set('ass.show-high', true);
 
 			}
 			
