@@ -37,7 +37,7 @@ function initAss() {
 		skippedQuestions: [], // the questions which have been viewed but not answered
 		remainingCategories: _.uniq(_.reject(window.allCategories, 
 			function(cat) { 
-				return catt && cat.charAt(0) === '*'; 
+				return cat && cat.charAt(0) === '*'; 
 			}
 		)),
 		started: false, // whether a practise has been started
