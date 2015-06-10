@@ -9,8 +9,6 @@ window.hashHistory = [];
 
 if (db.isEmpty('ass')) {
 
-	console.log('empty');
-
 	// setup the database ass object
 	initAss();
 
@@ -21,8 +19,6 @@ if (db.isEmpty('ass')) {
 	loadSlide('main-menu');
 
 } else {
-
-	console.log('not empty');
 
 	// welcome back users or allow new users to restart
 	loadSlide('resume');
@@ -139,7 +135,6 @@ function loadSlide(id, type) {
 
 	$('.slide > *').removeClass('loaded');
 
-	console.log('type', type);
 	// set type in local storage or reset to null
 	if (type) {
 		db.set('ass.slideType', type);
@@ -149,8 +144,6 @@ function loadSlide(id, type) {
 
 	// go to picked question
 	window.location.hash = '#' + id;
-
-	console.log('slide loaded');
 
 	// focus title to announce title in AT
 	$('#' + id)
@@ -212,8 +205,6 @@ function pickQuestion() {
 	var context = db.get('ass.context');
 	// get mode (unseen or skipped)
 	var mode = db.get('ass.mode');
-
-	console.log(window.answered);
 
 	if (typeOfSlide === 'question' && !window.answered && mode === 'unseenQuestions') {
 
@@ -306,8 +297,6 @@ function pickQuestion() {
 
 		} else {
 
-			console.log('Didn\'t remove one', questions);
-
 			// remove last question seen from random sample
 			// so two questions don't show at once
 			// unless this is the last one
@@ -359,8 +348,6 @@ function restart() {
 	db.set('ass.category', null);
 	db.set('ass.remainingCategories', _.uniq(window.allCategories));
 
-	console.log('restarting');
-
 	// go to start screen
 	loadSlide('start');
 
@@ -368,8 +355,6 @@ function restart() {
 
 // go to slide you were last at
 function resume() {
-
-	console.log('resuming');
 
 	// get the stored slide id
 	var whereIWas = db.get('ass.whereIAm');
@@ -397,8 +382,6 @@ function tally() {
 function qualify() {
 
 	var total = tally();
-
-	console.log('total', total);
 
 	if (total >= 15) {
 
@@ -704,8 +687,6 @@ $('body').on('click','[data-action="clean-up"]', function() {
 
 	// initialize database
 	initAss();
-
-	console.log(db.get('ass.incomplete'));
 
 	// load the intro slide
 	loadSlide('main-menu');
