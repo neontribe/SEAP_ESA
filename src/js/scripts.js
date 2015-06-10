@@ -768,7 +768,7 @@ $('body').on('change','[type="radio"]', function() {
 	// get checked answer's value and the category the question belongs to
 	var context = db.get('ass.context');
 	var points = $(':checked', '#' + context).val();
-	var category = $(':checked', '#' + context).attr('name');
+	var category = $(':checked', '#' + context).attr('data-category-name');
 	var question = $('h2 em', '#' + context).text();
 	var answer = $(':checked + span', '#' + context).text();
 
