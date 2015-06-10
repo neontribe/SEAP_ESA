@@ -209,6 +209,10 @@ a.nav-link, button.nav-link {
 	background: transparent;
 }
 
+a img {
+	border: 0;
+}
+
 a.nav-link:hover, button.nav-link:hover, 
 a.nav-link:focus, button.nav-link:focus {
 	color: #fff;
@@ -853,7 +857,7 @@ footer a {
 	.category-list li button {
 		height: 100%;
 		flex: 1 0;
-		min-height: 4em;
+		min-height: 3.25em;
 	}
 
 }
