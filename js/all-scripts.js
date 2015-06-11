@@ -14101,7 +14101,7 @@ var __module0__ = (function(__dependency1__, __dependency2__, __dependency3__, _
 }));
 
 /**********************************************************************
-START UP
+START UP (DETERMINE IF USER HAS BEEN USING THE APP ALREADY OR NOT)
 **********************************************************************/
 
 // define the database
@@ -14183,7 +14183,7 @@ function getCatQuestions(slug) {
 			
 			// make an array of all questions
 			// excluding followup questions
-			if (v.category.charAt(0) !== '*') {
+			if (v && v.category.charAt(0) !== '*') {
 				all.push(v.question);
 			}
 
