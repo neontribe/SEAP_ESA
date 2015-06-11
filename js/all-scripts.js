@@ -14101,7 +14101,7 @@ var __module0__ = (function(__dependency1__, __dependency2__, __dependency3__, _
 }));
 
 /**********************************************************************
-START UP
+START UP (DETERMINE IF USER HAS BEEN USING THE APP ALREADY OR NOT)
 **********************************************************************/
 
 // define the database
@@ -14183,7 +14183,7 @@ function getCatQuestions(slug) {
 			
 			// make an array of all questions
 			// excluding followup questions
-			if (v.category.charAt(0) !== '*') {
+			if (v && v.category.charAt(0) !== '*') {
 				all.push(v.question);
 			}
 
@@ -14642,19 +14642,19 @@ Handlebars.registerHelper('accuracy', function(array) {
 
 Handlebars.registerHelper('qualifyHigh', function() {
 	if (db.get('ass.high') && !db.get('ass.low')) {
-		return '<p>You may qualify for the highest allowance, placing you in what&#x2019;s called the Support Group. Remember to show your assessor the questions marked <span class="warn">VERY IMPORTANT</span> (below) by printing this page or opening it on your phone. These are the questions that indicate you qualify.</p>';
+		return '<p>You may qualify for the highest allowance, placing you in what&#x2019;s called the Support Group. Remember to show your assessor the answers marked <span class="warn">VERY IMPORTANT</span> (below) by printing this page or opening it on your phone. These indicate you could qualify.</p>';
 	}
 });
 
 Handlebars.registerHelper('qualifyLow', function() {
 	if (!db.get('ass.high') && db.get('ass.low')) {
-		return '<p>You may qualify for the standard ESA allowance, placing you in what&#x2019;s called the Work Related Activity Group. Remember to show your assessor the questions marked <span class="warn amber">IMPORTANT</span> (below) by printing this page or opening it on your phone. These are the questions that indicate you qualify.</p>';
+		return '<p>You may qualify for the standard ESA allowance, placing you in what&#x2019;s called the Work Related Activity Group. Remember to show your assessor the answers marked <span class="warn amber">IMPORTANT</span> (below) by printing this page or opening it on your phone. These indicate you could qualify.</p>';
 	}
 });
 
 Handlebars.registerHelper('qualifyEither', function() {
 	if (db.get('ass.high') && db.get('ass.low')) {
-		return '<p>It looks like you&#x2019;ll qualify for the standard allowance (placing you in what&#x2019;s called the Work Related Activity Group) or possibly the higher allowance (Support Group). Remember to show your assessor the <strong>Important Questions</strong> (below) by printing this page or opening it on your phone. These are the questions that indicate you qualify.</p>';
+		return '<p>It looks like you&#x2019;ll qualify for the standard allowance (placing you in what&#x2019;s called the Work Related Activity Group) or possibly the higher allowance (Support Group). Remember to show your assessor the <strong>Important Answers</strong> (below) by printing this page or opening it on your phone. These are the questions that indicate you qualify.</p>';
 	}
 });
 
