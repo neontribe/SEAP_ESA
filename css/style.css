@@ -958,10 +958,10 @@ footer a {
 
 	.category-list li {
 		min-width: 100% !important;
-		-webkit-box-flex: 1;
-		-webkit-flex: 1 0 100%;
-		    -ms-flex: 1 0 100%;
-		        flex: 1 0 100%;
+		-webkit-box-flex: 1 !important;
+		-webkit-flex: 1 0 100% !important;
+		    -ms-flex: 1 0 100% !important;
+		        flex: 1 0 100% !important;
 	}
 
 }
@@ -1023,6 +1023,7 @@ footer a {
 		padding: 0;
 		background: none;
 		margin: 0;
+		page-break-before: auto;
 	}
 
 	.q-and-a li + li {
