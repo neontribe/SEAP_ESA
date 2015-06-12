@@ -14855,6 +14855,9 @@ $('body').on('change','[type="radio"]', function() {
 	var question = $('h2 em', '#' + context).text();
 	var answer = $(':checked + span', '#' + context).text();
 
+	// Remove from skipped questions if present
+	db.set('ass.skippedQuestions', _.without(db.get('ass.skippedQuestions'), context));
+
 	// remove followup '*' cipher if present from category name
 	if (category.charAt(0) === '*') {
 
@@ -14954,20 +14957,15 @@ $('body').on('click','[data-action="set-cat"]', function() {
 
 });
 
-/*$(window).on('hashchange', function(e) {
+// Fix back button
+$(window).on('hashchange', function(e) {
 
-	// add hash to history
-	window.hashHistory.push(window.location.hash);
-
-	console.log(hashHistory);
-
-	if (window.location.hash.substr(0,9) === '#question') {
+	// If we've gone to a question fragment but we haven't
+	// pressed a "pick a question" button to get there...
+	if (window.location.hash.substr(0,9) === '#question' && !window.realPick) {
 		if (hashHistory.indexOf(window.location.hash > -1)) {
-			loadSlide(window.location.hash.substr(1));
-
-			// TODO Need to remove this question from working data here
-
+			loadSlide(window.location.hash.substr(1), 'question');
 		}
 	}
 
-});*/
+});
