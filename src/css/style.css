@@ -817,6 +817,10 @@ footer a {
 		flex: 1 0 50% !important;
 	}
 
+	.box {
+		margin: 0 10%;
+	}
+
 }
 
 @media (min-width: 600px) {
@@ -927,6 +931,10 @@ footer a {
 
 	.label-input {
 		width: 100%;
+	}
+
+	.box {
+		margin: 0;
 	}
 
 }
