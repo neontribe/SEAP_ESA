@@ -201,7 +201,7 @@ casper.test.begin 'Qualify low with : ' + activityName3, 5, (test) ->
 ####################################################
 activityName4= 'Picking up and moving things'
 
-casper.test.begin 'Qualify low then high with : ' + activityName4, 5, (test) ->
+casper.test.begin 'Qualify low then high with : ' + activityName4, 6, (test) ->
   # Start at home, clear data, return to home, click start-or-resume
   casper
     .start url, ->
@@ -231,7 +231,17 @@ casper.test.begin 'Qualify low then high with : ' + activityName4, 5, (test) ->
       test.assertSelectorHasText '.box.loaded h1 strong',
         'Work Related Activity Group',
         'Clicking aggregate 15 from different categories qualifies low'
-      # TODO ask another x2 then new act easting and drink answer no.
+      # ask another then new act eating and drink answer no.
       # should qualify high
+      @click '.box.loaded button[data-action="pick"]'
+      @click '.box.loaded button[data-action="categories"]'
+      @click getCategorySectionSelector 'Eating and drinking'
+      if answerQuestion('*') then data['answered'][question] = '*'
+      # click ask me another
+      @click '.question-container.loaded button[data-action="pick"]'
+      # verify Support Group Qualifier message
+      test.assertSelectorHasText '.box.loaded h1 strong',
+        'Support Group',
+        'Clicking value * answer with aggregate 15 already qualifies high'
     .run ->
       test.done()
