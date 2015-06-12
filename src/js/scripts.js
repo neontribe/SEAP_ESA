@@ -49,7 +49,6 @@ function initAss() {
 		answers: {}, // the master object of category high scores for tallying
 		low: false, // low qualification?
 		high: false, // high qualification?
-		promote: false, // whether a food/drink question has promoted the user from WRAG to Support
 		reminders: [], // list of reminders form "Things to remember" checkboxes
 		incomplete: true, // whether all the questions have been answered
 		date: '',
@@ -97,7 +96,9 @@ function getCatQuestions(slug) {
 		var reducedToCat = _.where(window.allQuestions, {category: slug});
 
 		$.each(reducedToCat, function(i, v) {
-			questions.push(v.question);
+			if (v) {
+				questions.push(v.question);
+			}
 		});
 
 		db.set('ass.unseenQuestions', questions);
@@ -342,7 +343,6 @@ function restart() {
 	db.set('ass.seenQuestions', []);
 	db.set('ass.skippedQuestions', []);
 	db.set('ass.started', false);
-	db.set('ass.promote', false);
 	db.set('ass.mode', 'unseenQuestions');
 	db.set('ass.incomplete', true);
 	db.set('ass.category', null);
@@ -368,14 +368,38 @@ function tally() {
 	// get all the answers
 	var answers = db.get('ass.answers');
 
+	// Remove the '*' answers
+	var omitSpecial = _.omit(answers, 'Eating and drinking');
+
 	// add up the highest values for each category
 	// by taking the max value that's not 16 from each
 	// category and adding them together
-	var total = _.reduce(answers, function(memo, cat){
-	    return memo + _.max(_.without( _.pluck(cat, 'points'), 16, '*') );
+	var total = _.reduce(omitSpecial, function(memo, cat){
+	    return memo + _.max(_.without( _.pluck(cat, 'points'), 16));
 	}, 0);
 
 	return total;
+
+}
+
+function promote() {
+
+	var answers = db.get('ass.answers');
+
+	var array = _.toArray(answers);
+
+	var star = false;
+
+	$.each(array, function(key, value) {
+		$.each(value, function(k, v) {
+			if (v.points === '*') {
+				star = true;
+			}
+		});
+	});
+
+	return star;
+
 }
 
 // add the high scores for each category together
@@ -386,10 +410,10 @@ function qualify() {
 	if (total >= 15) {
 
 		// if an end question was set to promote from low to high
-		if (db.get('ass.promote')) {
+		if (promote()) {
 
 			//don't show the slide if you have already
-			if (!db.get('ass.high') && !db.get('ass.low')) {
+			if (!db.get('ass.high')) {
 
 				db.set('ass.show-high', true);
 
@@ -471,25 +495,39 @@ function divideAnswers() {
 
 	// ugly nested each to make a handelebars #each iterable array of question objects
 	$.each(answers, function(key, value) {
-		$.each(value, function(k, v) {
-			// include support group answers
-			if (v.points === 16) {
-				// push to flattened array
-				supportAnswers.push({
-					question: v.question,
-					answer: v.answer,
-					points: v.points
-				});
-			}
-			// include WRAG answers
-			if (v.points > 0 && v.points !== 16) {
-				WRAGAnswers.push({
-					question: v.question,
-					answer: v.answer,
-					points: v.points
-				});					
-			}
-		});
+		if (value) {
+			$.each(value, function(k, v) {
+				if (v) {
+					// include support group answers
+					if (v.points === 16) {
+						// push to flattened array
+						supportAnswers.push({
+							question: v.question,
+							answer: v.answer,
+							points: v.points
+						});
+					}
+					// if it's a promotion question 
+					// and the total is more than 15
+					if (v.points === '*' && tally() >= 15) {
+						// push the promotion question 
+						supportAnswers.push({
+							question: v.question,
+							answer: v.answer,
+							points: v.points
+						});						
+					}
+					// include WRAG answers
+					if (v.points > 0 && v.points !== 16) {
+						WRAGAnswers.push({
+							question: v.question,
+							answer: v.answer,
+							points: v.points
+						});					
+					}
+				}
+			});
+		}
 	});
 
 	// set these to be accessible by template
@@ -754,6 +792,7 @@ $('body').on('change','[type="radio"]', function() {
 	var answer = $(':checked + span', '#' + context).text();
 
 	// Remove from skipped questions if present
+	// (part of back button fixing)
 	db.set('ass.skippedQuestions', _.without(db.get('ass.skippedQuestions'), context));
 
 	// remove followup '*' cipher if present from category name
@@ -763,32 +802,26 @@ $('body').on('change','[type="radio"]', function() {
 
 	}
 
-	if (!isNumeric(points)) {
+	var answerObject;
 
-		// if it is an asterisk end question, make sure a score
-		// of 15+ promotes the user's qualification to high
-		if (points === '*') {
+	if (!isNumeric(points) && points !== '*') {
 
-			db.set('ass.promote', true);
+		// turn the followup question into a slug ready to use
+		db.set('ass.followupSlug', 'question-'+sluggify(points));
 
-			// fire the adding up function
-			// to see if there are enough points to qualify
-			qualify();			
-
-		} else {
-
-			// turn the followup question into a slug ready to use
-			db.set('ass.followupSlug', 'question-'+sluggify(points));
-
-		}
 
 	} else {
 
-		// cast to real integer
-		points = +points;
+		// If not a star answer, cast to real integer
+		if (points !== '*') {
+			
+			// cast to real integer
+			points = +points;
+		
+		}
 
 		// initialize the answer object
-		var answerObject = {
+		answerObject = {
 			question: question,
 			answer: answer,
 			points: points
@@ -810,7 +843,7 @@ $('body').on('change','[type="radio"]', function() {
 				// record that the high qualification is true
 				db.set('ass.high', true);
 
-				// no need to add up, just tell the user
+				// no need to add up, just make sure the user is told
 				db.set('ass.show-high', true);
 
 			}
