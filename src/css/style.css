@@ -814,6 +814,7 @@ footer a {
 
 	.category-list li {
 		min-width: 50% !important;
+		flex: 1 0 50%;
 	}
 
 }
@@ -848,10 +849,10 @@ footer a {
 	}
 
 	.category-list li {
-		flex: 1 0;
 		display: flex;
 		flex-flow: column;
 		min-width: 33.333%;
+		flex: 1 0 33.333%;
 		min-height: 3em;
 	}
 
@@ -900,6 +901,7 @@ footer a {
 
 	.category-list li {
 		min-width: 100% !important;
+		flex: 1 0 100%;
 	}
 
 }
