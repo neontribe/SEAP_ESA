@@ -28,6 +28,23 @@
 # Verify 'Work Related Activity group' message
 
 # TEST 4 - qualify high with 15 + *
+# Select 'Picking up and moving things'
+# Click 'Ask me another' 3 times
+# Answer No (value 9)
+# Click 'Ask me another' 2 times
+# Click 'A new activity'
+# Select 'Verbal communication'
+# Click 'Ask me another'
+# Answer Very difficult... (value 6)
+# Click 'Ask me another'
+# Verify 'Work related activity group' message
+# Click 'Ask me another'
+# Click 'Another question'
+# Click 'A new activity'
+# Select 'Eating food and drink'
+# Answer No (value *)
+# Click 'Ask me another'
+# Verify 'support group qualifier' message
 
 # TODO move to another file?After test 3 ?without clearing -
 # Click My Assessment...
@@ -148,9 +165,9 @@ casper.test.begin 'Qualify high with : ' + activityName2, 5, (test) ->
     .run ->
       test.done()
 
-##############################################
+#########################################
 # Test Qualify Low with value 15 answer #
-##############################################
+#########################################
 activityName3= 'Awareness'
 
 casper.test.begin 'Qualify low with : ' + activityName3, 5, (test) ->
@@ -173,5 +190,58 @@ casper.test.begin 'Qualify low with : ' + activityName3, 5, (test) ->
       test.assertSelectorHasText '.box.loaded h1 strong',
         'Work Related Activity Group',
         'Clicking value 15 answer instantly qualifies low'
+    .run ->
+      test.done()
+
+####################################################
+# Test Qualify High with aggregate value 15 + star #
+# points taken as highest from all categories      #
+# The total 15 has to be from only 1 question per  #
+# category                                         #
+####################################################
+activityName4= 'Picking up and moving things'
+
+casper.test.begin 'Qualify low then high with : ' + activityName4, 6, (test) ->
+  # Start at home, clear data, return to home, click start-or-resume
+  casper
+    .start url, ->
+      clearAndStartPractise test, activityName4
+    .then (data) ->
+      # click ask me another 3 times
+      for i in [0...3] by 1
+        @click '.question-container.loaded button[data-action="pick"]'
+      question = @fetchText '.question-container.loaded h2 em'
+      test.comment question
+      # verify and click option value 9
+      if answerQuestion(9) then data['answered'][question] = 9
+      # click ask me another 2 times
+      for i in [0...2] by 1
+        @click '.question-container.loaded button[data-action="pick"]'
+      # click A new activity
+      @click '.box.loaded button[data-action="categories"]'
+      @click getCategorySectionSelector 'Verbal communication'
+      @click '.question-container.loaded button[data-action="pick"]'
+      question = @fetchText '.question-container.loaded h2 em'
+      test.comment question
+      # verify and click value 6
+      if answerQuestion(6) then data['answered'][question] = 6
+      # click ask me another
+      @click '.question-container.loaded button[data-action="pick"]'
+      # verify Support Group Qualifier message
+      test.assertSelectorHasText '.box.loaded h1 strong',
+        'Work Related Activity Group',
+        'Clicking aggregate 15 from different categories qualifies low'
+      # ask another then new act eating and drink answer no.
+      # should qualify high
+      @click '.box.loaded button[data-action="pick"]'
+      @click '.box.loaded button[data-action="categories"]'
+      @click getCategorySectionSelector 'Eating and drinking'
+      if answerQuestion('*') then data['answered'][question] = '*'
+      # click ask me another
+      @click '.question-container.loaded button[data-action="pick"]'
+      # verify Support Group Qualifier message
+      test.assertSelectorHasText '.box.loaded h1 strong',
+        'Support Group',
+        'Clicking value * answer with aggregate 15 already qualifies high'
     .run ->
       test.done()
