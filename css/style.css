@@ -837,6 +837,10 @@ footer a {
 
 	.category-list li {
 		min-width: 50% !important;
+		-webkit-box-flex: 1;
+		-webkit-flex: 1 0 50%;
+		    -ms-flex: 1 0 50%;
+		        flex: 1 0 50%;
 	}
 
 }
@@ -887,10 +891,6 @@ footer a {
 	}
 
 	.category-list li {
-		-webkit-box-flex: 1;
-		-webkit-flex: 1 0;
-		    -ms-flex: 1 0;
-		        flex: 1 0;
 		display: -webkit-box;
 		display: -webkit-flex;
 		display: -ms-flexbox;
@@ -899,6 +899,10 @@ footer a {
 		    -ms-flex-flow: column;
 		        flex-flow: column;
 		min-width: 33.333%;
+		-webkit-box-flex: 1;
+		-webkit-flex: 1 0 33.333%;
+		    -ms-flex: 1 0 33.333%;
+		        flex: 1 0 33.333%;
 		min-height: 3em;
 	}
 
@@ -950,6 +954,10 @@ footer a {
 
 	.category-list li {
 		min-width: 100% !important;
+		-webkit-box-flex: 1;
+		-webkit-flex: 1 0 100%;
+		    -ms-flex: 1 0 100%;
+		        flex: 1 0 100%;
 	}
 
 }
