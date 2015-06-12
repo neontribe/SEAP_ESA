@@ -814,7 +814,7 @@ footer a {
 
 	.category-list li {
 		min-width: 50% !important;
-		flex: 1 0 50%;
+		flex: 1 0 50% !important;
 	}
 
 }
