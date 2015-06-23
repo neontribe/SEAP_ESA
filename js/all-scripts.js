@@ -14104,6 +14104,13 @@ var __module0__ = (function(__dependency1__, __dependency2__, __dependency3__, _
 START UP (DETERMINE IF USER HAS BEEN USING THE APP ALREADY OR NOT)
 **********************************************************************/
 
+// Define indexOf for array - ie8
+if (!Array.prototype.indexOf) {
+  Array.prototype.indexOf = function(val) {
+    return jQuery.inArray(val, this);
+  };
+}
+
 // define the database
 var db = $.localStorage;
 
