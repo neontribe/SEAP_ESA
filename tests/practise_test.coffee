@@ -207,8 +207,8 @@ casper.test.begin 'Qualify low then high with : ' + activityName4, 6, (test) ->
     .start url, ->
       clearAndStartPractise test, activityName4
     .then (data) ->
-      # click ask me another 3 times
-      for i in [0...3] by 1
+      # click ask me another 4 times
+      for i in [0...4] by 1
         @click '.question-container.loaded button[data-action="pick"]'
       question = @fetchText '.question-container.loaded h2 em'
       test.comment question
