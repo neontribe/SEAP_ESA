@@ -222,6 +222,63 @@
         }
 			]
 		},
+    {
+			"question": "Can you do all of these using one or both arms: Put something in the top pocket of a coat you are wearing, put on a hat, reach something above your head?",
+			"hint": null,
+			"category": "Picking up and moving things",
+			"answers": [
+				{
+					"label": "Yes, I can do all of those things",
+					"value": 0
+				},
+				{
+					"label": "I can only do one or some of those things",
+					"value": "Can you put something in the top pocket of a coat or jacket you are wearing?"
+				},					
+        {
+          "label": "No, I can't do any of those things",
+          "value": 16
+        }
+			]
+		},
+    {
+      "question": "Can you put something in the top pocket of a coat or jacket you are wearing?",
+      "hint": null,
+      "category": "*Picking up and moving things",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": "Can you put on a hat?"
+        },
+        {
+          "label": "No",
+          "value": 9
+        },
+        {
+          "label": "It varies",
+          "value": "Can you put on a hat?"
+        }
+      ]
+    },
+    {
+      "question": "Can you put on a hat?",
+      "hint": null,
+      "category": "*Picking up and moving things",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 6
+        },
+        {
+          "label": "It varies",
+          "value": 0
+        }
+      ]
+    },
 		{		
 			"question": "Can you pick up and move things without any difficulty?",
 			"hint": null,
@@ -233,7 +290,7 @@
 				},
 				{
 					"label": "No",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				},
 				{
 					"label": "It varies",
@@ -256,7 +313,26 @@
 				},
 				{
 					"label": "It varies",
+					"value": "Could you make yourself a hot drink if you wanted to?" 
+				}						
+			]
+		},
+		{		
+			"question": "Could you make yourself a hot drink if you wanted to?",
+			"hint": null,
+			"category": "*Picking up and moving things",
+			"answers": [
+				{
+					"label": "Yes",
 					"value": 0
+				},
+				{
+					"label": "I can't lift the items needed to do that, such as a kettle or bottle of milk",
+					"value": 15
+				},
+				{
+					"label": "I could not do this for a different reason",
+					"value": 0 
 				}						
 			]
 		},
@@ -294,6 +370,24 @@
 				},
 				{
 					"label": "It varies",
+					"value": "Can you pick up or move a pillow on your bed?"
+				}						
+			]
+		},
+			"question": "Can you pick up or move a pillow on your bed?",
+			"hint": null,
+			"category": "*Picking up and moving things",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "I could not pick up something like a pillow",
+					"value": 6
+				},
+				{
+					"label": "It varies from day to day",
 					"value": 0
 				}						
 			]
@@ -332,8 +426,31 @@
 				},
 				{
 					"label": "It varies",
-					"value": 0
+					"value": "You said it varies whether or not you can turn the pages of a book, when could you do this?" 
 				}						
+			]
+		},
+		{		
+			"question": "You said it varies whether or not you can turn the pages of a book, when could you do this?",
+			"hint": null,
+			"category": "*Using your hands",
+			"answers": [
+				{
+					"label": "Most of the time, but not always",
+					"value": 0
+				},
+				{
+					"label": "Never because I do not read books",
+					"value": 0
+				},
+				{
+					"label": "Rarely because my condition is worse most of the time",
+					"value": 15 
+				},
+        {
+          "label": "A different reason"
+          "value": 0						
+        }
 			]
 		},
 		{		
@@ -351,8 +468,53 @@
 				},
 				{
 					"label": "It varies",
-					"value": 0
+					"value": "Can you use your hands to pay by cash in a shop?"
 				}						
+			]
+		},
+    {		
+			"question": "Can you use your hands to pay by cash in a shop?",
+			"hint": null,
+			"category": "*Using your hands",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": "Could you use a cash machine if you had a bank account?"
+				}
+			]
+		},
+    {		
+			"question": "Could you use a cash machine if you had a bank account?",
+			"hint": null,
+			"category": "*Using your hands",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 15
+				}
+			]
+		},
+    {		
+			"question": "Can you make a mark using a pen or pencil (it does not matter what the mark)?",
+			"hint": null,
+			"category": "Using your hands",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 9 
+				}
 			]
 		},
 		{		
@@ -367,11 +529,7 @@
 				{
 					"label": "No",
 					"value": 9
-				},
-				{
-					"label": "It varies",
-					"value": 0
-				}						
+				}
 			]
 		},
 		{		
