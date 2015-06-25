@@ -374,6 +374,7 @@
 				}						
 			]
 		},
+    {
 			"question": "Can you pick up or move a pillow on your bed?",
 			"hint": null,
 			"category": "*Picking up and moving things",
@@ -448,7 +449,7 @@
 					"value": 15 
 				},
         {
-          "label": "A different reason"
+          "label": "A different reason",
           "value": 0						
         }
 			]
