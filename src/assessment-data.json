@@ -544,7 +544,7 @@
 				},
 				{
 					"label": "No",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				}						
 			]
 		},
@@ -555,19 +555,19 @@
 			"answers": [
 				{
 					"label": "All of the time",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				},
 				{
 					"label": "Most of the time",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				},
 				{
 					"label": "Sometimes",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				},
 				{
 					"label": "Not very often",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				},
 				{
 					"label": "Never",
@@ -590,8 +590,28 @@
 				},
 				{
 					"label": "It varies",
+					"value": "You said it varies whether or not you could give a message to someone about how dangerous something is. Is this because:"
+				}
+			]
+		},
+				{		
+			"question": "You said it varies whether or not you could give a message to someone about how dangerous something is. Is this because:",
+			"hint": null,
+			"category": "*Making yourself understood",
+			"answers": [
+				{
+					"label": "It depends on the message",
+					"value": 0
+				},
+				{
+					"label": "It depends who I have to give the message to",
+					"value": 0
+				},
+				{
+					"label": "Another reason",
 					"value": 0
 				}
+				
 			]
 		},
 		{		
@@ -617,6 +637,21 @@
 				},
 				{
 					"label": "It varies",
+					"value": "You said it varies whether or not you can give a message to a stranger. Is this because:"
+				}
+			]
+		},
+				{		
+			"question": "You said it varies whether or not you can give a message to a stranger. Is this because:",
+			"hint": null,
+			"category": "*Making yourself understood",
+			"answers": [
+				{
+					"label": "Your condition changes",
+					"value": 0
+				},
+				{
+					"label": "Another reason",
 					"value": 0
 				}
 			]
@@ -632,10 +667,29 @@
 				},
 				{
 					"label": "No",
-					"value": "Question text of the follow-up question (string)"
+					"value": "You said that you cannot understand other people without difficulty (or that it varies). Is this because:"
 				},
 				{
 					"label": "It varies",
+					"value": "You said that you cannot understand other people without difficulty (or that it varies). Is this because:"
+				}
+			]
+		},
+				{		
+			"question": "You said that you cannot understand other people without difficulty (or that it varies). Is this because:",
+			"hint": null,
+			"category": "*Verbal communication",
+			"answers": [
+				{
+					"label": "Some days your condition is different to others",
+					"value": 0
+				},
+				{
+					"label": "It depends what they are telling me",
+					"value": 0
+				},
+				{
+					"label": "Neither of these",
 					"value": 0
 				}
 			]
