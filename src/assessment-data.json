@@ -773,7 +773,7 @@
 				},
 				{
 					"label": "No",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				}
 			]
 		},
@@ -819,11 +819,30 @@
 				},
 				{
 					"label": "It varies",
-					"value": "Question text of the follow-up question (string)"
+					"value": "Could you play CDs or use a radio if you had one?"
 				}
 			]
 		},
 		{		
+			"question": "Could you play CDs or use a radio if you had one?",
+			"hint": null,
+			"category": "*Learning tasks",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 9
+				},
+				{
+					"label": "Not sure",
+					"value": 0
+				}
+			]
+		},	
+		{
 			"question": "Can you learn something more complicated than how to use a washing machine?",
 			"hint": null,
 			"category": "Learning tasks",
@@ -838,7 +857,26 @@
 				},
 				{
 					"label": "It varies",
-					"value": "Question text of the follow-up question (string)"
+					"value": "Could you learn to programme the channels on your TV?"
+				}
+			]
+		},
+		{
+			"question": "Could you learn to programme the channels on your TV?",
+			"hint": null,
+			"category": "*Learning tasks",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "I could sometimes learn to do this",
+					"value": 0
+				},
+				{
+					"label": "This does not apply to me",
+					"value": 0
 				}
 			]
 		},
@@ -853,10 +891,25 @@
 				},
 				{
 					"label": "No",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				},
 				{
 					"label": "It varies",
+					"value": "Does it vary because:"
+				}
+			]
+		},
+		{		
+			"question": "Does it vary because:",
+			"hint": null,
+			"category": "*Awareness",
+			"answers": [
+				{
+					"label": "Some days your health is worse than others",
+					"value": 0
+				},
+				{
+					"label": "A different reason",
 					"value": 0
 				}
 			]
@@ -899,7 +952,7 @@
 				},
 				{
 					"label": "No",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				}
 			]
 		},
@@ -964,6 +1017,21 @@
 				},
 				{
 					"label": "It varies",
+					"value": "How often does it vary?"
+				}
+			]
+		},
+		{		
+			"question": "How often does it vary?",
+			"hint": null,
+			"category": "*Initiating and completing tasks",
+			"answers": [
+				{
+					"label": "Throughout the day",
+					"value": 0
+				},
+				{
+					"label": "It is different on different days",
 					"value": 0
 				}
 			]
@@ -1068,7 +1136,7 @@
 				},
 				{
 					"label": "No",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				}
 			]
 		},
@@ -1091,6 +1159,74 @@
 				},
 				{
 					"label": "It varies",
+					"value": "Do you ever visit your doctor or the hospital?"
+				}
+			]
+		},
+		{		
+			"question": "Do you ever visit your doctor or the hospital?",
+			"hint": null,
+			"category": "*Getting about",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
+					"value": 0
+				}
+			]
+		},
+		{		
+			"question": "Can you leave home and go to places you don't know?",
+			"hint": null,
+			"category": "Getting about",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "Not at all",
+					"value": 15
+				},
+				{
+					"label": "Only if someone goes with me",
+					"value": 6
+				},
+				{
+					"label": "It varies",
+					"value": "Does it depend on the place?"
+				}
+			]
+		},
+		{		
+			"question": "Does it depend on the place?",
+			"hint": null,
+			"category": "*Getting about",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": "Will you be going to your work capability assessment?"
+				},
+				{
+					"label": "No",
+					"value": "Will you be going to your work capability assessment?"
+				}
+			]
+		},
+		{		
+			"question": "Will you be going to your work capability assessment?",
+			"hint": null,
+			"category": "*Getting about",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
 					"value": 0
 				}
 			]
@@ -1106,14 +1242,29 @@
 				},
 				{
 					"label": "I find it very difficult",
-					"value": "Question text of the follow-up question (string)"
+					"value": "Do you ever talk to your neighbours or friends?"
 				},
 				{
 					"label": "I have some difficulty",
-					"value": "Question text of the follow-up question (string)"
+					"value": "Do you ever talk to your neighbours or friends?"
 				},
 				{
 					"label": "It varies",
+					"value": "Do you ever talk to your neighbours or friends?"
+				}
+			]
+		},
+		{		
+			"question": "Do you ever talk to your neighbours or friends?",
+			"hint": null,
+			"category": "*Social engagement",
+			"answers": [
+				{
+					"label": "Yes",
+					"value": 0
+				},
+				{
+					"label": "No",
 					"value": 0
 				}
 			]
@@ -1129,15 +1280,15 @@
 				},
 				{
 					"label": "I can sometimes relate to other people, but I will feel anxious or distressed",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				},
 				{
 					"label": "I can never relate to other people",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				},
 				{
 					"label": "I never meet other people because it makes me quite distressed",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				},
 				{
 					"label": "I never speak to other people, socially because it makes me extremely distressed",
@@ -1183,18 +1334,18 @@
 				},
 				{
 					"label": "Yes",
-					"value": "Question text of the follow-up question (string)"
+					"value": "How often do you behave in an uncontrollable aggressive way towards other people?"
 				},
 				{
 					"label": "It varies",
-					"value": "Question text of the follow-up question (string)"
+					"value": "How often do you behave in an uncontrollable aggressive way towards other people?"
 				}
 			]
 		},
 		{		
 			"question": "How often do you behave in an uncontrollable aggressive way towards other people?",
 			"hint": null,
-			"category": "Appropriate behaviour",
+			"category": "*Appropriate behaviour",
 			"answers": [
 				{
 					"label": "Every day",
