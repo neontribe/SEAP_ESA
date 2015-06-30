@@ -14705,7 +14705,7 @@ Handlebars.registerHelper('qualifyEither', function() {
 
 Handlebars.registerHelper('qualifyNone', function() {
 	if (!db.get('ass.high') && !db.get('ass.low')) {
-		return "<p>It does not currently look like you will qualify for ESA.</p>";
+		return "<p>From the questions you've answered so far, you do not have enough points to qualify for ESA.</p>";
 	}
 });
 
