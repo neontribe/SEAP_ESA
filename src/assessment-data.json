@@ -1047,15 +1047,15 @@
 				},
 				{
 					"label": "I can't cope to the extent is causes me a lot of distress",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				},
 				{
 					"label": "I can cope, but it will make me anxious or worried",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				},
 				{
 					"label": "I can cope without any difficulties",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				},
 				{
 					"label": "It varies",
@@ -1078,11 +1078,11 @@
 				},
 				{
 					"label": "I can't cope. It would make me feel anxious",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				},
 				{
 					"label": "I can cope without any difficulties",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				},
 				{
 					"label": "I have a learning difficulty or mental health problem which makes it impossible to cope with any change and would make my day-to-day life unmanageable",
@@ -1109,11 +1109,11 @@
 				},
 				{
 					"label": "It would make day-to-day life difficult to manage",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				},
 				{
 					"label": "I can cope without any difficulties",
-					"value": "Question text of the follow-up question (string)"
+					"value": 0
 				},
 				{
 					"label": "I would not meet anyone in the first place",
