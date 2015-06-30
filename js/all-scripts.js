@@ -14193,12 +14193,16 @@ function getCatQuestions(slug) {
 				all.push(v.question);
 			}
 
-		});		
+		});
 
 		var seen = db.get('ass.seenQuestions');
 
 		db.set('ass.unseenQuestions', _.difference(all, seen));
 		db.set('ass.category', null);
+
+		loadSlide('chose-i-dont-know');
+
+		return;
 
 	} else {
 
