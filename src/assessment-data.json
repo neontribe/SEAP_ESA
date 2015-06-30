@@ -857,12 +857,12 @@
 				},
 				{
 					"label": "It varies",
-					"value": "Could you learn to programme the channels on your TV?"
+					"value": "Could you learn to program the channels on your TV?"
 				}
 			]
 		},
 		{
-			"question": "Could you learn to programme the channels on your TV?",
+			"question": "Could you learn to program the channels on your TV?",
 			"hint": null,
 			"category": "*Learning tasks",
 			"answers": [
