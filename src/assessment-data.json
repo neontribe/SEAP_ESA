@@ -1448,11 +1448,11 @@
 			"answers": [
 				{
 					"label": "Yes",
-					"value": 0
+					"value": "*"
 				},
 				{
 					"label": "No",
-					"value": "*"
+					"value": 0 
 				},
 				{
 					"label": "It varies",
@@ -1536,11 +1536,11 @@
 			"answers": [
 				{
 					"label": "Yes",
-					"value": 0
+					"value": "*"
 				},
 				{
 					"label": "No",
-					"value": "*"
+					"value": 0
 				},
 				{
 					"label": "It varies",
@@ -1555,30 +1555,11 @@
 			"answers": [
 				{
 					"label": "Yes",
-					"value": 0
-				},
-				{
-					"label": "No",
 					"value": "*"
 				},
 				{
-					"label": "It varies",
-					"value": 0
-				}
-			]
-		},
-		{		
-			"question": "Can you climb short flights of stairs AT ALL?",
-			"hint": null,
-			"category": "*Moving around and using steps",
-			"answers": [
-				{
-					"label": "Yes",
-					"value": 0
-				},
-				{
 					"label": "No",
-					"value": 16
+					"value": 0
 				},
 				{
 					"label": "It varies",
