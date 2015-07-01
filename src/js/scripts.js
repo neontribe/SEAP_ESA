@@ -42,6 +42,11 @@ function initAss() {
 		unseenQuestions: [],
 		seenQuestions: [],
 		skippedQuestions: [], // the questions which have been viewed but not answered
+		allCategories: _.uniq(_.reject(window.allCategories, 
+			function(cat) { 
+				return cat && cat.charAt(0) === '*'; 
+			}
+		)),
 		remainingCategories: _.uniq(_.reject(window.allCategories, 
 			function(cat) { 
 				return cat && cat.charAt(0) === '*'; 
@@ -467,6 +472,31 @@ function compileStats() {
 
 }
 
+function disabledCats() {
+
+	var remaining = db.get('ass.remainingCategories');
+
+	$('.real-cat').each(function() {
+
+		var button = $('button', this);
+
+		button.attr('disabled', null);
+
+		var catName = button.attr('data-category');
+
+		console.log('remaining', remaining);
+		console.log('disabled?', !_.contains(remaining, catName));
+
+		if (!_.contains(remaining, catName)) {
+
+			button.attr('disabled', 'disabled');
+			
+		}
+
+	});
+
+}
+
 function compileCategories() {
 
 	// template up the stats with handlebars and 
@@ -475,6 +505,9 @@ function compileCategories() {
 	var assData = db.get('ass');
 	var output = template(assData);
 	$('#categories-content').html(output);
+
+	// disable seen categories
+	disabledCats();
 
 }
 
