@@ -89,6 +89,10 @@ p + p {
 	line-height: 0;
 }
 
+sup {
+	color: #3389c1;
+}
+
 button i {
 	color: #43ab7c;
 }
@@ -179,7 +183,7 @@ button:only-of-type {
 }
 
 button[disabled] {
-	opacity: 0.5;
+	opacity: 0.7;
 }
 
 button[disabled]::after {
@@ -776,6 +780,10 @@ img + h1 {
 
 /* expandies
 ---------------------------------------------*/
+
+.expandies h3 {
+	font-size: 1.25em;
+}
 
 h2 [aria-controls] {
 	display: block;
