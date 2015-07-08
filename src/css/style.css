@@ -89,6 +89,10 @@ p + p {
 	line-height: 0;
 }
 
+sup {
+	color: #3389c1;
+}
+
 button i {
 	color: #43ab7c;
 }
@@ -753,6 +757,10 @@ img + h1 {
 
 /* expandies
 ---------------------------------------------*/
+
+.expandies h3 {
+	font-size: 1.25em;
+}
 
 h2 [aria-controls] {
 	display: block;
