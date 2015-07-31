@@ -255,6 +255,10 @@ function pickQuestion() {
 			}
 		}
 	} else {
+		if (mode === 'unseenQuestions' && _.isEmpty(db.get('ass.unseenQuestions')) && _.isEmpty(db.get('ass.skippedQuestions'))) {
+			loadSlide('seen-all-even-skipped');
+			return;
+		}
 		if (mode === 'unseenQuestions' && _.isEmpty(db.get('ass.unseenQuestions'))) {
 			loadSlide('seen-all');
 			return;
