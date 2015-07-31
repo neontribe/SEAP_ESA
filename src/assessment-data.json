@@ -1576,14 +1576,14 @@ label: "Yes",
 	  },
 	  {
 label: "No",
-       value: 0
+       value: "Which one of these best describes how often you have to wash yourself or change your clothes because of difficulty controlling your bladder, bowels or a collecting device?"
 	  }
 	  ]
 	   },
 	   {
 question: "Which one of these best describes how often you have to wash yourself or change your clothes because of difficulty controlling your bladder, bowels or a collecting device?",
 	  hint: null,
-	  category: "Bladder and bowel control",
+	  category: "*Bladder and bowel control",
 	  answers: [
 	  {
 label: "Never",
@@ -1618,7 +1618,7 @@ question: "Do you have any problems staying conscious while you are awake?",
 	  answers: [
 	  {
 label: "Yes",
-       value: 0
+       value: "While you are awake which of these best describes how often you faint or have fits or have blackouts?"
 	  },
 	  {
 label: "No",
@@ -1629,7 +1629,7 @@ label: "No",
 	   {
 question: "While you are awake which of these best describes how often you faint or have fits or have blackouts?",
 	  hint: null,
-	  category: "Consciousness",
+	  category: "*Consciousness",
 	  answers: [
 	  {
 label: "Never",
