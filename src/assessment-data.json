@@ -1648,7 +1648,7 @@ label: "At least once a month",
        value: 6
 	  },
 	  {
-label: "Less thank once a month",
+label: "Less than once a month",
        value: 0
 	  }
 	  ]
