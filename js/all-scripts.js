@@ -14448,7 +14448,6 @@ function restart() {
 	db.set('ass.skippedQuestions', []);
 	db.set('ass.started', false);
 	db.set('ass.mode', 'unseenQuestions');
-	db.set('ass.incomplete', true);
 	db.set('ass.category', null);
 	db.set('ass.remainingCategories', _.uniq(window.allCategories));
 
