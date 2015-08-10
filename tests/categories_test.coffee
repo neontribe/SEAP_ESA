@@ -1,12 +1,12 @@
 # Go to categories page
-# Check the visable title is Choose an activity
-# Check for li button data category and count equals button count
+# Check the visable title is Choose an activity that is relevant to any problems you experience.
+# # Check for li button data category and count equals button count
 # Check that clicking each li button goes to a question in that category
 
 baseurl = 'http://localhost:9001/build'
 hash = 'categories'
 url = baseurl + '/#' + hash
-sectionTitle = 'Choose an activity'
+sectionTitle = 'Choose an activity that is relevant to any problems you experience.'
 
 # Helper to get back to categories list
 navToHash = (hash) ->
