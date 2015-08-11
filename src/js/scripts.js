@@ -487,8 +487,8 @@ function disabledCats() {
 
 		var catName = button.attr('data-category');
 
-		console.log('remaining', remaining);
-		console.log('disabled?', !_.contains(remaining, catName));
+		// console.log('remaining', remaining);
+		// console.log('disabled?', !_.contains(remaining, catName));
 
 		if (!_.contains(remaining, catName)) {
 
