@@ -23,8 +23,8 @@ __Staging__
 * If the tests pass, Travis commits the new build to gh-pages branch (our staging server) http://neontribe.github.io/SEAP_ESA
 
 __Live__  
-**There curently is no live hosting in place but the plan is as follows**
 * When release is tagged and pushed
-* Use Travis to carry out procedure as for Staging - add some lines to deploy.sh to detect release tag and...
-* If all goes well: push the new build to the live site - overwriting whatever is there.
+* Use Travis to carry out procedure as for Staging
+* If tests pass, and build is successful, detect release tag and push the new build to the live site - overwriting whatever is there.
+* A release.txt will be added at site root with tag name and datetime
 
