@@ -916,6 +916,7 @@ footer a {
 		display: block;
 	}
 
+	.print-box .button-shaped,
 	[aria-label$="menu"] button {
 		width: 100%;
 		margin: 0.25em 0;
