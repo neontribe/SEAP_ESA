@@ -776,7 +776,7 @@ img + h1 {
 	height: 0;
 }
 
-.print-box button, {
+.print-box button {
 	margin: 0;
 	margin-left: 0.5em;
 	float: right;
