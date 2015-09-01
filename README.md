@@ -24,8 +24,8 @@ __Staging__
 
 __Live__  
 * When release is tagged and pushed  
-`git tag -a v0.0.2-beta -m "add GA tracking to main pages"`  
-`git psh origin --tags`  
+`git tag -a v0.0.0-beta -m "description of release updates"`  
+`git push origin --tags`  
 * Use Travis to carry out procedure as for Staging
 * If tests pass, and build is successful, detect release tag and push the new build to the live site - overwriting whatever is there.
 * A release.txt will be added at site root with tag name and datetime
