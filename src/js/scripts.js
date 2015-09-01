@@ -130,6 +130,13 @@ function getCatQuestions(slug) {
 
 function loadSlide(id, type) {
 
+	// Register google page view
+	var trackHashes = ['main-menu', 'stats', 'data', 'about-esa', 'start'];
+	if ($.inArray(id, trackHashes)) {
+		ga('send', 'pageview', '#' + id);
+	}
+
+
 	if (id === 'stats') {
 
 		// if you ran out of unseen questions and didn't skip any
