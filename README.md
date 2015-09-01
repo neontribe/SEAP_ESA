@@ -23,7 +23,8 @@ __Staging__
 * If the tests pass, Travis commits the new build to gh-pages branch (our staging server) http://neontribe.github.io/SEAP_ESA
 
 __Live__  
-* When release is tagged and pushed
+* When release is tagged and pushed `git tag -a v0.0.2-beta -m "add GA tracking to main pages"
+`
 * Use Travis to carry out procedure as for Staging
 * If tests pass, and build is successful, detect release tag and push the new build to the live site - overwriting whatever is there.
 * A release.txt will be added at site root with tag name and datetime
