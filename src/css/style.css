@@ -886,7 +886,7 @@ footer a {
 	}
 
 	[aria-label$="menu"] li {
-		display: block;
+		display: inline-block;
 	}
 
 	#about-esa .print-box p,
@@ -974,6 +974,10 @@ footer a {
 }
 
 @media (max-width: 500px) {
+
+	[aria-label$="menu"] li {
+		display: block;
+	}
 
 	[role="banner"] {
 		height: auto;
