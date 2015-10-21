@@ -736,8 +736,8 @@ img + h1 {
 }
 
 .box.loaded {
-	-webkit-animation: wobble 0.15s linear 1;
-	        animation: wobble 0.15s linear 1;
+	-webkit-animation: wobble 0.25s linear 1;
+	        animation: wobble 0.25s linear 1;
 }
 
 .box.green.loaded {
