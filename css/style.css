@@ -706,18 +706,18 @@ img + h1 {
 }
 
 @-webkit-keyframes wobble {
-	0% { -webkit-transform: rotate(1deg); transform: rotate(1deg); }
-	25% { -webkit-transform: rotate(-1deg); transform: rotate(-1deg); }
-	50% { -webkit-transform: rotate(1deg); transform: rotate(1deg); }
-	75% { -webkit-transform: rotate(-1deg); transform: rotate(-1deg); }
+	0% { -webkit-transform: rotate(0.5deg); transform: rotate(0.5deg); }
+	25% { -webkit-transform: rotate(-0.5deg); transform: rotate(-0.5deg); }
+	50% { -webkit-transform: rotate(0.5deg); transform: rotate(0.5deg); }
+	75% { -webkit-transform: rotate(-0.5deg); transform: rotate(-0.5deg); }
 	100% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
 }
 
 @keyframes wobble {
-	0% { -webkit-transform: rotate(1deg); transform: rotate(1deg); }
-	25% { -webkit-transform: rotate(-1deg); transform: rotate(-1deg); }
-	50% { -webkit-transform: rotate(1deg); transform: rotate(1deg); }
-	75% { -webkit-transform: rotate(-1deg); transform: rotate(-1deg); }
+	0% { -webkit-transform: rotate(0.5deg); transform: rotate(0.5deg); }
+	25% { -webkit-transform: rotate(-0.5deg); transform: rotate(-0.5deg); }
+	50% { -webkit-transform: rotate(0.5deg); transform: rotate(0.5deg); }
+	75% { -webkit-transform: rotate(-0.5deg); transform: rotate(-0.5deg); }
 	100% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
 }
 
