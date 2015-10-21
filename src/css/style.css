@@ -172,6 +172,7 @@ button:active, .button-shaped:active {
 	padding-right: 0.25em;
 	color: #fff;
 	font-weight: bold;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 button::-moz-focus-inner {
