@@ -27,7 +27,8 @@ line height = 1.5
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Source Sans Pro', sans-serif;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: rgba(0,0,0,0); /*Remove tap highlight for iOS */
+	-webkit-tap-highlight-color: transparent; /* For some Androids */
 }
 
 img {
@@ -173,7 +174,6 @@ button:active, .button-shaped:active {
 	padding-right: 0.25em;
 	color: #fff;
 	font-weight: bold;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 button::-moz-focus-inner {
@@ -196,16 +196,6 @@ button[disabled]::after {
 
 button[disabled]:active {
 	background: #E25C43;
-}
-
-// Remove tap highlight on iOS
-input,
-textarea,
-button,
-select,
-label,
-a {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 /* links
