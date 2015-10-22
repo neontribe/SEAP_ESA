@@ -850,15 +850,6 @@ footer p {
 	padding-right: 0.75em;
 }
 
-footer img {
-	height: 50px;
-	width: auto;
-	vertical-align: -0.68em;
-	position: relative;
-	top: -3px;
-	margin-left: 0.5em;
-}
-
 footer a {
 	border: 0;
 }
@@ -868,6 +859,10 @@ footer a {
     background-repeat: no-repeat;
     display: inline-block;
 		margin-left: 0.5em;
+		width: auto;
+		vertical-align: -0.68em;
+		position: relative;
+		top: -3px;
 }
 
 .sprite-TLEFlogo {
