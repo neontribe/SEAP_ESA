@@ -145,11 +145,13 @@ button, .button-shaped, [type="radio"] + span {
 }
 
 [type="radio"] + span {
-	width: 20em;
+	padding: 0.5em 0.75em 0.5em 3em;
 }
 
 [type="radio"]:checked + span {
-	width: 30em;
+	padding: 0.5em 0.75em 0.5em 1.9em;
+	position: relative;
+	top: 0.15em;
 }
 
 button span {
@@ -173,8 +175,6 @@ button:active, .button-shaped:active {
 	color: #6fe9bf;
 	border: 0 !important;
 	box-shadow: none;
-	position: relative;
-	/*right: 0.3em;*/
 }
 
 [type="radio"]:checked + span::before {
