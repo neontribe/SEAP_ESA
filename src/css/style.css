@@ -863,6 +863,31 @@ footer a {
 	border: 0;
 }
 
+.sprite {
+    background-image: url(../images/spritesheet.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+		margin-left: 0.5em;
+}
+
+.sprite-TLEFlogo {
+    width: 55px;
+    height: 50px;
+    background-position: -5px -5px;
+}
+
+.sprite-comic {
+    width: 50px;
+    height: 50px;
+    background-position: -70px -5px;
+}
+
+.sprite-logo {
+    width: 84px;
+    height: 50px;
+    background-position: -5px -65px;
+}
+
 /* break points
 ---------------------------------------------*/
 
