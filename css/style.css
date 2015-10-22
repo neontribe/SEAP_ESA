@@ -1083,6 +1083,9 @@ footer a {
 		margin: 0;
 	}
 
+	footer p {
+		font-size: 12px;
+	}
 }
 
 @media print {
