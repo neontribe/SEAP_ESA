@@ -27,7 +27,7 @@ line height = 1.5
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Source Sans Pro', sans-serif;
-	-webkit-tap-highlight-color: rgba(0,0,0,0); /*Remove tap highlight for iOS */
+	-webkit-tap-highlight-color: rgba(0,0,0,0); /*Remove tap highlight iOS */
 	-webkit-tap-highlight-color: transparent; /* For some Androids */
 }
 
@@ -807,20 +807,20 @@ img + h1 {
 	margin-top: 0;
 }
 
-/* about-esa
+/* about-esa about-PIP
 ---------------------------------------------*/
 
-#about-esa .print-box .button-box {
+#about-esa #about-PIP .print-box .button-box {
 	max-width: 45%;
 	float: right;
 }
 
-#about-esa .print-box .button-shaped {
+#about-esa #about-PIP .print-box .button-shaped {
 	width: 95%;
 	margin-bottom: 0.25em;
 }
 
-#about-esa .print-box p {
+#about-esa #about-PIP .print-box p {
 	max-width: 55%;
 	float: left;
 }
@@ -914,6 +914,48 @@ footer a {
     background-position: -5px -65px;
 }
 
+/* feedback
+---------------------------------------------*/
+
+[role="alert"] {
+	margin: 0;
+	font-weight: bold;
+}
+
+@-webkit-keyframes prompt {
+	0% {
+		background: transparent;
+	}
+	20% {
+		background: #3389c1;
+	}
+	100% {
+		background: transparent;
+	}
+}
+
+@keyframes prompt {
+	0% {
+		background: transparent;
+	}
+	20% {
+		background: #3389c1;
+	}
+	100% {
+		background: transparent;
+	}
+}
+
+[role="alert"] p {
+	padding: 0.75em;
+	max-width: 700px;
+	margin: 0.5em auto;
+	text-align: center;
+	-webkit-animation: prompt 0.75s linear 1;
+	        animation: prompt 0.75s linear 1;
+	border: 1px solid;
+}
+
 /* break points
 ---------------------------------------------*/
 
@@ -937,6 +979,8 @@ footer a {
 
 }
 
+
+/*ipad 768px iphone6&6+ 736px */
 @media (max-width: 750px) {
 
 	body {
@@ -972,6 +1016,16 @@ footer a {
 	.box {
 		margin: 0 0.5em;
 		padding: 1em 0.5em 0.5em;
+	}
+
+	.question h2 {
+		font-size: 1.55em;
+	}
+
+	button,
+	.button-shaped,
+	[type="radio"] + span {
+		font-size: 0.9em;
 	}
 
 	footer p {
@@ -1085,6 +1139,10 @@ footer a {
 
 	.label-input {
 		width: 100%;
+	}
+
+	[aria-label$="menu"] li {
+		display: block;
 	}
 
 	.box {
