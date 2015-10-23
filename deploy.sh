@@ -11,7 +11,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
 
 #checkout gh_pages branch and update with contents of build folder
 git remote rm origin
-git remote add origin https://$GIT_USER:$GIT_PASS@github.com/neontribe/SEAP_ESA.git
+git remote add origin https://$GIT_USER:$GIT_PASS@github.com/neontribe/seap_esa.git
 git fetch
 git checkout gh-pages
 cp -r build/* .
@@ -31,7 +31,7 @@ if [ "$TRAVIS_TAG" ]; then
     echo -e "Prepare files for live deploy"
     #Deploy gh-pages to deployment server
     cd ..
-    tar -czf release.tgz SEAP_ESA 
+    tar -czf release.tgz seap_esa 
     sudo apt-get -y install sshpass
 
     #copy tarball to deployment server
@@ -40,7 +40,7 @@ if [ "$TRAVIS_TAG" ]; then
     echo -e "Deploying to Live."
 
     #ssh onto deployment server. unpack. tidy. fire live deploy script.
-    sshpass -p $DEPLOY_PASS ssh $DEPLOY_USER@$DEPLOY_HOST  "cd $DEPLOY_PATH && tar -xvf release.tgz && rm -rf SEAP_ESA/.git && printf "$TRAVIS_TAG-$DATETIME" > SEAP_ESA/release.txt && rm release.tgz && bash deploy-seap-esa.sh"
+    sshpass -p $DEPLOY_PASS ssh $DEPLOY_USER@$DEPLOY_HOST  "cd $DEPLOY_PATH && tar -xvf release.tgz && rm -rf seap_esa/.git && printf "$TRAVIS_TAG-$DATETIME" > seap_esa/release.txt && rm release.tgz && bash deploy-seap-esa.sh"
 
     #TODO need to add robots.txt for live in above script or in deploy-seap-esa.sn on deploy server
 
