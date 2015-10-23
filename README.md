@@ -20,7 +20,7 @@
 __Staging__
 * We are using Travis (.travis.yml) and grunt to build test (Gruntfile.js) and deploy (deploy.sh)
 * On EVERY push, pull request or merge Travis uses Grunt test task to run all _test.coffee and _test.js files in /tests
-* If the tests pass, Travis commits the new build to gh-pages branch (our staging server) http://neontribe.github.io/SEAP_ESA
+* If the tests pass, Travis commits the new build to gh-pages branch (our staging server) http://neontribe.github.io/seap_esa
 
 __Live__  
 * When release is tagged and pushed  
