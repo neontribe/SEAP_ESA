@@ -26,11 +26,17 @@ module.exports = function(grunt){
       },
       copy: {
         generate: {
-          cwd: 'src',
-          src: [ '**' ],
+				  cwd: 'src',
+					src: [ '**' ],
           dest: 'build',
-          expand: true
-        }
+          expand: true,
+        },
+				generate_core: {
+				  cwd: 'node_modules/seap_core/src',
+					src: [ '**' ],
+          dest: 'build',
+          expand: true,
+				}
       },
       cssmin: {
         build: {
