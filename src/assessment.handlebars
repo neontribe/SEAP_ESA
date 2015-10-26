@@ -45,12 +45,13 @@
 				<!--<img src="path/to/question-icon.svg" alt="" />-->
 				<h2 class="question-text" tabindex="-1">
 					{{#if category}}
-						<span class="activity">Activity: {{category}}</span>
+						<span id="category-{{sluggify question}}" class="activity" aria-hidden="true">Activity: {{category}}</span>
 					{{else}}
 						<span class="activity"><strong>Follow up question:</strong></span>
 					{{/if}}
 					<span class="vh">Question:</span>
 					<em>{{question}}</em>
+					<span aria-labelledby="category-{{sluggify question}}"></span>
 				</h2>
 				<div class="answers">
 					<fieldset>
