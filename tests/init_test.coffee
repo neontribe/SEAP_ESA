@@ -1,6 +1,6 @@
 # Check site is serving
 # Check title is My ESA Assessment
-# Check count 3 menu links in main nav (Main Menu, my assessment, my data)
+# Check count 3 menu links in main nav (Home, my assessment, my data)
 # Make sure we aren't on resume screen, then
 # Check count 3 option buttons - (guide, practise, my assessment)
 
