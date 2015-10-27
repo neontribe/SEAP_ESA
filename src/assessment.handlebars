@@ -476,24 +476,8 @@
     </p>
   </footer>
   <script>
-    window.allQuestions = [{
-          {#
-            each questions
-          }
-        } {
-          question: 'question-{{sluggify question}}',
-          category: '{{category}}'
-        }, {
-          {
-            /each}}];
-            window.allCategories = [{
-                  {#
-                    each questions
-                  }
-                }
-                '{{category}}', {
-                  {
-                    /each}}];
+    window.allQuestions = [{{#each questions}}{ question: 'question-{{sluggify question}}', category: '{{category}}'}, {{/each}}];
+    window.allCategories = [{{#each questions}}'{{category}}',{{/each}}];
   </script>
   <script src="js/all-scripts.js"></script>
   <script id="stats-template" type="text/x-handlebars-template">
