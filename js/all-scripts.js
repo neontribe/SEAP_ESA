@@ -14144,18 +14144,18 @@ function initAss() {
 		unseenQuestions: [],
 		seenQuestions: [],
 		skippedQuestions: [], // the questions which have been viewed but not answered
-		allCategories: _.uniq(_.reject(window.allCategories,
-			function(cat) {
-				return cat && cat.charAt(0) === '*';
+		allCategories: _.uniq(_.reject(window.allCategories, 
+			function(cat) { 
+				return cat && cat.charAt(0) === '*'; 
 			}
 		)),
-		remainingCategories: _.uniq(_.reject(window.allCategories,
-			function(cat) {
-				return cat && cat.charAt(0) === '*';
+		remainingCategories: _.uniq(_.reject(window.allCategories, 
+			function(cat) { 
+				return cat && cat.charAt(0) === '*'; 
 			}
 		)),
 		started: false, // whether a practise has been started
-		answeredOne: false, // Whether any questions have been answered at all
+		answeredOne: false, // Whether any questions have been answered at all 
 		context: null, // the jQuery object for the slide in hand
 		slideType: null, // null or 'question' etc.
 		mode: 'unseenQuestions', // 'unseenQuestions' or 'skippedQuestions'
@@ -14180,32 +14180,53 @@ function initAss() {
 
 function getCatQuestions(slug) {
 
+	var questions = [];
+
 	if (slug === "i-dont-know") {
-		// Select a random category containing unseen questions
-		var nextCat = _.sample(db.get('esaAss.remainingCategories'));
-		db.set('esaAss.category', nextCat);
+
+		// Remove seen questions from 
+		var all = [];
+
+		// Empty "remaining categories"
+		db.set('esaAss.remainingCategories', []);
+
+		$.each(window.allQuestions, function(i, v) {
+			
+			// make an array of all questions
+			// excluding followup questions
+			if (v && v.category.charAt(0) !== '*') {
+				all.push(v.question);
+			}
+
+		});
+
+		var seen = db.get('esaAss.seenQuestions');
+
+		db.set('esaAss.unseenQuestions', _.difference(all, seen));
+		db.set('esaAss.category', null);
+
 		loadSlide('chose-i-dont-know');
+
 		return;
 
 	} else {
+
+		var reducedToCat = _.where(window.allQuestions, {category: slug});
+
+		$.each(reducedToCat, function(i, v) {
+			if (v) {
+				questions.push(v.question);
+			}
+		});
+
+		db.set('esaAss.unseenQuestions', questions);
+
 		db.set('esaAss.category', slug);
-		getCatQuestionArr(slug);
-		pickQuestion();
 
 	}
 
-}
 
-function getCatQuestionArr(slug) {
-
-	var questions = [],
-			reducedToCat = _.where(window.allQuestions, {category: slug});
-
-	$.each(reducedToCat, function(i, v) {
-		questions.push(v.question);
-	});
-
-	db.set('esaAss.unseenQuestions', questions);
+	pickQuestion();
 
 }
 
@@ -14213,10 +14234,10 @@ function loadSlide(id, type) {
 
 	// Register google page view
 	var trackHashes = ['main-menu', 'stats', 'data', 'about-esa', 'start'];
-
 	if ($.inArray(id, trackHashes) !== -1) {
 		ga('send', 'pageview', '#' + id);
 	}
+
 
 	if (id === 'stats') {
 
@@ -14238,11 +14259,6 @@ function loadSlide(id, type) {
 		$('#this-activity').text(db.get('esaAss.category').toLowerCase());
 	}
 
-	if (id === 'chose-i-dont-know') {
-		$('#chose-i-dont-know button').attr('data-category', db.get('esaAss.category'));
-		$('#chose-i-dont-know #unseen-category').text(db.get('esaAss.category'));
-	}
-
 	$('.slide > *').removeClass('loaded');
 
 	// set type in local storage or reset to null
@@ -14261,8 +14277,8 @@ function loadSlide(id, type) {
 		.focus();
 
 	// find out if we've gone to one of the locations that don't need saving
-	var exclude = _.find(['resume', 'break-time', 'resume-practise'],
-		function(unsaveable) {
+	var exclude = _.find(['resume', 'break-time', 'resume-practise'], 
+		function(unsaveable) { 
 			return unsaveable === id;
 	});
 
@@ -14344,7 +14360,7 @@ function pickQuestion() {
 				}
 			} else {
 				loadSlide('category-finished');
-				return;
+				return;				
 			}
 		}
 	} else {
@@ -14360,7 +14376,7 @@ function pickQuestion() {
 			loadSlide('seen-all-even-skipped');
 			db.set('esaAss.incomplete', false);
 			return;
-		}
+		}		
 	}
 
 	// init individual question var
@@ -14400,7 +14416,7 @@ function pickQuestion() {
 				questions = _.without(questions, context);
 			}
 
-			if (db.get('esaAss.category')) {
+			if (db.get('esaAss.category')) { 
 
 				question = questions[0];
 
@@ -14423,7 +14439,7 @@ function pickQuestion() {
 
 	db.set('esaAss.seenQuestions', seen);
 
-	// load question slide and set slide type global to 'question'
+	// load question slide and set slide type global to 'question' 
 	loadSlide(question, 'question');
 
 	// set to false until button pressed
@@ -14458,7 +14474,7 @@ function resume() {
 }
 
 function tally() {
-
+	
 	// get all the answers
 	var answers = db.get('esaAss.answers');
 
@@ -14528,7 +14544,7 @@ function qualify() {
 			}
 
 			// record that low qualification is possible
-			db.set('esaAss.low', true);
+			db.set('esaAss.low', true);		
 
 		}
 
@@ -14559,7 +14575,7 @@ function compileStats() {
 		db.set('esaAss.low', false);
 	}
 
-	// template up the stats with handlebars and
+	// template up the stats with handlebars and 
 	// write to the stats container
 	var template = Handlebars.compile(document.getElementById("stats-template").innerHTML);
 	var esaAssData = db.get('esaAss');
@@ -14586,7 +14602,7 @@ function disabledCats() {
 		if (!_.contains(remaining, catName)) {
 
 			button.attr('disabled', 'disabled');
-
+			
 		}
 
 	});
@@ -14595,7 +14611,7 @@ function disabledCats() {
 
 function compileCategories() {
 
-	// template up the stats with handlebars and
+	// template up the stats with handlebars and 
 	// write to the categories container
 	var template = Handlebars.compile(document.getElementById("categories-template").innerHTML);
 	var esaAssData = db.get('esaAss');
@@ -14609,7 +14625,7 @@ function compileCategories() {
 
 // remove answers from category nesting for easy iteration
 function divideAnswers() {
-
+	
 	var answers = db.get('esaAss.answers');
 
 	var supportAnswers = [];
@@ -14629,15 +14645,15 @@ function divideAnswers() {
 							points: v.points
 						});
 					}
-					// if it's a promotion question
+					// if it's a promotion question 
 					// and the total is more than 15
 					if (v.points === '*' && tally() >= 15) {
-						// push the promotion question
+						// push the promotion question 
 						supportAnswers.push({
 							question: v.question,
 							answer: v.answer,
 							points: v.points
-						});
+						});						
 					}
 					// include WRAG answers
 					if (v.points > 0 && v.points !== 16) {
@@ -14645,7 +14661,7 @@ function divideAnswers() {
 							question: v.question,
 							answer: v.answer,
 							points: v.points
-						});
+						});					
 					}
 				}
 			});
@@ -14690,7 +14706,7 @@ Handlebars.registerHelper('accuracy', function(array) {
 	var answered = 0;
 
 	$.each(answers, function(key, value) {
-	    answered += _.size(value);
+	    answered += _.size(value); 
 	});
 
 	var accuracy = Math.round((answered / allQuestions.length) * 100) + "%";
@@ -14813,7 +14829,7 @@ $('.expandies').on('click','[aria-controls]', function() {
 
 		$(this).attr('aria-expanded', 'false');
 
-		controlled.attr('aria-hidden','true');
+		controlled.attr('aria-hidden','true');		
 
 	}
 
@@ -14936,10 +14952,10 @@ $('body').on('change','[type="radio"]', function() {
 
 		// If not a star answer, cast to real integer
 		if (points !== '*') {
-
+			
 			// cast to real integer
 			points = +points;
-
+		
 		}
 
 		// initialize the answer object
@@ -14969,20 +14985,20 @@ $('body').on('change','[type="radio"]', function() {
 				db.set('esaAss.show-high', true);
 
 			}
-
+			
 		} else {
 
 			// fire the adding up function
 			// to see if there are enough points to qualify
-			qualify();
+			qualify();			
 
 		}
-
+		
 	}
 
 });
 
-$('body').on('click','[data-action="categories"]', function() {
+$('body').on('click','[data-action="categories"]', function() { 
 
 	loadSlide('categories');
 
