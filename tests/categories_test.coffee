@@ -10,7 +10,7 @@ sectionTitle = 'Choose an activity that is relevant to any problems you experien
 
 # Helper to get back to categories list
 navToHash = (hash) ->
-  casper.click 'a[data-action="data"]'
+  casper.click 'a[data-action="stats"]'
   casper.click 'button[data-action="delete-data"]'
   casper.click 'button[data-action="menu"]'
   casper.click 'a[data-action="start-or-resume"]'
