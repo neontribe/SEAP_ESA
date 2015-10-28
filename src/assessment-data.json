@@ -186,7 +186,7 @@
     {
       "question": "Can you reach up with both your arms without difficulty?",
       "hint": null,
-      "category": "Picking up and moving things",
+      "category": "Reaching",
       "answers": [
         {
           "label": "Yes",
@@ -205,7 +205,7 @@
     {
       "question": "Can you reach clothes, for example, on a shelf or in a cupboard?",
       "hint": null,
-      "category": "*Picking up and moving things",
+      "category": "*Reaching",
       "answers": [
         {
           "label": "Yes",
@@ -224,7 +224,7 @@
     {
       "question": "Can you do all of these using one or both arms: Put something in the top pocket of a coat you are wearing, put on a hat, reach something above your head?",
       "hint": null,
-      "category": "Picking up and moving things",
+      "category": "Reaching",
       "answers": [
         {
           "label": "Yes, I can do all of those things",
@@ -243,7 +243,7 @@
     {
       "question": "Can you put something in the top pocket of a coat or jacket you are wearing?",
       "hint": null,
-      "category": "*Picking up and moving things",
+      "category": "*Reaching",
       "answers": [
         {
           "label": "Yes",
@@ -262,7 +262,7 @@
     {
       "question": "Can you put on a hat?",
       "hint": null,
-      "category": "*Picking up and moving things",
+      "category": "*Reaching",
       "answers": [
         {
           "label": "Yes",
