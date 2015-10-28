@@ -168,7 +168,7 @@ casper.test.begin 'Qualify high with : ' + activityName2, 5, (test) ->
 #########################################
 # Test Qualify Low with value 15 answer #
 #########################################
-activityName3= 'Awareness'
+activityName3= 'Awareness of hazards or danger'
 
 casper.test.begin 'Qualify low with : ' + activityName3, 5, (test) ->
   # Start at home, clear data, return to home, click start-or-resume
@@ -208,7 +208,7 @@ casper.test.begin 'Qualify low then high with : ' + activityName4, 6, (test) ->
       clearAndStartPractise test, activityName4
     .then (data) ->
       # click ask me another 4 times
-      for i in [0...4] by 1
+      for i in [0...2] by 1
         @click '.question-container.loaded button[data-action="pick"]'
       question = @fetchText '.question-container.loaded h2 em'
       test.comment question
