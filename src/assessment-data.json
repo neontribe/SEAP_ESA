@@ -1,115 +1,24 @@
 {
   "questions": [
     {
-      "question": "Can you move around and use steps without difficulty?",
+      "question": "How well do you cope with any change?",
       "hint": null,
-      "category": "Moving around and using steps",
+      "category": "Coping with change",
       "answers": [
         {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "No",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "What is the furthest you can move safely on level ground without needing to stop?",
-      "hint": "Answer this question even if you need a walking stick, manual wheelchair or other aid to help you.",
-      "category": "Moving around and using steps",
-      "answers": [
-        {
-          "label": "0 - 50 metres",
+          "label": "I can't cope to the extent I can't manage my day-to-day life at all",
           "value": 16
         },
         {
-          "label": "51 - 100 metres",
-          "value": 9
-        },
-        {
-          "label": "101 - 200 metres",
-          "value": 6
-        },
-        {
-          "label": "More than 200 metres",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "After moving once, how far can you move again within a short time without it causing you significant discomfort or exhaustion?",
-      "hint": null,
-      "category": "Moving around and using steps",
-      "answers": [
-        {
-          "label": "0 - 50 metres",
-          "value": 16
-        },
-        {
-          "label": "51 - 100 metres",
-          "value": 9
-        },
-        {
-          "label": "101 - 200 metres",
-          "value": 6
-        },
-        {
-          "label": "More than 200 metres",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "Can you go up or down two steps without being helped by another person even with the support of a handrail?",
-      "hint": null,
-      "category": "Moving around and using steps",
-      "answers": [
-        {
-          "label": "Yes",
+          "label": "I can't cope to the extent is causes me a lot of distress",
           "value": 0
         },
         {
-          "label": "No",
-          "value": 9
-        },
-        {
-          "label": "It varies",
-          "value": "You said going up or down two steps varies, can you do this?"
-        }
-      ]
-    },
-    {
-      "question": "You said going up or down two steps varies, can you do this?",
-      "hint": null,
-      "category": "*Moving around and using steps",
-      "answers": [
-        {
-          "label": "Most of the time, but not always",
+          "label": "I can cope, but it will make me anxious or worried",
           "value": 0
         },
         {
-          "label": "I could do it once, but not again within a reasonable timescale",
-          "value": 9
-        },
-        {
-          "label": "None of these apply to me",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "Can you stand and sit without difficulty?",
-      "hint": null,
-      "category": "Sitting and standing",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "No",
+          "label": "I can cope without any difficulties",
           "value": 0
         },
         {
@@ -119,16 +28,28 @@
       ]
     },
     {
-      "question": "If two seats are placed next to each other could you move from one to the other without help from someone else?",
+      "question": "If you are due to meet someone, but a few days before they change the date, how well would you cope with this change to your routine?",
       "hint": null,
-      "category": "Sitting and standing",
+      "category": "Coping with change",
       "answers": [
         {
-          "label": "Yes",
+          "label": "I can't cope to the extent I can't manage my day-to-day life at all",
+          "value": 15
+        },
+        {
+          "label": "I can't cope, it would make day-to-day life very difficult to manage",
+          "value": 9
+        },
+        {
+          "label": "I can't cope. It would make me feel anxious",
           "value": 0
         },
         {
-          "label": "No",
+          "label": "I can cope without any difficulties",
+          "value": 0
+        },
+        {
+          "label": "I have a learning difficulty or mental health problem which makes it impossible to cope with any change and would make my day-to-day life unmanageable",
           "value": 16
         },
         {
@@ -138,47 +59,124 @@
       ]
     },
     {
-      "question": "How long could you either sit or stand or both at a workstation for the majority of time without help from someone else before it caused you significant discomfort or exhaustion and you had to move away?",
+      "question": "If you are asked to attend an appointment, but on the day you are contacted to say the time has been changed, how well would you cope with this change?",
       "hint": null,
-      "category": "Sitting and standing",
+      "category": "Coping with change",
       "answers": [
         {
-          "label": "0 - 30 mins",
+          "label": "I can't cope at all to the extent I would not be able to manage day-to-day life",
+          "value": 15
+        },
+        {
+          "label": "I can't cope, it would make day-to-day life very difficult to manage",
           "value": 6
         },
         {
-          "label": "30 mins to 1 hour",
-          "value": 9
+          "label": "It would make day-to-day life difficult to manage",
+          "value": 0
         },
         {
-          "label": "Over an hour",
+          "label": "I can cope without any difficulties",
+          "value": 0
+        },
+        {
+          "label": "I would not meet anyone in the first place",
           "value": 0
         },
         {
           "label": "It varies",
-          "value": "What is the longest you can sit in a seat at home for example when watching television or eating a meal?"
+          "value": 0
         }
       ]
     },
     {
-      "question": "What is the longest you can sit in a seat at home for example when watching television or eating a meal?",
+      "question": "How well do you cope in social situations?",
       "hint": null,
-      "category": "*Sitting and standing",
+      "category": "Coping with social engagement",
       "answers": [
         {
-          "label": "0 - 30 mins",
-          "value": 9
-        },
-        {
-          "label": "30 mins to 1 hour",
-          "value": 6
-        },
-        {
-          "label": "Over an hour",
+          "label": "I have no difficulty",
           "value": 0
         },
         {
-          "label": "None of these apply to me",
+          "label": "I find it very difficult",
+          "value": "Do you ever talk to your neighbours or friends?"
+        },
+        {
+          "label": "I have some difficulty",
+          "value": "Do you ever talk to your neighbours or friends?"
+        },
+        {
+          "label": "It varies",
+          "value": "Do you ever talk to your neighbours or friends?"
+        }
+      ]
+    },
+    {
+      "question": "Do you ever talk to your neighbours or friends?",
+      "hint": null,
+      "category": "*Coping with social engagement",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "Which of these best describes how you relate to other people in social situations?",
+      "hint": null,
+      "category": "Coping with social engagement",
+      "answers": [
+        {
+          "label": "I have no difficulty relating to other people",
+          "value": 0
+        },
+        {
+          "label": "I can sometimes relate to other people, but I will feel anxious or distressed",
+          "value": 0
+        },
+        {
+          "label": "I can never relate to other people",
+          "value": 0
+        },
+        {
+          "label": "I never meet other people because it makes me quite distressed",
+          "value": 0
+        },
+        {
+          "label": "I never speak to other people, socially because it makes me extremely distressed",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "question": "Which of these best describes how you feel when you engage socially with someone you do not know?",
+      "hint": null,
+      "category": "Coping with social engagement",
+      "answers": [
+        {
+          "label": "I do not have any problems meeting new people",
+          "value": 0
+        },
+        {
+          "label": "I will feel anxious or distressed sometimes",
+          "value": 0
+        },
+        {
+          "label": "I never meet people I do not know because it makes me extremely distressed",
+          "value": 9
+        },
+        {
+          "label": "Most of the time it is not possible because I get extremely distressed",
+          "value": 6
+        },
+        {
+          "label": "I will feel anxious or distressed all the time",
           "value": 0
         }
       ]
@@ -533,6 +531,656 @@
       ]
     },
     {
+      "question": "Can you manage to plan, start and finish daily tasks without any difficulty?",
+      "hint": null,
+      "category": "Starting or finishing tasks",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "It varies",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "Thinking about your mental health, which of these best describes how often you could reliably start and finish at least two personal actions (such as getting up, washing and dressing, cooking a meal or going shopping) one after the other?",
+      "hint": null,
+      "category": "Starting or finishing tasks",
+      "answers": [
+        {
+          "label": "All the time",
+          "value": 0
+        },
+        {
+          "label": "Never because of mental health",
+          "value": 16
+        },
+        {
+          "label": "Cannot most of the time because of mental health",
+          "value": 9
+        },
+        {
+          "label": "Cannot frequently because of mental health",
+          "value": 6
+        },
+        {
+          "label": "It varies",
+          "value": "How often does it vary?"
+        }
+      ]
+    },
+    {
+      "question": "How often does it vary?",
+      "hint": null,
+      "category": "*Starting or finishing tasks",
+      "answers": [
+        {
+          "label": "Throughout the day",
+          "value": 0
+        },
+        {
+          "label": "It is different on different days",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "Do you have learning or mental health difficulties which affect how you behave towards other people?",
+      "hint": null,
+      "category": "Behaving appropriately",
+      "answers": [
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "Yes",
+          "value": "How often do you behave in an uncontrollable aggressive way towards other people?"
+        },
+        {
+          "label": "It varies",
+          "value": "How often do you behave in an uncontrollable aggressive way towards other people?"
+        }
+      ]
+    },
+    {
+      "question": "How often do you behave in an uncontrollable aggressive way towards other people?",
+      "hint": null,
+      "category": "*Behaving appropriately",
+      "answers": [
+        {
+          "label": "Every day",
+          "value": 16
+        },
+        {
+          "label": "Not every day, but quite often",
+          "value": 15
+        },
+        {
+          "label": "Occassionally",
+          "value": 9
+        },
+        {
+          "label": "Never",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "Can you stand and sit without difficulty?",
+      "hint": null,
+      "category": "Sitting and standing",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "It varies",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "If two seats are placed next to each other could you move from one to the other without help from someone else?",
+      "hint": null,
+      "category": "Sitting and standing",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 16
+        },
+        {
+          "label": "It varies",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "How long could you either sit or stand or both at a workstation for the majority of time without help from someone else before it caused you significant discomfort or exhaustion and you had to move away?",
+      "hint": null,
+      "category": "Sitting and standing",
+      "answers": [
+        {
+          "label": "0 - 30 mins",
+          "value": 6
+        },
+        {
+          "label": "30 mins to 1 hour",
+          "value": 9
+        },
+        {
+          "label": "Over an hour",
+          "value": 0
+        },
+        {
+          "label": "It varies",
+          "value": "What is the longest you can sit in a seat at home for example when watching television or eating a meal?"
+        }
+      ]
+    },
+    {
+      "question": "What is the longest you can sit in a seat at home for example when watching television or eating a meal?",
+      "hint": null,
+      "category": "*Sitting and standing",
+      "answers": [
+        {
+          "label": "0 - 30 mins",
+          "value": 9
+        },
+        {
+          "label": "30 mins to 1 hour",
+          "value": 6
+        },
+        {
+          "label": "Over an hour",
+          "value": 0
+        },
+        {
+          "label": "None of these apply to me",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "Can you move around and use steps without difficulty?",
+      "hint": null,
+      "category": "Moving around and using steps",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "What is the furthest you can move safely on level ground without needing to stop?",
+      "hint": "Answer this question even if you need a walking stick, manual wheelchair or other aid to help you.",
+      "category": "Moving around and using steps",
+      "answers": [
+        {
+          "label": "0 - 50 metres",
+          "value": 16
+        },
+        {
+          "label": "51 - 100 metres",
+          "value": 9
+        },
+        {
+          "label": "101 - 200 metres",
+          "value": 6
+        },
+        {
+          "label": "More than 200 metres",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "After moving once, how far can you move again within a short time without it causing you significant discomfort or exhaustion?",
+      "hint": null,
+      "category": "Moving around and using steps",
+      "answers": [
+        {
+          "label": "0 - 50 metres",
+          "value": 16
+        },
+        {
+          "label": "51 - 100 metres",
+          "value": 9
+        },
+        {
+          "label": "101 - 200 metres",
+          "value": 6
+        },
+        {
+          "label": "More than 200 metres",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "Can you go up or down two steps without being helped by another person even with the support of a handrail?",
+      "hint": null,
+      "category": "Moving around and using steps",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 9
+        },
+        {
+          "label": "It varies",
+          "value": "You said going up or down two steps varies, can you do this?"
+        }
+      ]
+    },
+    {
+      "question": "You said going up or down two steps varies, can you do this?",
+      "hint": null,
+      "category": "*Moving around and using steps",
+      "answers": [
+        {
+          "label": "Most of the time, but not always",
+          "value": 0
+        },
+        {
+          "label": "I could do it once, but not again within a reasonable timescale",
+          "value": 9
+        },
+        {
+          "label": "None of these apply to me",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "Can you go out on your own?",
+      "hint": null,
+      "category": "Getting about",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "Can you leave home and go out to places you know?",
+      "hint": null,
+      "category": "Getting about",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "Not at all",
+          "value": 15
+        },
+        {
+          "label": "Only if someone goes with me",
+          "value": 9
+        },
+        {
+          "label": "It varies",
+          "value": "Do you ever visit your doctor or the hospital?"
+        }
+      ]
+    },
+    {
+      "question": "Do you ever visit your doctor or the hospital?",
+      "hint": null,
+      "category": "*Getting about",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "Can you leave home and go to places you don't know?",
+      "hint": null,
+      "category": "Getting about",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "Not at all",
+          "value": 15
+        },
+        {
+          "label": "Only if someone goes with me",
+          "value": 6
+        },
+        {
+          "label": "It varies",
+          "value": "Does it depend on the place?"
+        }
+      ]
+    },
+    {
+      "question": "Does it depend on the place?",
+      "hint": null,
+      "category": "*Getting about",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": "Will you be going to your work capability assessment?"
+        },
+        {
+          "label": "No",
+          "value": "Will you be going to your work capability assessment?"
+        }
+      ]
+    },
+    {
+      "question": "Will you be going to your work capability assessment?",
+      "hint": null,
+      "category": "*Getting about",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "Can you cross the road on your own, without needing help from someone else whether or not you need to use a guide dog or other aid?",
+      "hint": null,
+      "category": "Navigating safely",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "question": "Can you move around an unfamiliar place without help from someone else whether or not you need to use a guide dog or other aid?",
+      "hint": null,
+      "category": "Navigating safely",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "question": "Can you move around a familiar place without help from someone else whether or not you need to use a guide dog or other aid?",
+      "hint": null,
+      "category": "Navigating safely",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "question": "Can you stay safe when doing everyday tasks such as boiling water or using sharp objects?",
+      "hint": null,
+      "category": "Awareness of hazards or danger",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "It varies",
+          "value": "Does it vary because:"
+        }
+      ]
+    },
+    {
+      "question": "Does it vary because:",
+      "hint": null,
+      "category": "*Awareness of hazards or danger",
+      "answers": [
+        {
+          "label": "Some days your health is worse than others",
+          "value": 0
+        },
+        {
+          "label": "A different reason",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "How often do you need someone to stay with you to keep you safe because you are not aware how everyday hazards (such as boiling water or sharp objects) can injure you\/other people or cause damage to property\/possessions?",
+      "hint": null,
+      "category": "Awareness of hazards or danger",
+      "answers": [
+        {
+          "label": "All the time",
+          "value": 15
+        },
+        {
+          "label": "Majority of the time",
+          "value": 15
+        },
+        {
+          "label": "Quite often",
+          "value": 9
+        },
+        {
+          "label": "Occassionally",
+          "value": 6
+        },
+        {
+          "label": "Never",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "Do you have any learning impairments of mental disorders which mean you are at significant risk of harm or injury to yourself or others?",
+      "hint": null,
+      "category": "Awareness of hazards or danger",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 16
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "Do you have any learning impairments or mental disorders which mean someone needs to be with you most of the time to prevent significant risk of damage to property or possessions?",
+      "hint": null,
+      "category": "Awareness of hazards or danger",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 16
+        },
+        {
+          "label": "No",
+          "value": 0
+        },
+        {
+          "label": "It varies",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "Can you learn to do everyday tasks without any difficulty?",
+      "hint": null,
+      "category": "Learning tasks",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "Which of these best describes whether you can learn to do a simple task such as setting an alarm clock?",
+      "hint": null,
+      "category": "Learning tasks",
+      "answers": [
+        {
+          "label": "I would not have a problem learning a task like this",
+          "value": 0
+        },
+        {
+          "label": "I can sometimes learn some simple tasks",
+          "value": 0
+        },
+        {
+          "label": "I do not know",
+          "value": 0
+        },
+        {
+          "label": "I would never be able to learn how to complete a task like this",
+          "value": 15
+        },
+        {
+          "label": "I would never be able to learn how to complete a task like this because I have learning difficulties or mental health impairments",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "question": "Can you learn something complex such as how to use a washing machine?",
+      "hint": null,
+      "category": "Learning tasks",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 9
+        },
+        {
+          "label": "It varies",
+          "value": "Could you play CDs or use a radio if you had one?"
+        }
+      ]
+    },
+    {
+      "question": "Could you play CDs or use a radio if you had one?",
+      "hint": null,
+      "category": "*Learning tasks",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 9
+        },
+        {
+          "label": "Not sure",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "Can you learn something more complicated than how to use a washing machine?",
+      "hint": null,
+      "category": "Learning tasks",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 6
+        },
+        {
+          "label": "It varies",
+          "value": "Could you learn to program the channels on your TV?"
+        }
+      ]
+    },
+    {
+      "question": "Could you learn to program the channels on your TV?",
+      "hint": null,
+      "category": "*Learning tasks",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "I could sometimes learn to do this",
+          "value": 0
+        },
+        {
+          "label": "This does not apply to me",
+          "value": 0
+        }
+      ]
+    },
+    {
       "question": "Can you communicate with other people without any difficulty?",
       "hint": null,
       "category": "Making yourself understood",
@@ -716,9 +1364,9 @@
       ]
     },
     {
-      "question": "Can you cross the road on your own, without needing help from someone else whether or not you need to use a guide dog or other aid?",
+      "question": "Can you control your bowels and bladder without any difficulty?",
       "hint": null,
-      "category": "Navigation safely",
+      "category": "Bladder and bowel control",
       "answers": [
         {
           "label": "Yes",
@@ -726,639 +1374,79 @@
         },
         {
           "label": "No",
-          "value": 15
+          "value": "Which one of these best describes how often you have to wash yourself or change your clothes because of difficulty controlling your bladder, bowels or a collecting device?"
         }
       ]
     },
     {
-      "question": "Can you move around an unfamiliar place without help from someone else whether or not you need to use a guide dog or other aid?",
+      "question": "Which one of these best describes how often you have to wash yourself or change your clothes because of difficulty controlling your bladder, bowels or a collecting device?",
       "hint": null,
-      "category": "Navigation safely",
+      "category": "*Bladder and bowel control",
       "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "No",
-          "value": 15
-        }
-      ]
-    },
-    {
-      "question": "Can you move around a familiar place without help from someone else whether or not you need to use a guide dog or other aid?",
-      "hint": null,
-      "category": "Navigation safely",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "No",
-          "value": 9
-        }
-      ]
-    },
-    {
-      "question": "Can you learn to do everyday tasks without any difficulty?",
-      "hint": null,
-      "category": "Learning tasks",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "No",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "Which of these best describes whether you can learn to do a simple task such as setting an alarm clock?",
-      "hint": null,
-      "category": "Learning tasks",
-      "answers": [
-        {
-          "label": "I would not have a problem learning a task like this",
-          "value": 0
-        },
-        {
-          "label": "I can sometimes learn some simple tasks",
-          "value": 0
-        },
-        {
-          "label": "I do not know",
-          "value": 0
-        },
-        {
-          "label": "I would never be able to learn how to complete a task like this",
-          "value": 15
-        },
-        {
-          "label": "I would never be able to learn how to complete a task like this because I have learning difficulties or mental health impairments",
-          "value": 16
-        }
-      ]
-    },
-    {
-      "question": "Can you learn something complex such as how to use a washing machine?",
-      "hint": null,
-      "category": "Learning tasks",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "No",
-          "value": 9
-        },
-        {
-          "label": "It varies",
-          "value": "Could you play CDs or use a radio if you had one?"
-        }
-      ]
-    },
-    {
-      "question": "Could you play CDs or use a radio if you had one?",
-      "hint": null,
-      "category": "*Learning tasks",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "No",
-          "value": 9
-        },
-        {
-          "label": "Not sure",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "Can you learn something more complicated than how to use a washing machine?",
-      "hint": null,
-      "category": "Learning tasks",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "No",
-          "value": 6
-        },
-        {
-          "label": "It varies",
-          "value": "Could you learn to program the channels on your TV?"
-        }
-      ]
-    },
-    {
-      "question": "Could you learn to program the channels on your TV?",
-      "hint": null,
-      "category": "*Learning tasks",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "I could sometimes learn to do this",
-          "value": 0
-        },
-        {
-          "label": "This does not apply to me",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "Can you stay safe when doing everyday tasks such as boiling water or using sharp objects?",
-      "hint": null,
-      "category": "Awareness of hazards or danger",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "No",
-          "value": 0
-        },
-        {
-          "label": "It varies",
-          "value": "Does it vary because:"
-        }
-      ]
-    },
-    {
-      "question": "Does it vary because:",
-      "hint": null,
-      "category": "*Awareness of hazards or danger",
-      "answers": [
-        {
-          "label": "Some days your health is worse than others",
-          "value": 0
-        },
-        {
-          "label": "A different reason",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "How often do you need someone to stay with you to keep you safe because you are not aware how everyday hazards (such as boiling water or sharp objects) can injure you\/other people or cause damage to property\/possessions?",
-      "hint": null,
-      "category": "Awareness of hazards or danger",
-      "answers": [
-        {
-          "label": "All the time",
-          "value": 15
-        },
-        {
-          "label": "Majority of the time",
-          "value": 15
-        },
-        {
-          "label": "Quite often",
-          "value": 9
-        },
-        {
-          "label": "Occassionally",
-          "value": 6
-        },
         {
           "label": "Never",
           "value": 0
-        }
-      ]
-    },
-    {
-      "question": "Do you have any learning impairments of mental disorders which mean you are at significant risk of harm or injury to yourself or others?",
-      "hint": null,
-      "category": "Awareness of hazards or danger",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 16
         },
         {
-          "label": "No",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "Do you have any learning impairments or mental disorders which mean someone needs to be with you most of the time to prevent significant risk of damage to property or possessions?",
-      "hint": null,
-      "category": "Awareness of hazards or danger",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 16
-        },
-        {
-          "label": "No",
+          "label": "Not very often",
           "value": 0
         },
-        {
-          "label": "It varies",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "Can you manage to plan, start and finish daily tasks without any difficulty?",
-      "hint": null,
-      "category": "Starting or finishing tasks",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "No",
-          "value": 0
-        },
-        {
-          "label": "It varies",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "Thinking about your mental health, which of these best describes how often you could reliably start and finish at least two personal actions (such as getting up, washing and dressing, cooking a meal or going shopping) one after the other?",
-      "hint": null,
-      "category": "Starting or finishing tasks",
-      "answers": [
-        {
-          "label": "All the time",
-          "value": 0
-        },
-        {
-          "label": "Never because of mental health",
-          "value": 16
-        },
-        {
-          "label": "Cannot most of the time because of mental health",
-          "value": 9
-        },
-        {
-          "label": "Cannot frequently because of mental health",
-          "value": 6
-        },
-        {
-          "label": "It varies",
-          "value": "How often does it vary?"
-        }
-      ]
-    },
-    {
-      "question": "How often does it vary?",
-      "hint": null,
-      "category": "*Starting or finishing tasks",
-      "answers": [
-        {
-          "label": "Throughout the day",
-          "value": 0
-        },
-        {
-          "label": "It is different on different days",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "How well do you cope with any change?",
-      "hint": null,
-      "category": "Coping with change",
-      "answers": [
-        {
-          "label": "I can't cope to the extent I can't manage my day-to-day life at all",
-          "value": 16
-        },
-        {
-          "label": "I can't cope to the extent is causes me a lot of distress",
-          "value": 0
-        },
-        {
-          "label": "I can cope, but it will make me anxious or worried",
-          "value": 0
-        },
-        {
-          "label": "I can cope without any difficulties",
-          "value": 0
-        },
-        {
-          "label": "It varies",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "If you are due to meet someone, but a few days before they change the date, how well would you cope with this change to your routine?",
-      "hint": null,
-      "category": "Coping with change",
-      "answers": [
-        {
-          "label": "I can't cope to the extent I can't manage my day-to-day life at all",
-          "value": 15
-        },
-        {
-          "label": "I can't cope, it would make day-to-day life very difficult to manage",
-          "value": 9
-        },
-        {
-          "label": "I can't cope. It would make me feel anxious",
-          "value": 0
-        },
-        {
-          "label": "I can cope without any difficulties",
-          "value": 0
-        },
-        {
-          "label": "I have a learning difficulty or mental health problem which makes it impossible to cope with any change and would make my day-to-day life unmanageable",
-          "value": 16
-        },
-        {
-          "label": "It varies",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "If you are asked to attend an appointment, but on the day you are contacted to say the time has been changed, how well would you cope with this change?",
-      "hint": null,
-      "category": "Coping with change",
-      "answers": [
-        {
-          "label": "I can't cope at all to the extent I would not be able to manage day-to-day life",
-          "value": 15
-        },
-        {
-          "label": "I can't cope, it would make day-to-day life very difficult to manage",
-          "value": 6
-        },
-        {
-          "label": "It would make day-to-day life difficult to manage",
-          "value": 0
-        },
-        {
-          "label": "I can cope without any difficulties",
-          "value": 0
-        },
-        {
-          "label": "I would not meet anyone in the first place",
-          "value": 0
-        },
-        {
-          "label": "It varies",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "Can you go out on your own?",
-      "hint": null,
-      "category": "Getting about",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "No",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "Can you leave home and go out to places you know?",
-      "hint": null,
-      "category": "Getting about",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "Not at all",
-          "value": 15
-        },
-        {
-          "label": "Only if someone goes with me",
-          "value": 9
-        },
-        {
-          "label": "It varies",
-          "value": "Do you ever visit your doctor or the hospital?"
-        }
-      ]
-    },
-    {
-      "question": "Do you ever visit your doctor or the hospital?",
-      "hint": null,
-      "category": "*Getting about",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "No",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "Can you leave home and go to places you don't know?",
-      "hint": null,
-      "category": "Getting about",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "Not at all",
-          "value": 15
-        },
-        {
-          "label": "Only if someone goes with me",
-          "value": 6
-        },
-        {
-          "label": "It varies",
-          "value": "Does it depend on the place?"
-        }
-      ]
-    },
-    {
-      "question": "Does it depend on the place?",
-      "hint": null,
-      "category": "*Getting about",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": "Will you be going to your work capability assessment?"
-        },
-        {
-          "label": "No",
-          "value": "Will you be going to your work capability assessment?"
-        }
-      ]
-    },
-    {
-      "question": "Will you be going to your work capability assessment?",
-      "hint": null,
-      "category": "*Getting about",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "No",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "How well do you cope in social situations?",
-      "hint": null,
-      "category": "Coping with social engagement",
-      "answers": [
-        {
-          "label": "I have no difficulty",
-          "value": 0
-        },
-        {
-          "label": "I find it very difficult",
-          "value": "Do you ever talk to your neighbours or friends?"
-        },
-        {
-          "label": "I have some difficulty",
-          "value": "Do you ever talk to your neighbours or friends?"
-        },
-        {
-          "label": "It varies",
-          "value": "Do you ever talk to your neighbours or friends?"
-        }
-      ]
-    },
-    {
-      "question": "Do you ever talk to your neighbours or friends?",
-      "hint": null,
-      "category": "*Coping with social engagement",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "No",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "Which of these best describes how you relate to other people in social situations?",
-      "hint": null,
-      "category": "Coping with social engagement",
-      "answers": [
-        {
-          "label": "I have no difficulty relating to other people",
-          "value": 0
-        },
-        {
-          "label": "I can sometimes relate to other people, but I will feel anxious or distressed",
-          "value": 0
-        },
-        {
-          "label": "I can never relate to other people",
-          "value": 0
-        },
-        {
-          "label": "I never meet other people because it makes me quite distressed",
-          "value": 0
-        },
-        {
-          "label": "I never speak to other people, socially because it makes me extremely distressed",
-          "value": 16
-        }
-      ]
-    },
-    {
-      "question": "Which of these best describes how you feel when you engage socially with someone you do not know?",
-      "hint": null,
-      "category": "Coping with social engagement",
-      "answers": [
-        {
-          "label": "I do not have any problems meeting new people",
-          "value": 0
-        },
-        {
-          "label": "I will feel anxious or distressed sometimes",
-          "value": 0
-        },
-        {
-          "label": "I never meet people I do not know because it makes me extremely distressed",
-          "value": 9
-        },
-        {
-          "label": "Most of the time it is not possible because I get extremely distressed",
-          "value": 6
-        },
-        {
-          "label": "I will feel anxious or distressed all the time",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "Do you have learning or mental health difficulties which affect how you behave towards other people?",
-      "hint": null,
-      "category": "Behaving appropriately",
-      "answers": [
-        {
-          "label": "No",
-          "value": 0
-        },
-        {
-          "label": "Yes",
-          "value": "How often do you behave in an uncontrollable aggressive way towards other people?"
-        },
-        {
-          "label": "It varies",
-          "value": "How often do you behave in an uncontrollable aggressive way towards other people?"
-        }
-      ]
-    },
-    {
-      "question": "How often do you behave in an uncontrollable aggressive way towards other people?",
-      "hint": null,
-      "category": "*Behaving appropriately",
-      "answers": [
         {
           "label": "Every day",
           "value": 16
         },
         {
-          "label": "Not every day, but quite often",
+          "label": "At least once a week",
+          "value": 16
+        },
+        {
+          "label": "At least once a month",
           "value": 15
         },
         {
-          "label": "Occassionally",
-          "value": 9
+          "label": "Most of the time, if I can't reach a toilet quickly enough",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "question": "Do you have any problems staying conscious while you are awake?",
+      "hint": null,
+      "category": "Consciousness",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": "While you are awake which of these best describes how often you faint or have fits or have blackouts?"
         },
         {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "While you are awake which of these best describes how often you faint or have fits or have blackouts?",
+      "hint": null,
+      "category": "*Consciousness",
+      "answers": [
+        {
           "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Daily",
+          "value": 15
+        },
+        {
+          "label": "At least once a week",
+          "value": 15
+        },
+        {
+          "label": "At least once a month",
+          "value": 6
+        },
+        {
+          "label": "Less than once a month",
           "value": 0
         }
       ]
@@ -1561,94 +1649,6 @@
         },
         {
           "label": "It varies",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "Can you control your bowels and bladder without any difficulty?",
-      "hint": null,
-      "category": "Bladder and bowel control",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "No",
-          "value": "Which one of these best describes how often you have to wash yourself or change your clothes because of difficulty controlling your bladder, bowels or a collecting device?"
-        }
-      ]
-    },
-    {
-      "question": "Which one of these best describes how often you have to wash yourself or change your clothes because of difficulty controlling your bladder, bowels or a collecting device?",
-      "hint": null,
-      "category": "*Bladder and bowel control",
-      "answers": [
-        {
-          "label": "Never",
-          "value": 0
-        },
-        {
-          "label": "Not very often",
-          "value": 0
-        },
-        {
-          "label": "Every day",
-          "value": 16
-        },
-        {
-          "label": "At least once a week",
-          "value": 16
-        },
-        {
-          "label": "At least once a month",
-          "value": 15
-        },
-        {
-          "label": "Most of the time, if I can't reach a toilet quickly enough",
-          "value": 6
-        }
-      ]
-    },
-    {
-      "question": "Do you have any problems staying conscious while you are awake?",
-      "hint": null,
-      "category": "Consciousness",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": "While you are awake which of these best describes how often you faint or have fits or have blackouts?"
-        },
-        {
-          "label": "No",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "While you are awake which of these best describes how often you faint or have fits or have blackouts?",
-      "hint": null,
-      "category": "*Consciousness",
-      "answers": [
-        {
-          "label": "Never",
-          "value": 0
-        },
-        {
-          "label": "Daily",
-          "value": 15
-        },
-        {
-          "label": "At least once a week",
-          "value": 15
-        },
-        {
-          "label": "At least once a month",
-          "value": 6
-        },
-        {
-          "label": "Less than once a month",
           "value": 0
         }
       ]
