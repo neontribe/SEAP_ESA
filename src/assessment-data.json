@@ -718,7 +718,7 @@
     {
       "question": "Can you cross the road on your own, without needing help from someone else whether or not you need to use a guide dog or other aid?",
       "hint": null,
-      "category": "Navigation and maintaining safety",
+      "category": "Navigation safely",
       "answers": [
         {
           "label": "Yes",
@@ -733,7 +733,7 @@
     {
       "question": "Can you move around an unfamiliar place without help from someone else whether or not you need to use a guide dog or other aid?",
       "hint": null,
-      "category": "Navigation and maintaining safety",
+      "category": "Navigation safely",
       "answers": [
         {
           "label": "Yes",
@@ -748,7 +748,7 @@
     {
       "question": "Can you move around a familiar place without help from someone else whether or not you need to use a guide dog or other aid?",
       "hint": null,
-      "category": "Navigation and maintaining safety",
+      "category": "Navigation safely",
       "answers": [
         {
           "label": "Yes",
@@ -881,7 +881,7 @@
     {
       "question": "Can you stay safe when doing everyday tasks such as boiling water or using sharp objects?",
       "hint": null,
-      "category": "Awareness",
+      "category": "Awareness of hazards or danger",
       "answers": [
         {
           "label": "Yes",
@@ -900,7 +900,7 @@
     {
       "question": "Does it vary because:",
       "hint": null,
-      "category": "*Awareness",
+      "category": "*Awareness of hazards or danger",
       "answers": [
         {
           "label": "Some days your health is worse than others",
@@ -915,7 +915,7 @@
     {
       "question": "How often do you need someone to stay with you to keep you safe because you are not aware how everyday hazards (such as boiling water or sharp objects) can injure you\/other people or cause damage to property\/possessions?",
       "hint": null,
-      "category": "Awareness",
+      "category": "Awareness of hazards or danger",
       "answers": [
         {
           "label": "All the time",
@@ -942,7 +942,7 @@
     {
       "question": "Do you have any learning impairments of mental disorders which mean you are at significant risk of harm or injury to yourself or others?",
       "hint": null,
-      "category": "Awareness",
+      "category": "Awareness of hazards or danger",
       "answers": [
         {
           "label": "Yes",
@@ -957,7 +957,7 @@
     {
       "question": "Do you have any learning impairments or mental disorders which mean someone needs to be with you most of the time to prevent significant risk of damage to property or possessions?",
       "hint": null,
-      "category": "Awareness",
+      "category": "Awareness of hazards or danger",
       "answers": [
         {
           "label": "Yes",
@@ -976,7 +976,7 @@
     {
       "question": "Can you manage to plan, start and finish daily tasks without any difficulty?",
       "hint": null,
-      "category": "Initiating and completing tasks",
+      "category": "Starting or finishing tasks",
       "answers": [
         {
           "label": "Yes",
@@ -995,7 +995,7 @@
     {
       "question": "Thinking about your mental health, which of these best describes how often you could reliably start and finish at least two personal actions (such as getting up, washing and dressing, cooking a meal or going shopping) one after the other?",
       "hint": null,
-      "category": "Initiating and completing tasks",
+      "category": "Starting or finishing tasks",
       "answers": [
         {
           "label": "All the time",
@@ -1022,7 +1022,7 @@
     {
       "question": "How often does it vary?",
       "hint": null,
-      "category": "*Initiating and completing tasks",
+      "category": "*Starting or finishing tasks",
       "answers": [
         {
           "label": "Throughout the day",
@@ -1232,7 +1232,7 @@
     {
       "question": "How well do you cope in social situations?",
       "hint": null,
-      "category": "Social engagement",
+      "category": "Coping with social engagement",
       "answers": [
         {
           "label": "I have no difficulty",
@@ -1255,7 +1255,7 @@
     {
       "question": "Do you ever talk to your neighbours or friends?",
       "hint": null,
-      "category": "*Social engagement",
+      "category": "*Coping with social engagement",
       "answers": [
         {
           "label": "Yes",
@@ -1270,7 +1270,7 @@
     {
       "question": "Which of these best describes how you relate to other people in social situations?",
       "hint": null,
-      "category": "Social engagement",
+      "category": "Coping with social engagement",
       "answers": [
         {
           "label": "I have no difficulty relating to other people",
@@ -1297,7 +1297,7 @@
     {
       "question": "Which of these best describes how you feel when you engage socially with someone you do not know?",
       "hint": null,
-      "category": "Social engagement",
+      "category": "Coping with social engagement",
       "answers": [
         {
           "label": "I do not have any problems meeting new people",
@@ -1324,7 +1324,7 @@
     {
       "question": "Do you have learning or mental health difficulties which affect how you behave towards other people?",
       "hint": null,
-      "category": "Appropriate behaviour",
+      "category": "Behaving appropriately",
       "answers": [
         {
           "label": "No",
@@ -1343,7 +1343,7 @@
     {
       "question": "How often do you behave in an uncontrollable aggressive way towards other people?",
       "hint": null,
-      "category": "*Appropriate behaviour",
+      "category": "*Behaving appropriately",
       "answers": [
         {
           "label": "Every day",
