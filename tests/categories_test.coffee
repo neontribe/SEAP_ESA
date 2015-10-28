@@ -17,7 +17,7 @@ navToHash = (hash) ->
   casper.click 'button[data-action="' + hash + '"]'
   currentUrl = casper.getCurrentUrl()
 
-casper.test.begin 'ESA Choose an Activity', 20, (test) ->
+casper.test.begin 'ESA Choose an Activity', 21, (test) ->
   # Start go straight to categories page
   casper
     .start url, ->
