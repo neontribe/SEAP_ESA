@@ -1515,11 +1515,11 @@
       "answers": [
         {
           "label": "Yes",
-          "value": 0
+          "value": "*"
         },
         {
           "label": "No",
-          "value": "*"
+          "value": 0
         },
         {
           "label": "It varies",
