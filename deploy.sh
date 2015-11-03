@@ -30,8 +30,10 @@ if [ "$TRAVIS_TAG" ]; then
     DATETIME=`date +%Y%m%d"-"%H%M%S`
     echo -e "Prepare files for live deploy"
     #Deploy gh-pages to deployment server
+    #remove robots.txt so dev nofollow is not copied up to live
+    rm robots.txt
     cd ..
-    tar -czf release.tgz seap_esa 
+    tar -czf release.tgz seap_esa
     sudo apt-get -y install sshpass
 
     #copy tarball to deployment server
