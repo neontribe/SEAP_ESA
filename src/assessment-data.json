@@ -1,187 +1,6 @@
 {
   "questions": [
     {
-      "question": "How well do you cope with any change?",
-      "hint": null,
-      "category": "Coping with change",
-      "answers": [
-        {
-          "label": "I can't cope to the extent I can't manage my day-to-day life at all",
-          "value": 16
-        },
-        {
-          "label": "I can't cope to the extent is causes me a lot of distress",
-          "value": 0
-        },
-        {
-          "label": "I can cope, but it will make me anxious or worried",
-          "value": 0
-        },
-        {
-          "label": "I can cope without any difficulties",
-          "value": 0
-        },
-        {
-          "label": "It varies",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "If you are due to meet someone, but a few days before they change the date, how well would you cope with this change to your routine?",
-      "hint": null,
-      "category": "Coping with change",
-      "answers": [
-        {
-          "label": "I can't cope to the extent I can't manage my day-to-day life at all",
-          "value": 15
-        },
-        {
-          "label": "I can't cope, it would make day-to-day life very difficult to manage",
-          "value": 9
-        },
-        {
-          "label": "I can't cope. It would make me feel anxious",
-          "value": 0
-        },
-        {
-          "label": "I can cope without any difficulties",
-          "value": 0
-        },
-        {
-          "label": "I have a learning difficulty or mental health problem which makes it impossible to cope with any change and would make my day-to-day life unmanageable",
-          "value": 16
-        },
-        {
-          "label": "It varies",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "If you are asked to attend an appointment, but on the day you are contacted to say the time has been changed, how well would you cope with this change?",
-      "hint": null,
-      "category": "Coping with change",
-      "answers": [
-        {
-          "label": "I can't cope at all to the extent I would not be able to manage day-to-day life",
-          "value": 15
-        },
-        {
-          "label": "I can't cope, it would make day-to-day life very difficult to manage",
-          "value": 6
-        },
-        {
-          "label": "It would make day-to-day life difficult to manage",
-          "value": 0
-        },
-        {
-          "label": "I can cope without any difficulties",
-          "value": 0
-        },
-        {
-          "label": "I would not meet anyone in the first place",
-          "value": 0
-        },
-        {
-          "label": "It varies",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "How well do you cope in social situations?",
-      "hint": null,
-      "category": "Coping with social engagement",
-      "answers": [
-        {
-          "label": "I have no difficulty",
-          "value": 0
-        },
-        {
-          "label": "I find it very difficult",
-          "value": "Do you ever talk to your neighbours or friends?"
-        },
-        {
-          "label": "I have some difficulty",
-          "value": "Do you ever talk to your neighbours or friends?"
-        },
-        {
-          "label": "It varies",
-          "value": "Do you ever talk to your neighbours or friends?"
-        }
-      ]
-    },
-    {
-      "question": "Do you ever talk to your neighbours or friends?",
-      "hint": null,
-      "category": "*Coping with social engagement",
-      "answers": [
-        {
-          "label": "Yes",
-          "value": 0
-        },
-        {
-          "label": "No",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "question": "Which of these best describes how you relate to other people in social situations?",
-      "hint": null,
-      "category": "Coping with social engagement",
-      "answers": [
-        {
-          "label": "I have no difficulty relating to other people",
-          "value": 0
-        },
-        {
-          "label": "I can sometimes relate to other people, but I will feel anxious or distressed",
-          "value": 0
-        },
-        {
-          "label": "I can never relate to other people",
-          "value": 0
-        },
-        {
-          "label": "I never meet other people because it makes me quite distressed",
-          "value": 0
-        },
-        {
-          "label": "I never speak to other people, socially because it makes me extremely distressed",
-          "value": 16
-        }
-      ]
-    },
-    {
-      "question": "Which of these best describes how you feel when you engage socially with someone you do not know?",
-      "hint": null,
-      "category": "Coping with social engagement",
-      "answers": [
-        {
-          "label": "I do not have any problems meeting new people",
-          "value": 0
-        },
-        {
-          "label": "I will feel anxious or distressed sometimes",
-          "value": 0
-        },
-        {
-          "label": "I never meet people I do not know because it makes me extremely distressed",
-          "value": 9
-        },
-        {
-          "label": "Most of the time it is not possible because I get extremely distressed",
-          "value": 6
-        },
-        {
-          "label": "I will feel anxious or distressed all the time",
-          "value": 0
-        }
-      ]
-    },
-    {
       "question": "Can you reach up with both your arms without difficulty?",
       "hint": null,
       "category": "Reaching",
@@ -527,6 +346,187 @@
         {
           "label": "No",
           "value": 9
+        }
+      ]
+    },
+    {
+      "question": "How well do you cope with any change?",
+      "hint": null,
+      "category": "Coping with change",
+      "answers": [
+        {
+          "label": "I can't cope to the extent I can't manage my day-to-day life at all",
+          "value": 16
+        },
+        {
+          "label": "I can't cope to the extent is causes me a lot of distress",
+          "value": 0
+        },
+        {
+          "label": "I can cope, but it will make me anxious or worried",
+          "value": 0
+        },
+        {
+          "label": "I can cope without any difficulties",
+          "value": 0
+        },
+        {
+          "label": "It varies",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "If you are due to meet someone, but a few days before they change the date, how well would you cope with this change to your routine?",
+      "hint": null,
+      "category": "Coping with change",
+      "answers": [
+        {
+          "label": "I can't cope to the extent I can't manage my day-to-day life at all",
+          "value": 15
+        },
+        {
+          "label": "I can't cope, it would make day-to-day life very difficult to manage",
+          "value": 9
+        },
+        {
+          "label": "I can't cope. It would make me feel anxious",
+          "value": 0
+        },
+        {
+          "label": "I can cope without any difficulties",
+          "value": 0
+        },
+        {
+          "label": "I have a learning difficulty or mental health problem which makes it impossible to cope with any change and would make my day-to-day life unmanageable",
+          "value": 16
+        },
+        {
+          "label": "It varies",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "If you are asked to attend an appointment, but on the day you are contacted to say the time has been changed, how well would you cope with this change?",
+      "hint": null,
+      "category": "Coping with change",
+      "answers": [
+        {
+          "label": "I can't cope at all to the extent I would not be able to manage day-to-day life",
+          "value": 15
+        },
+        {
+          "label": "I can't cope, it would make day-to-day life very difficult to manage",
+          "value": 6
+        },
+        {
+          "label": "It would make day-to-day life difficult to manage",
+          "value": 0
+        },
+        {
+          "label": "I can cope without any difficulties",
+          "value": 0
+        },
+        {
+          "label": "I would not meet anyone in the first place",
+          "value": 0
+        },
+        {
+          "label": "It varies",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "How well do you cope in social situations?",
+      "hint": null,
+      "category": "Coping with social engagement",
+      "answers": [
+        {
+          "label": "I have no difficulty",
+          "value": 0
+        },
+        {
+          "label": "I find it very difficult",
+          "value": "Do you ever talk to your neighbours or friends?"
+        },
+        {
+          "label": "I have some difficulty",
+          "value": "Do you ever talk to your neighbours or friends?"
+        },
+        {
+          "label": "It varies",
+          "value": "Do you ever talk to your neighbours or friends?"
+        }
+      ]
+    },
+    {
+      "question": "Do you ever talk to your neighbours or friends?",
+      "hint": null,
+      "category": "*Coping with social engagement",
+      "answers": [
+        {
+          "label": "Yes",
+          "value": 0
+        },
+        {
+          "label": "No",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "question": "Which of these best describes how you relate to other people in social situations?",
+      "hint": null,
+      "category": "Coping with social engagement",
+      "answers": [
+        {
+          "label": "I have no difficulty relating to other people",
+          "value": 0
+        },
+        {
+          "label": "I can sometimes relate to other people, but I will feel anxious or distressed",
+          "value": 0
+        },
+        {
+          "label": "I can never relate to other people",
+          "value": 0
+        },
+        {
+          "label": "I never meet other people because it makes me quite distressed",
+          "value": 0
+        },
+        {
+          "label": "I never speak to other people, socially because it makes me extremely distressed",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "question": "Which of these best describes how you feel when you engage socially with someone you do not know?",
+      "hint": null,
+      "category": "Coping with social engagement",
+      "answers": [
+        {
+          "label": "I do not have any problems meeting new people",
+          "value": 0
+        },
+        {
+          "label": "I will feel anxious or distressed sometimes",
+          "value": 0
+        },
+        {
+          "label": "I never meet people I do not know because it makes me extremely distressed",
+          "value": 9
+        },
+        {
+          "label": "Most of the time it is not possible because I get extremely distressed",
+          "value": 6
+        },
+        {
+          "label": "I will feel anxious or distressed all the time",
+          "value": 0
         }
       ]
     },
