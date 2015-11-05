@@ -61,7 +61,6 @@ function initAss() {
     answers: {}, // the master object of category high scores for tallying
     low: false, // low qualification?
     high: false, // high qualification?
-    reminders: [], // list of reminders form "Things to remember" checkboxes
     incomplete: true // whether all the questions have been answered
   };
 
@@ -179,8 +178,10 @@ function loadSlide(id, type) {
 
 }
 
-// show a random unseen question
+// show an unseen question
 function pickQuestion() {
+
+  qualify(db.get('esaAss.submitPoints'));
 
   // If the next question was a followup, load it
   if (db.get('esaAss.followupSlug')) {
@@ -362,10 +363,9 @@ function tally() {
   var omitSpecial = _.omit(answers, 'Eating and drinking');
 
   // add up the highest values for each category
-  // by taking the max value that's not 16 from each
-  // category and adding them together
+  // by taking the max value from each category and adding them together
   var total = _.reduce(omitSpecial, function(memo, cat) {
-    return memo + _.max(_.without(_.pluck(cat, 'points'), 16));
+    return memo + _.max(_.pluck(cat, 'points'));
   }, 0);
 
   return total;
@@ -393,14 +393,14 @@ function promote() {
 }
 
 // add the high scores for each category together
-function qualify() {
+function qualify(points) {
 
   var total = tally();
 
   if (total >= 15) {
 
     // if an end question was set to promote from low to high
-    if (promote()) {
+    if (promote() || points === 16) {
 
       //don't show the slide if you have already
       if (!db.get('esaAss.high')) {
@@ -414,7 +414,7 @@ function qualify() {
       // AND record that high qualification is possible
       db.set('esaAss.high', true);
 
-    } else {
+      } else {
 
       //don't show the slide if you have already
       if (!db.get('esaAss.high') && !db.get('esaAss.low')) {
@@ -829,7 +829,7 @@ $('body').on('change', '[type="radio"]', function() {
 
   } else {
 
-    // If not a star answer, cast to real integer
+    // If not a star answer - Eating and drinking category, cast to real integer
     if (points !== '*') {
 
       // cast to real integer
@@ -852,27 +852,9 @@ $('body').on('change', '[type="radio"]', function() {
 
     // set the new points for this question in this category
     db.set('esaAss.answers.' + category + '.' + context, answerObject);
-
-    if (points === 16) {
-
-      if (!db.get('esaAss.high')) {
-
-        // record that the high qualification is true
-        db.set('esaAss.high', true);
-
-        // no need to add up, just make sure the user is told
-        db.set('esaAss.show-high', true);
-
-      }
-
-    } else {
-
-      // fire the adding up function
-      // to see if there are enough points to qualify
-      qualify();
-
-    }
-
+    
+    // Save current point value for submission
+    db.set('esaAss.submitPoints', points);
   }
 
 });
