@@ -797,6 +797,9 @@ $('body').on('change', '[data-action="save-basic-info"]', function() {
 
 $('body').on('change', '[type="radio"]', function() {
 
+  // add highlighted class to pick button when an answer button is pressed
+  $('.loaded button.nav-link[data-action="pick"]').addClass( 'highlighted' );
+
   // record that change has been made
   window.answered = true;
 
@@ -852,7 +855,7 @@ $('body').on('change', '[type="radio"]', function() {
 
     // set the new points for this question in this category
     db.set('esaAss.answers.' + category + '.' + context, answerObject);
-    
+
     // Save current point value for submission
     db.set('esaAss.submitPoints', points);
   }
