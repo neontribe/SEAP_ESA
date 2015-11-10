@@ -14259,7 +14259,7 @@ function loadSlide(id, type) {
     .focus();
 
   // find out if we've gone to one of the locations that don't need saving
-  var exclude = _.find(['resume', 'break-time', 'resume-practise'],
+  var exclude = _.find(['resume', 'are-you-sure', 'deleted', 'break-time',],
     function(unsaveable) {
       return unsaveable === id;
     });
@@ -14848,6 +14848,13 @@ $('body').on('click', '[data-action="clean-up"]', function() {
 
   // load the intro slide
   loadSlide('main-menu');
+
+});
+
+$('body').on('click', '[data-action="delete-are-you-sure"]', function() {
+
+  // load the deleted data slide
+  loadSlide('are-you-sure');
 
 });
 
