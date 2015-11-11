@@ -10,48 +10,6 @@
       "take-a-break":"<button class=\"nav-link\" data-action=\"take-a-break\" role=\"link\">Take a break?</button>"
     },
   ],
-  "about":[
-    {
-      "title":"<button aria-controls=\"what-is-esa-for\" aria-expanded=\"false\">What is ESA for?</button>",
-      "information":"<div id=\"what-is-esa-for\" aria-hidden=\"true\"><p>ESA stands for Employment And Support Allowance. ESA is a benefit for people who can&#x2019;t work because of illness or disability.</p></div>"
-    },
-    {
-      "title":"<button aria-controls=\"getting-started\" aria-expanded=\"false\">Getting started</button>",
-      "information":"<div id=\"getting-started\" aria-hidden=\"true\"><p>To start your application for ESA, do one of the following:</p> <ul class=\"ticks\"> <li>Phone <a href=\"tel:08000556688\">0800 055 6688</a></li> <li>Textphone <a href=\"tel:08000234888\">0800 023 4888</a></li> <li>Go to the website www.gov.uk and print out <a href=\"https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/419630/esa1.pdf\" target=\"_blank\">the ESA1 form (PDF) <span class=\"vh\">opens new tab</span></a>, complete it and send it to the address on the form, or take it to your local job centre. Make sure you return the form on time or your claim will fail.</li> </ul> </div>"
-    },
-    {
-      "title":"<button aria-controls=\"application-process\" aria-expanded=\"false\">Assessment process</button>",
-      "information":"<div id=\"application-process\" aria-hidden=\"true\"> <p>To get ESA you have to pass through the <strong>Work Capability Assessment</strong>.</p> <p>The first part of the assessment involves filling in a medical questionnaire form called the ESA 50. Most people then go on to have a face-to-face assessment.</p> <p>A medical professional carries out the assessment, but the final decision on your claim is made by a decision maker at the Department of Work and Pensions (DWP for short) based on recommendations by the assessor.</p> <h3>The decision</h3> <p>When making their recommendation, the assessor will consider:</p> <ul class=\"ticks\"> <li>The answers you give on the medical questionnaire.</li> <li>All the evidence that you send with the questionnaire or provide at the face-to-face assessment.</li> <li>The answers you give at your face-to-face assessment.</li> </ul> </div>"
-    },
-    {
-      "title":"<button aria-controls=\"scoring\" aria-expanded=\"false\">Scoring</button>",
-      "information":"<div id=\"scoring\" aria-hidden=\"true\"> <p>The assessor looks at different activities that you might be asked to carry out if you were in a job or undertaking a work related activity. These are divided into physical and mental activities. You will be given a score from 0 to 15 for questions relating to each of these physical and mental activities.</p> <p>For example, for the physical activity of 'using your hands', if you can&#x2019;t press a button like a telephone keypad or turn the pages of a book, you will score 15 points. If you have full use of your hands you will score 0 points. If you can&#x2019;t write with a pen or pencil, or have problems using a keyboard, your score will be in between.</p> </div>"
-    },
-    {
-      "title":"<button aria-controls=\"the-assessment-questions\" aria-expanded=\"false\">How to answer assessment questions</button>",
-      "information":"<div id=\"the-assessment-questions\" aria-hidden=\"true\"> <ul class=\"ticks\"> <li>Don&#x2019;t put on a brave face when talking about your disability or health condition; be clear about how much it affects you.</li> <li>Your condition may change from day to day, be clear about how it impacts on you on your worst day.</li> <li>Equally, don&#x2019;t pretend things are worse than they really are. Knowingly giving false answers as part of a benefit application is benefit fraud, which is a criminal offence.</li> </ul> </div>"
-    },
-    {
-      "title":"<button aria-controls=\"before\" aria-expanded=\"false\">Preparing for the assessment</button>",
-      "information":"<div id=\"before\" aria-hidden=\"true\"> <p>Just a couple of things to remember:</p> <ul class=\"ticks\"> <li>Make a list of your health conditions and disabilities, so that you don&#x2019;t forget to mention them at the assessment. Try <a href=\"javascript:void(0)\" data-action=\"start-or-resume\">taking the test on our website</a> first, where you can save and print off your most important answers! </li> <li>Plan your journey to the assessment centre in advance. Don&#x2019;t be late! </li> <li>Your assessor will probably ask you how you got to the assessment. It may affect your claim if the answer you give seems to contradict the answers given on your form.</li> <li>If your condition has worsened since you completed the ESA 50 form, get a report&#x2F; letter from a doctor or other professional to explain how it has changed, and how that impacts on you.</li> <li>Consider keeping a diary which you can show the assessor. This will help you track your good and bad days, the impact of any treatment you have, and whether what you do on one day affects what you do on the next.</li> </ul> </div>"
-    },
-    {
-      "title":"<button aria-controls=\"rights\" aria-expanded=\"false\">Your rights</button>",
-      "information":"<div id=\"rights\" aria-hidden=\"true\"> <ul class=\"ticks\"> <li>You will be able to claim back reasonable expenses for getting to your assessment, so keep any bus or train tickets</li> <li>You have the right to be accompanied at your assessment. You can ask a relative, friend, carer, or an advocate or support worker to go with you</li> <li>You have a right to complain about the assessment if you don’t think it was conducted fairly</li> </ul> </div>"
-    },
-    {
-      "title":"<button aria-controls=\"the-outcome\" aria-expanded=\"false\">The outcome</button>",
-      "information":"<div id=\"the-outcome\" aria-hidden=\"true\"> <p>You will receive a letter from the DWP telling you the outcome of your application. The letter will explain how the decision was reached, including the points you scored in your test, and the amount you will be paid. You may also be phoned with the outcome, but if so, you will also get written confirmation of the result.</p> <p>If you receive less than 15 points you will not be entitled to Employment and Support Allowance. You may be entitled to Job Seekers Allowance or other benefits. If you score 15 points or more, you will be entitled to ESA. Dependent on the detail of your answers, you may be placed in the <strong>Work Related Activity Group</strong> in which case you will be required to undertake some activities to help you become work ready in the future, or the <strong>Support Group</strong>, in which case you will not have to engage in any such activities.</p> </div>"
-    },
-    {
-      "title":"<button aria-controls=\"if-you-dont-agree\" aria-expanded=\"false\">If you don&#x2019;t agree with the decision</button>",
-      "information":"<div id=\"if-you-dont-agree\" aria-hidden=\"true\"><p>If you are unhappy with the decision, you can request a mandatory reconsideration. If you are still unhappy, you can appeal against it. We recommend that you get some support with this from a local Citizen&#x2019;s Advice Bureau or advice centre.</p></div>"
-    },
-    {
-      "title":"<button aria-controls=\"the-guide\" aria-expanded=\"false\">Read the guide</button>",
-      "information":"<div id=\"the-guide\" aria-hidden=\"true\"><p><a href=\"docs/All_About_ESA.pdf\" title=\"opens a new tab\" target=\"_blank\">Read The Guide (opens new tab)</a></p></div>"
-    }
-  ],
   "questions": [
     {
       "question": "Can you reach up with both your arms without difficulty?",

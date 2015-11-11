@@ -489,6 +489,13 @@ function disabledCats() {
 
 }
 
+function compileAboutButtons() {
+  var template = Handlebars.compile(document.getElementById("about-buttons-template").innerHTML);
+  var pipAssData = db.get('pipAss');
+  var output = template(pipAssData);
+  $('.expandies.information .about-buttons-content').html(output);
+}
+
 function compileCategories() {
 
   // template up the stats with handlebars and
@@ -852,7 +859,7 @@ $('body').on('change', '[type="radio"]', function() {
 
     // set the new points for this question in this category
     db.set('esaAss.answers.' + category + '.' + context, answerObject);
-    
+
     // Save current point value for submission
     db.set('esaAss.submitPoints', points);
   }

@@ -384,20 +384,22 @@
     </div>
       <div class="expandies">
 
-        {{#about}}
-          <h2>{{{title}}}</h2>
-          {{{information}}}
-        {{/about}}
+        {{#each about}}
+          <h2>{{{title}}}!!!!</h2>
+          {{{information}}}$$$$
+
 
         <ul aria-label="menu">
-          {{#buttons}}
+      buttons  {{#each buttons}}
             <li>{{{practise}}}</li>
+
             <li>{{{info-button}}}</li>
             <li>{{{take-a-break}}}</li>
-            {{/buttons}}
+            {{/each}}
+
         </ul>
 
-
+  {{/each}}
         <!--<h2><button aria-controls="what-is-esa-for" aria-expanded="false">What is ESA for?</button></h2>
         <div id="what-is-esa-for" aria-hidden="true">
           <p>ESA stands for Employment And Support Allowance. ESA is a benefit for people who can&#x2019;t work because of illness or disability.</p>
@@ -539,6 +541,9 @@
   <script id="categories-template" type="text/x-handlebars-template">
     <!--(bake categories-template.html)-->
   </script>
+  <script id="about-buttons-template" type="text/x-handlebars-template">
+  <!--(bake about-buttons-template.html)-->
+</script>
 </body>
 
 </html>
