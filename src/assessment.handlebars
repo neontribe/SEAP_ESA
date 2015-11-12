@@ -5,9 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta id="theme-color" name="theme-color" content="#79bde9">
   <link href="css/style.css" rel="stylesheet" media="all" />
   <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,300" rel="stylesheet" type="text/css" media="none" onload="if(media!='all')media='all'">
   <title>ESA Assessment Support</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <!--[if lt IE 9]>
 			<script src="js/html5.js"></script>
 			<script src="js/selectivizr-min.js"></script>
@@ -141,10 +143,24 @@
       </ul>
     </div>
   </div>
+  <div class="slide are-you-sure" id="are-you-sure">
+    <div class="box">
+      <h1 tabindex="-1" style="red">Are you sure?</h1>
+      <p>##MISSING COPY## Do you really want to delete your data and start over? ##MISSING COPY##</p>
+      <ul aria-label="menu">
+        <li>
+          <button class="nav-link red" data-action="delete-data">I&#x2019;m done! Delete my stuff</button>
+        </li>
+        <li>
+          <button class="nav-link" data-action="menu" role="link">Home</button>
+        </li>
+      </ul>
+    </div>
+  </div>
   <div class="slide deleted" id="deleted">
     <div class="box">
       <h1 tabindex="-1" style="red">Deleted</h1>
-      <p>All of your assessment data has been successfully deleted from your computer.</p>
+      <p>All of your assessment data has been successfully deleted from this computer.</p>
       <ul aria-label="menu">
         <li>
           <button class="nav-link" data-action="menu" role="link">Home</button>
@@ -157,9 +173,14 @@
       <h1 tabindex="-1">Let&#x2019;s begin</h1>
       <p>When you apply for ESA, your ability to work will be assessed. The person you meet will ask you all sorts of things. We can show you around some of the categories ESA is assessed on, so you're familiar with them. You can <a role="button" href="#break-time"
         data-action="break">take a break</a> at any time and come back later. Your computer will remember where you were in the app :-)</p>
-      <div>
-        <button class="nav-link" data-action="categories">Choose a category.</button>
-      </div>
+        <ul aria-label="menu">
+          <li>
+            <button class="nav-link" data-action="categories">Choose an activity</button>
+          </li>
+          <li>
+            <button class="nav-link" data-action="about-esa">##MISSING COPY## More info</button>
+          </li>
+        </ul>
     </div>
   </div>
   <div class="slide get-started" id="seen-all">

@@ -157,7 +157,7 @@ function loadSlide(id, type) {
     .focus();
 
   // find out if we've gone to one of the locations that don't need saving
-  var exclude = _.find(['resume', 'break-time', 'resume-practise'],
+  var exclude = _.find(['resume', 'are-you-sure', 'deleted', 'break-time',],
     function(unsaveable) {
       return unsaveable === id;
     });
@@ -749,6 +749,13 @@ $('body').on('click', '[data-action="clean-up"]', function() {
 
 });
 
+$('body').on('click', '[data-action="delete-are-you-sure"]', function() {
+
+  // load the deleted data slide
+  loadSlide('are-you-sure');
+
+});
+
 $('body').on('click', '[data-action="delete-data"]', function() {
 
   // set answered global to false
@@ -796,6 +803,9 @@ $('body').on('change', '[data-action="save-basic-info"]', function() {
 });
 
 $('body').on('change', '[type="radio"]', function() {
+
+  // add highlighted class to pick button when an answer button is pressed
+  $('.loaded button.nav-link[data-action="pick"]').addClass( 'highlighted' );
 
   // record that change has been made
   window.answered = true;
@@ -852,7 +862,7 @@ $('body').on('change', '[type="radio"]', function() {
 
     // set the new points for this question in this category
     db.set('esaAss.answers.' + category + '.' + context, answerObject);
-    
+
     // Save current point value for submission
     db.set('esaAss.submitPoints', points);
   }
