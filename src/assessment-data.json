@@ -1438,6 +1438,10 @@
           "value":0
         },
         {
+          "label":"Daily",
+          "value":15
+        },
+        {
           "label":"At least once a week",
           "value":15
         },
