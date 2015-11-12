@@ -1,7 +1,7 @@
 {
   "questions":[
     {
-      "question":"Can you reach up with both your arms without difficulty?",
+      "question":"Can you reach up with both your arms without difficulty and pain?",
       "hint":null,
       "category":"Reaching",
       "answers":[
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "question":"Can you do all of these using one or both arms: Put something in the top pocket of a coat you are wearing, put on a hat, reach something above your head?",
+      "question":"Can you do all of these using one or both arms and without difficulty and pain: Put something in the top pocket of a coat you are wearing, put on a hat, reach something above your head?",
       "hint":null,
       "category":"Reaching",
       "answers":[
@@ -58,7 +58,7 @@
       ]
     },
     {
-      "question":"Can you put something in the top pocket of a coat or jacket you are wearing?",
+      "question":"Can you put something in the top pocket of a coat or jacket you are wearing without difficulty and pain?",
       "hint":null,
       "category":"*Reaching",
       "answers":[
@@ -77,7 +77,7 @@
       ]
     },
     {
-      "question":"Can you put on a hat?",
+      "question":"Can you put on a hat without difficulty and pain?",
       "hint":null,
       "category":"*Reaching",
       "answers":[
@@ -115,7 +115,7 @@
       ]
     },
     {
-      "question":"Can you pick up and move a half litre (pint) carton of liquid?",
+      "question":"Can you pick up and move a half litre (1 pint) carton of liquid?",
       "hint":null,
       "category":"Picking up and moving things",
       "answers":[
@@ -172,7 +172,7 @@
       ]
     },
     {
-      "question":"Can you pick up and move a light but bulky object like an empty cardboard box?",
+      "question":"Can you pick up and move a light but bulky object such as an empty cardboard box?",
       "hint":null,
       "category":"Picking up and moving things",
       "answers":[
@@ -210,7 +210,7 @@
       ]
     },
     {
-      "question":"Can you use one hand to press a button, for example on a telephone key pad?",
+      "question":"Can you use one hand to press a button for example on a telephone keypad?",
       "hint":null,
       "category":"Using your hands",
       "answers":[
@@ -229,7 +229,7 @@
       ]
     },
     {
-      "question":"Can you turn the pages of a book with one or both hands?",
+      "question":"Can you turn the pages of a book with one or both of your hands?",
       "hint":null,
       "category":"Using your hands",
       "answers":[
@@ -305,7 +305,7 @@
       ]
     },
     {
-      "question":"Could you use a cash machine if you had a bank account?",
+      "question":"Can you use a keypad at a cash machine?",
       "hint":null,
       "category":"*Using your hands",
       "answers":[
@@ -320,7 +320,7 @@
       ]
     },
     {
-      "question":"Can you make a mark using a pen or pencil (it does not matter what the mark)?",
+      "question":"Can you make a mark on a piece of paper using a pen or pencil?",
       "hint":null,
       "category":"Using your hands",
       "answers":[
@@ -377,7 +377,7 @@
       ]
     },
     {
-      "question":"If you are due to meet someone, but a few days before they change the date, how well would you cope with this change to your routine?",
+      "question":"If you are due to meet someone but a few days before they change the date or time, how would you cope with this small, planned change?",
       "hint":null,
       "category":"Coping with change",
       "answers":[
@@ -408,7 +408,7 @@
       ]
     },
     {
-      "question":"If you are asked to attend an appointment, but on the day you are contacted to say the time has been changed, how well would you cope with this change?",
+      "question":"If you are asked to attend an appointment, but on the day you are contacted to say the time has been changed, how well would you cope with this small unplanned change?",
       "hint":null,
       "category":"Coping with change",
       "answers":[
@@ -439,7 +439,7 @@
       ]
     },
     {
-      "question":"How well do you cope in social situations?",
+      "question":"How do you find social situations?",
       "hint":null,
       "category":"Coping with social engagement",
       "answers":[
@@ -504,7 +504,7 @@
       ]
     },
     {
-      "question":"Which of these best describes how you feel when you engage socially with someone you do not know?",
+      "question":"Which of these best describes how you feel when you meet someone you do not know?",
       "hint":null,
       "category":"Coping with social engagement",
       "answers":[
@@ -531,7 +531,7 @@
       ]
     },
     {
-      "question":"Can you manage to plan, start and finish daily tasks without any difficulty?",
+      "question":"Can you plan, start and finish daily tasks without any difficulty?",
       "hint":null,
       "category":"Starting or finishing tasks",
       "answers":[
@@ -550,7 +550,7 @@
       ]
     },
     {
-      "question":"Thinking about your mental health, which of these best describes how often you could reliably start and finish at least two personal actions (such as getting up, washing and dressing, cooking a meal or going shopping) one after the other?",
+      "question":"Thinking about your mental health, which of these best describes how often you could start and finish at least two personal actions (such as getting up, washing and dressing, cooking a meal or going shopping) one after the other:",
       "hint":null,
       "category":"Starting or finishing tasks",
       "answers":[
@@ -592,7 +592,7 @@
       ]
     },
     {
-      "question":"Do you have learning or mental health difficulties which affect how you behave towards other people?",
+      "question":"Do you have mental health or learning difficulties which affect how you behave towards other people?",
       "hint":null,
       "category":"Behaving appropriately",
       "answers":[
@@ -611,7 +611,7 @@
       ]
     },
     {
-      "question":"How often do you behave in an uncontrollable aggressive way towards other people?",
+      "question":"How often do you behave in an uncontrolled aggressive way towards other people?",
       "hint":null,
       "category":"*Behaving appropriately",
       "answers":[
@@ -672,7 +672,7 @@
       ]
     },
     {
-      "question":"How long could you either sit or stand or both at a workstation for the majority of time without help from someone else before it caused you significant discomfort or exhaustion and you had to move away?",
+      "question":"How long could you either sit or stand, or both, at a workstation without help from someone else before it caused you significant discomfort or exhaustion and you had to move away?",
       "hint":null,
       "category":"Sitting and standing",
       "answers":[
@@ -695,7 +695,7 @@
       ]
     },
     {
-      "question":"What is the longest you can sit in a seat at home for example when watching television or eating a meal?",
+      "question":"What is the longest you can sit in a seat at home, for example when watching television or eating a meal?",
       "hint":null,
       "category":"*Sitting and standing",
       "answers":[
@@ -779,7 +779,7 @@
       ]
     },
     {
-      "question":"Can you go up or down two steps without being helped by another person even with the support of a handrail?",
+      "question":"Can you go up or down 2 steps without being helped by another person, even with the support of a handrail?",
       "hint":null,
       "category":"Moving around and using steps",
       "answers":[
@@ -798,7 +798,7 @@
       ]
     },
     {
-      "question":"You said going up or down two steps varies, can you do this?",
+      "question":"You said it varies whether you can go up or down 2 steps. Which of the following best describes this?",
       "hint":null,
       "category":"*Moving around and using steps",
       "answers":[
@@ -855,7 +855,7 @@
       ]
     },
     {
-      "question":"Do you ever visit your doctor or the hospital?",
+      "question":"Do you ever go to the doctor or the hospital?",
       "hint":null,
       "category":"*Getting about",
       "answers":[
@@ -893,7 +893,7 @@
       ]
     },
     {
-      "question":"Does it depend on the place?",
+      "question":"You said it varies whether you can go to places you don't know. Does it depend on the place?",
       "hint":null,
       "category":"*Getting about",
       "answers":[
@@ -923,7 +923,7 @@
       ]
     },
     {
-      "question":"Can you cross the road on your own, without needing help from someone else whether or not you need to use a guide dog or other aid?",
+      "question":"Can you cross the road on your own without help from anyone, whether or not you need a guide dog or other aid.",
       "hint":null,
       "category":"Navigating safely",
       "answers":[
@@ -938,7 +938,7 @@
       ]
     },
     {
-      "question":"Can you move around an unfamiliar place without help from someone else whether or not you need to use a guide dog or other aid?",
+      "question":"Can you move around an unfamiliar place without help from someone else, whether or not you need a guide dog or other aid.",
       "hint":null,
       "category":"Navigating safely",
       "answers":[
@@ -953,7 +953,7 @@
       ]
     },
     {
-      "question":"Can you move around a familiar place without help from someone else whether or not you need to use a guide dog or other aid?",
+      "question":"Can you move around a familiar place without help from someone else, whether or not you need a guide dog or other aid.",
       "hint":null,
       "category":"Navigating safely",
       "answers":[
@@ -987,7 +987,7 @@
       ]
     },
     {
-      "question":"Does it vary because:",
+      "question":"Could you say why it varies?",
       "hint":null,
       "category":"*Awareness of hazards or danger",
       "answers":[
@@ -1002,7 +1002,7 @@
       ]
     },
     {
-      "question":"How often do you need someone to stay with you to keep you safe because you are not aware how everyday hazards (such as boiling water or sharp objects) can injure you\/other people or cause damage to property\/possessions?",
+      "question":"Does someone need to be with you most of the time to prevent the risk of damage to property or possessions due to a learning impairment or mental disorder?",
       "hint":null,
       "category":"Awareness of hazards or danger",
       "answers":[
@@ -1029,7 +1029,7 @@
       ]
     },
     {
-      "question":"Do you have any learning impairments of mental disorders which mean you are at significant risk of harm or injury to yourself or others?",
+      "question":"Are you at significant risk of harm or injury to yourself or others because of a learning impairment or mental disorder?",
       "hint":null,
       "category":"Awareness of hazards or danger",
       "answers":[
@@ -1078,7 +1078,7 @@
       ]
     },
     {
-      "question":"Which of these best describes whether you can learn to do a simple task such as setting an alarm clock?",
+      "question":"Which of these best describes if you can learn to do a simple task such as setting an alarm clock?",
       "hint":null,
       "category":"Learning tasks",
       "answers":[
@@ -1105,7 +1105,7 @@
       ]
     },
     {
-      "question":"Can you learn something complex such as how to use a washing machine?",
+      "question":"Can you learn something complex such as how to use washing machine?",
       "hint":null,
       "category":"Learning tasks",
       "answers":[
@@ -1143,7 +1143,7 @@
       ]
     },
     {
-      "question":"Can you learn something more complicated than how to use a washing machine?",
+      "question":"Can you learn something more complicated than how to use a washing machine, such as how to record a programme from the TV?",
       "hint":null,
       "category":"Learning tasks",
       "answers":[
@@ -1162,7 +1162,7 @@
       ]
     },
     {
-      "question":"Could you learn to program the channels on your TV?",
+      "question":"Could you learn to programme the channels on your TV?",
       "hint":null,
       "category":"*Learning tasks",
       "answers":[
@@ -1223,7 +1223,7 @@
       ]
     },
     {
-      "question":"Can you give a simple message to someone such as a message explaining how dangerous something is?",
+      "question":"Can you give a message to someone, such as about how dangerous something is?",
       "hint":null,
       "category":"Making yourself understood",
       "answers":[
@@ -1261,7 +1261,7 @@
       ]
     },
     {
-      "question":"How difficult would you find it to pass a simple message to a stranger?",
+      "question":"How hard would you find it to give a simple message to a stranger?",
       "hint":null,
       "category":"Making yourself understood",
       "answers":[
@@ -1303,7 +1303,7 @@
       ]
     },
     {
-      "question":"Can you understand other people without any difficulty?",
+      "question":"Can you understand other people without any difficulty when they speak to you?",
       "hint":null,
       "category":"Verbal communication",
       "answers":[
@@ -1322,7 +1322,7 @@
       ]
     },
     {
-      "question":"You said that you cannot understand other people without difficulty (or that it varies). Is this because:",
+      "question":"You said you can\u2019t understand other people without difficulty (or that it varies). Is this because:",
       "hint":null,
       "category":"*Verbal communication",
       "answers":[
@@ -1341,7 +1341,7 @@
       ]
     },
     {
-      "question":"Which of these best describes how well you can understand a simple message such as the location of a fire escape?",
+      "question":"Which of these best describes how well you can understand a simple message, such as where a fire escape is",
       "hint":null,
       "category":"Verbal communication",
       "answers":[
@@ -1364,7 +1364,7 @@
       ]
     },
     {
-      "question":"Can you control your bowels and bladder without any difficulty?",
+      "question":"Can you control your bowels and bladder without difficulty?",
       "hint":null,
       "category":"Bladder and bowel control",
       "answers":[
@@ -1379,7 +1379,7 @@
       ]
     },
     {
-      "question":"Which one of these best describes how often you have to wash yourself or change your clothes because of difficulty controlling your bladder, bowels or a collecting device?",
+      "question":"How often do you have to wash yourself or change your clothes because of difficulty controlling your bladder, bowels or using a collecting device?",
       "hint":null,
       "category":"*Bladder and bowel control",
       "answers":[
@@ -1410,7 +1410,7 @@
       ]
     },
     {
-      "question":"Do you have any problems staying conscious while you are awake?",
+      "question":"Do you have any problems staying conscious?",
       "hint":null,
       "category":"Consciousness",
       "answers":[
@@ -1425,7 +1425,7 @@
       ]
     },
     {
-      "question":"While you are awake which of these best describes how often you faint or have fits or have blackouts?",
+      "question":"How often do you faint, have fits or blackouts when you are awake?",
       "hint":null,
       "category":"*Consciousness",
       "answers":[
@@ -1434,8 +1434,8 @@
           "value":0
         },
         {
-          "label":"Daily",
-          "value":15
+          "label":"Less than once a month",
+          "value":0
         },
         {
           "label":"At least once a week",
@@ -1444,10 +1444,6 @@
         {
           "label":"At least once a month",
           "value":6
-        },
-        {
-          "label":"Less than once a month",
-          "value":0
         }
       ]
     },
