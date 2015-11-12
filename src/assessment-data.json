@@ -1,15 +1,4 @@
 {
-  "buttons":[
-    {
-      "practise":"<button class=\"nav-link\" data-action=\"start-or-resume\" role=\"link\">Ready to practise?</button>"
-    },
-    {
-      "info-button":"<button class=\"nav-link\" data-action=\"about-PIP\" role=\"link\">More Infomation</button>"
-    },
-    {
-      "take-a-break":"<button class=\"nav-link\" data-action=\"take-a-break\" role=\"link\">Take a break?</button>"
-    },
-  ],
   "questions": [
     {
       "question": "Can you reach up with both your arms without difficulty?",
