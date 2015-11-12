@@ -491,8 +491,8 @@ function disabledCats() {
 
 function compileAboutButtons() {
   var template = Handlebars.compile(document.getElementById("about-buttons-template").innerHTML);
-  var pipAssData = db.get('pipAss');
-  var output = template(pipAssData);
+  var esaAssData = db.get('esaAss');
+  var output = template(esaAssData);
   $('.expandies.information .about-buttons-content').html(output);
 }
 
