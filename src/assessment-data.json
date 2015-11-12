@@ -49,7 +49,7 @@
         },
         {
           "label":"I can only do one or some of those things",
-          "value":"Can you put something in the top pocket of a coat or jacket you are wearing?"
+          "value":"Can you put something in the top pocket of a coat or jacket you are wearing without difficulty and pain?"
         },
         {
           "label":"No, I can't do any of those things",
@@ -64,7 +64,7 @@
       "answers":[
         {
           "label":"Yes",
-          "value":"Can you put on a hat?"
+          "value":"Can you put on a hat without difficulty and pain?"
         },
         {
           "label":"No",
@@ -72,7 +72,7 @@
         },
         {
           "label":"It varies",
-          "value":"Can you put on a hat?"
+          "value":"Can you put on a hat without difficulty and pain?"
         }
       ]
     },
@@ -300,7 +300,7 @@
         },
         {
           "label":"No",
-          "value":"Could you use a cash machine if you had a bank account?"
+          "value":"Can you use a keypad at a cash machine?"
         }
       ]
     },
@@ -602,11 +602,11 @@
         },
         {
           "label":"Yes",
-          "value":"How often do you behave in an uncontrollable aggressive way towards other people?"
+          "value":"How often do you behave in an uncontrolled aggressive way towards other people?"
         },
         {
           "label":"It varies",
-          "value":"How often do you behave in an uncontrollable aggressive way towards other people?"
+          "value":"How often do you behave in an uncontrolled aggressive way towards other people?"
         }
       ]
     },
@@ -690,7 +690,7 @@
         },
         {
           "label":"It varies",
-          "value":"What is the longest you can sit in a seat at home for example when watching television or eating a meal?"
+          "value":"What is the longest you can sit in a seat at home, for example when watching television or eating a meal?"
         }
       ]
     },
@@ -793,7 +793,7 @@
         },
         {
           "label":"It varies",
-          "value":"You said going up or down two steps varies, can you do this?"
+          "value":"You said it varies whether you can go up or down 2 steps. Which of the following best describes this?"
         }
       ]
     },
@@ -850,7 +850,7 @@
         },
         {
           "label":"It varies",
-          "value":"Do you ever visit your doctor or the hospital?"
+          "value":"Do you ever go to the doctor or the hospital?"
         }
       ]
     },
@@ -888,7 +888,7 @@
         },
         {
           "label":"It varies",
-          "value":"Does it depend on the place?"
+          "value":"You said it varies whether you can go to places you don't know. Does it depend on the place?"
         }
       ]
     },
@@ -982,7 +982,7 @@
         },
         {
           "label":"It varies",
-          "value":"Does it vary because:"
+          "value":"Could you say why it varies?"
         }
       ]
     },
@@ -1157,7 +1157,7 @@
         },
         {
           "label":"It varies",
-          "value":"Could you learn to program the channels on your TV?"
+          "value":"Could you learn to programme the channels on your TV?"
         }
       ]
     },
@@ -1313,16 +1313,16 @@
         },
         {
           "label":"No",
-          "value":"You said that you cannot understand other people without difficulty (or that it varies). Is this because:"
+          "value":"You said you can't understand other people without difficulty (or that it varies). Is this because:"
         },
         {
           "label":"It varies",
-          "value":"You said that you cannot understand other people without difficulty (or that it varies). Is this because:"
+          "value":"You said you can't understand other people without difficulty (or that it varies). Is this because:"
         }
       ]
     },
     {
-      "question":"You said you can\u2019t understand other people without difficulty (or that it varies). Is this because:",
+      "question":"You said you can't understand other people without difficulty (or that it varies). Is this because:",
       "hint":null,
       "category":"*Verbal communication",
       "answers":[
@@ -1374,7 +1374,7 @@
         },
         {
           "label":"No",
-          "value":"Which one of these best describes how often you have to wash yourself or change your clothes because of difficulty controlling your bladder, bowels or a collecting device?"
+          "value":"How often do you have to wash yourself or change your clothes because of difficulty controlling your bladder, bowels or using a collecting device?"
         }
       ]
     },
@@ -1416,7 +1416,7 @@
       "answers":[
         {
           "label":"Yes",
-          "value":"While you are awake which of these best describes how often you faint or have fits or have blackouts?"
+          "value":"How often do you faint, have fits or blackouts when you are awake?"
         },
         {
           "label":"No",
