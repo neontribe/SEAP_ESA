@@ -14134,15 +14134,6 @@ if (db.isEmpty('esaAss')) {
 
 }
 
-$(function() {
-   var isMobile = window.matchMedia("only screen and (max-width: 800px)");
-
-   if (isMobile.matches) {
-       $("#about-esa .expandies button").attr("aria-expanded", "false");
-       $("#about-esa .expandies h2").next().attr("aria-hidden", "true");
-   }
-});
-
 /**********************************************************************
 FUNCTIONS
 **********************************************************************/
@@ -14237,10 +14228,6 @@ function loadSlide(id, type) {
 
   }
 
-  if (id === 'about-esa') {
-    compileAboutButtons();
-  }
-
   if (id === 'categories') {
     compileCategories();
   }
@@ -14272,7 +14259,7 @@ function loadSlide(id, type) {
     .focus();
 
   // find out if we've gone to one of the locations that don't need saving
-  var exclude = _.find(['resume', 'break-time', 'resume-practise'],
+  var exclude = _.find(['resume', 'are-you-sure', 'deleted', 'break-time',],
     function(unsaveable) {
       return unsaveable === id;
     });
@@ -14604,13 +14591,6 @@ function disabledCats() {
 
 }
 
-function compileAboutButtons() {
-  var template = Handlebars.compile(document.getElementById("about-buttons-template").innerHTML);
-  var esaAssData = db.get('esaAss');
-  var output = template(esaAssData);
-  $('.expandies.information .about-buttons-content').html(output);
-}
-
 function compileCategories() {
 
   // template up the stats with handlebars and
@@ -14871,6 +14851,13 @@ $('body').on('click', '[data-action="clean-up"]', function() {
 
 });
 
+$('body').on('click', '[data-action="delete-are-you-sure"]', function() {
+
+  // load the deleted data slide
+  loadSlide('are-you-sure');
+
+});
+
 $('body').on('click', '[data-action="delete-data"]', function() {
 
   // set answered global to false
@@ -14918,6 +14905,9 @@ $('body').on('change', '[data-action="save-basic-info"]', function() {
 });
 
 $('body').on('change', '[type="radio"]', function() {
+
+  // add highlighted class to pick button when an answer button is pressed
+  $('.loaded button.nav-link[data-action="pick"]').addClass( 'highlighted' );
 
   // record that change has been made
   window.answered = true;
