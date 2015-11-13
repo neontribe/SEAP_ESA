@@ -135,6 +135,10 @@ function loadSlide(id, type) {
 
   }
 
+  if (id === 'about-esa') {
+    compileAboutButtons();
+  }
+
   if (id === 'categories') {
     compileCategories();
   }
