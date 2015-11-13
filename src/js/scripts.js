@@ -38,7 +38,6 @@ $(function() {
    if (isMobile.matches) {
        $("#about-esa .expandies button").attr("aria-expanded", "false");
        $("#about-esa .expandies h2").next().attr("aria-hidden", "true");
-       console.log("large");
    }
 });
 
