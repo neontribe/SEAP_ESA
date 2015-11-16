@@ -134,7 +134,7 @@ function loadSlide(id, type) {
     $('#this-activity').text(db.get('esaAss.category').toLowerCase());
   }
 
-  if (id === 'chose-andom-category') {
+  if (id === 'chose-random-category') {
     $('#chose-random-category button').attr('data-category', db.get('esaAss.category'));
     $('#chose-random-category #unseen-category').text(db.get('esaAss.category'));
   }
