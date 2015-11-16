@@ -42,7 +42,7 @@ casper.test.begin 'ESA Choose an Activity', 21, (test) ->
       for cat in cats
         catCount++
         @echo cat
-        if cat && cat != 'i-dont-know'
+        if cat && cat != 'random-category'
           @click '.box.loaded li button[data-category="'+cat+'"]'
           h2Activity = @fetchText '.loaded h2 span.activity'
           test.assertEquals h2Activity, 'Activity: ' + cat,
