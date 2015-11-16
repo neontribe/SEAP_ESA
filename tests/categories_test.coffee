@@ -6,7 +6,7 @@
 baseurl = 'http://localhost:9001/build'
 hash = 'categories'
 url = baseurl + '/#' + hash
-sectionTitle = 'Choose an activity affected by your condition.'
+sectionTitle = 'Choose an activity affected by your condition'
 
 # Helper to get back to categories list
 navToHash = (hash) ->
