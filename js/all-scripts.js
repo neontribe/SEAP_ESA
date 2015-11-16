@@ -14134,15 +14134,6 @@ if (db.isEmpty('esaAss')) {
 
 }
 
-$(function() {
-   var isMobile = window.matchMedia("only screen and (max-width: 800px)");
-
-   if (isMobile.matches) {
-       $("#about-esa .expandies button").attr("aria-expanded", "false");
-       $("#about-esa .expandies h2").next().attr("aria-hidden", "true");
-   }
-});
-
 /**********************************************************************
 FUNCTIONS
 **********************************************************************/
@@ -14235,10 +14226,6 @@ function loadSlide(id, type) {
     // compile the stats before showing slide
     compileStats();
 
-  }
-
-  if (id === 'about-esa') {
-    compileAboutButtons();
   }
 
   if (id === 'categories') {
@@ -14602,13 +14589,6 @@ function disabledCats() {
 
   });
 
-}
-
-function compileAboutButtons() {
-  var template = Handlebars.compile(document.getElementById("about-buttons-template").innerHTML);
-  var esaAssData = db.get('esaAss');
-  var output = template(esaAssData);
-  $('.expandies.information .about-buttons-content').html(output);
 }
 
 function compileCategories() {
