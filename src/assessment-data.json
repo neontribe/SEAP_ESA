@@ -29,7 +29,7 @@
           "value":0
         },
         {
-          "label":"Not at all",
+          "label":"No",
           "value":6
         },
         {
@@ -265,7 +265,7 @@
           "value":15
         },
         {
-          "label":"A different reason",
+          "label":"Rarely because of a different reason",
           "value":0
         }
       ]
@@ -382,23 +382,23 @@
       "category":"Coping with change",
       "answers":[
         {
-          "label":"I can't cope to the extent I can't manage my day-to-day life at all",
+          "label":"I couldn't cope at all",
           "value":15
         },
         {
-          "label":"I can't cope, it would make day-to-day life very difficult to manage",
+          "label":"It would make managing my day-to-day life very difficult",
           "value":9
         },
         {
-          "label":"I can't cope. It would make me feel anxious",
+          "label":"It would make me feel anxious",
           "value":0
         },
         {
-          "label":"I can cope without any difficulties",
+          "label":"Without any difficulties",
           "value":0
         },
         {
-          "label":"I have a learning difficulty or mental health problem which makes it impossible to cope with any change and would make my day-to-day life unmanageable",
+          "label":"I have a learning difficulty or mental health problem which makes it impossible to cope with any change",
           "value":16
         },
         {
@@ -413,19 +413,19 @@
       "category":"Coping with change",
       "answers":[
         {
-          "label":"I can't cope at all to the extent I would not be able to manage day-to-day life",
+          "label":"I couldn't cope at all",
           "value":15
         },
         {
-          "label":"I can't cope, it would make day-to-day life very difficult to manage",
+          "label":"It would make managing my day-to-day life very difficult",
           "value":6
         },
         {
-          "label":"It would make day-to-day life difficult to manage",
+          "label":"It would make me feel anxious",
           "value":0
         },
         {
-          "label":"I can cope without any difficulties",
+          "label":"Without any difficulties",
           "value":0
         },
         {
@@ -710,10 +710,6 @@
         {
           "label":"Over an hour",
           "value":0
-        },
-        {
-          "label":"None of these apply to me",
-          "value":0
         }
       ]
     },
@@ -807,12 +803,8 @@
           "value":0
         },
         {
-          "label":"I could do it once, but not again within a reasonable timescale",
+          "label":"I could do it once, but it is painful or leaves me exhausted",
           "value":9
-        },
-        {
-          "label":"None of these apply to me",
-          "value":0
         }
       ]
     },
@@ -992,11 +984,11 @@
       "category":"*Awareness of hazards or danger",
       "answers":[
         {
-          "label":"Some days your health is worse than others",
+          "label":"Because some days my health is worse than others",
           "value":0
         },
         {
-          "label":"A different reason",
+          "label":"Because of a different reason",
           "value":0
         }
       ]
@@ -1083,7 +1075,7 @@
       "category":"Learning tasks",
       "answers":[
         {
-          "label":"I would not have a problem learning a task like this",
+          "label":"I would not have a problem",
           "value":0
         },
         {
@@ -1171,11 +1163,7 @@
           "value":0
         },
         {
-          "label":"I could sometimes learn to do this",
-          "value":0
-        },
-        {
-          "label":"This does not apply to me",
+          "label":"No",
           "value":0
         }
       ]
