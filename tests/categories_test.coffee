@@ -1,12 +1,12 @@
 # Go to categories page
-# Check the visable title is Choose an activity that is relevant to any problems you experience.
+# Check the visable title is Choose an activity affected by your condition.
 # # Check for li button data category and count equals button count
 # Check that clicking each li button goes to a question in that category
 
 baseurl = 'http://localhost:9001/build'
 hash = 'categories'
 url = baseurl + '/#' + hash
-sectionTitle = 'Choose an activity that is relevant to any problems you experience.'
+sectionTitle = 'Choose an activity affected by your condition.'
 
 # Helper to get back to categories list
 navToHash = (hash) ->
@@ -48,7 +48,7 @@ casper.test.begin 'ESA Choose an Activity', 21, (test) ->
           test.assertEquals h2Activity, 'Activity: ' + cat,
             'Clicking button displays question from: ' + cat
           navToHash hash
- 
+
       # number of categories matches number of buttons
       test.assertElementCount '.box.loaded li button', catCount
     .run ->
