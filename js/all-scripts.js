@@ -14225,6 +14225,13 @@ function loadSlide(id, type) {
     ga('send', 'pageview', '#' + id);
   }
 
+  // Oops! we got here without an id to load - probably resuming user
+  // session after data deleted. So no esaAss.whereIAm defined but computer
+  // thinks user has been here before.
+  if (!id || id === 'undefined') {
+    loadSlide('main-menu');
+  }
+
   if (id === 'stats') {
 
     // if you ran out of unseen questions and didn't skip any
@@ -14272,7 +14279,9 @@ function loadSlide(id, type) {
     .focus();
 
   // find out if we've gone to one of the locations that don't need saving
-  var exclude = _.find(['resume', 'are-you-sure', 'deleted', 'break-time',],
+  // If you want to be able to return from a break to them, add to validBreakReturn
+  // in the click action for break
+  var exclude = _.find(['main-menu', 'stats', 'about-esa', 'resume', 'are-you-sure', 'deleted', 'break-time'],
     function(unsaveable) {
       return unsaveable === id;
     });
@@ -14285,8 +14294,12 @@ function loadSlide(id, type) {
 
   }
 
-  // Set context reference (jQuery object)
-  db.set('esaAss.context', id);
+  // Only set context if we were not on a break from excluded (eg stats or about)
+  var currentContext = db.get('esaAss.context') ? db.get('esaAss.context') : '';
+  if (currentContext.indexOf('break-from-') === -1) {
+    // Set context reference (jQuery object)
+    db.set('esaAss.context', id);
+  }
 
   // add the loaded class for transitions
   $('#' + id + ' > *').addClass('loaded');
@@ -14465,7 +14478,22 @@ function resume() {
   // get the stored slide id
   var whereIWas = db.get('esaAss.whereIAm');
 
-  loadSlide(whereIWas);
+  // unless we are having a break from an excluded page - stats, about.
+  // Don't save where I was as stats, so we remember practice place.
+  if (db.get('esaAss.context').indexOf('break-from-') !== -1) {
+
+    // this is the page we want to return to if we're on a break
+    // from an excluded page
+    var whereICameFrom = db.get('esaAss.context').replace('break-from-', '');
+
+    // Reset to correct context for when we leave entry to break page
+    db.set('esaAss.context', whereIWas);
+    loadSlide(whereICameFrom);
+
+  } else {
+
+    loadSlide(whereIWas);
+  }
 
 }
 
@@ -14590,9 +14618,6 @@ function disabledCats() {
     button.attr('disabled', null);
 
     var catName = button.attr('data-category');
-
-    // console.log('remaining', remaining);
-    // console.log('disabled?', !_.contains(remaining, catName));
 
     if (!_.contains(remaining, catName)) {
 
@@ -14797,7 +14822,7 @@ $('body').on('click', '[data-action="start-or-resume"]', function() {
   // has the user (or _a_ user) been to the questions section before?
   if (db.get('esaAss.started')) {
 
-    pickQuestion();
+    resume();
 
   } else {
 
@@ -14809,8 +14834,15 @@ $('body').on('click', '[data-action="start-or-resume"]', function() {
 
 $('body').on('click', '[data-action="break"]', function() {
 
-  // run resume function defined in FUNCTIONS block
-  db.set('esaAss.whereIAm', window.location.hash.slice(1));
+  // If we are on one of these pages when we take a break, save our place.
+  var validBreakReturn = ['stats', 'about-esa', 'transcript'];
+    currentContext = db.get('esaAss.context');
+
+  // If we are taking a break from excluded page but want to save our place
+  if (_.contains(validBreakReturn, db.get('esaAss.context'))) {
+    db.set('esaAss.context', 'break-from-' + currentContext);
+  }
+
   loadSlide('break-time');
 
 });
@@ -14846,14 +14878,12 @@ $('body').on('click', '[data-action="resume"]', function() {
 
 $('body').on('click', '[data-action="menu"]', function() {
 
-  // run resume function defined in FUNCTIONS block
   loadSlide('main-menu');
 
 });
 
 $('body').on('click', '[data-action="remember"]', function() {
 
-  // run resume function defined in FUNCTIONS block
   loadSlide('remember');
 
 });
@@ -14895,19 +14925,6 @@ $('body').on('click', '[data-action="stats"]', function() {
 
   // load the stats slide
   loadSlide('stats');
-
-});
-
-$('body').on('click', '[data-action="prep"]', function() {
-
-  // get id of slide to load
-  var id = $(this).attr('data-prep-slug');
-
-  // check checkboxes based on previous actions
-  checkReminders(id);
-
-  // load slide
-  loadSlide(id);
 
 });
 
@@ -15024,7 +15041,7 @@ $(window).on('hashchange', function(e) {
 
   // If we've gone to a question fragment but we haven't
   // pressed a "pick a question" button to get there...
-  if (window.location.hash.substr(0, 9) === '#question' && !window.realPick) {
+  if (window.location.hash.substr(0, 9) === '#question') {
     if (hashHistory.indexOf(window.location.hash > -1)) {
       loadSlide(window.location.hash.substr(1), 'question');
     }
