@@ -14634,6 +14634,8 @@ function compileAboutButtons() {
   var esaAssData = db.get('esaAss');
   var output = template(esaAssData);
   $('.expandies.information .about-buttons-content').html(output);
+  $('#transcript .about-buttons-content').html(output);
+
 }
 
 function compileCategories() {
@@ -14932,6 +14934,13 @@ $('body').on('click', '[data-action="about-esa"]', function() {
 
   // load slide
   loadSlide('about-esa');
+
+});
+
+$('body').on('click', '[data-action="transcript"]', function() {
+
+  // load slide
+  loadSlide('transcript');
 
 });
 
