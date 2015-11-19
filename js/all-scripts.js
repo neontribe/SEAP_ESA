@@ -14738,13 +14738,13 @@ Handlebars.registerHelper('accuracy', function(array) {
 
 Handlebars.registerHelper('qualifyHigh', function() {
   if (db.get('esaAss.high') && !db.get('esaAss.low')) {
-    return '<p>You may qualify for the Support Group. Remember to show your assessor the answers marked <span class="warn">VERY IMPORTANT</span> (below) by printing this page or opening it on your phone. These indicate you could qualify.</p>';
+    return '<p>You may qualify for the highest allowance, placing you in what&#x2019;s called the Support Group. Remember to show your assessor the answers marked <span class="warn">VERY IMPORTANT</span> (below) by printing this page or opening it on your phone. These indicate you could qualify.</p>';
   }
 });
 
 Handlebars.registerHelper('qualifyLow', function() {
   if (!db.get('esaAss.high') && db.get('esaAss.low')) {
-    return '<p>You may qualify for the Work Related Activity Group. Remember to show your assessor the answers marked <span class="warn amber">IMPORTANT</span> (below) by printing this page or opening it on your phone. These indicate you could qualify.</p>';
+    return '<p>You may qualify for the standard ESA allowance, placing you in what&#x2019;s called the Work Related Activity Group. Remember to show your assessor the answers marked <span class="warn amber">IMPORTANT</span> (below) by printing this page or opening it on your phone. These indicate you could qualify.</p>';
   }
 });
 
