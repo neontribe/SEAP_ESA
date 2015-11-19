@@ -116,18 +116,11 @@ function getCatQuestionArr(slug) {
 
 function loadSlide(id, type) {
 
-  // Register google page view
-  var trackHashes = ['main-menu', 'stats', 'data', 'about-esa', 'start'];
-
-  if ($.inArray(id, trackHashes) !== -1) {
-    ga('send', 'pageview', '#' + id);
-  }
-
   // Oops! we got here without an id to load - probably resuming user
   // session after data deleted. So no esaAss.whereIAm defined but computer
   // thinks user has been here before.
-  if (!id || id === 'undefined') {
-    loadSlide('main-menu');
+  if (!id) {
+    id = 'main-menu';
   }
 
   if (id === 'stats') {
