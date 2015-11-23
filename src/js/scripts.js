@@ -501,7 +501,7 @@ function compileStats() {
   var template = Handlebars.compile(document.getElementById("stats-template").innerHTML);
   var esaAssData = db.get('esaAss');
   var output = template(esaAssData);
-  $('#stats-content').html(output);
+  $('#stats-content').html(output).trigger('stats-analytic-event');
 
 }
 
