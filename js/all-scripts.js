@@ -14218,18 +14218,11 @@ function getCatQuestionArr(slug) {
 
 function loadSlide(id, type) {
 
-  // Register google page view
-  var trackHashes = ['main-menu', 'stats', 'data', 'about-esa', 'start'];
-
-  if ($.inArray(id, trackHashes) !== -1) {
-    ga('send', 'pageview', '#' + id);
-  }
-
   // Oops! we got here without an id to load - probably resuming user
   // session after data deleted. So no esaAss.whereIAm defined but computer
   // thinks user has been here before.
-  if (!id || id === 'undefined') {
-    loadSlide('main-menu');
+  if (!id) {
+    id = 'main-menu';
   }
 
   if (id === 'stats') {
@@ -14745,19 +14738,19 @@ Handlebars.registerHelper('accuracy', function(array) {
 
 Handlebars.registerHelper('qualifyHigh', function() {
   if (db.get('esaAss.high') && !db.get('esaAss.low')) {
-    return '<p>You may qualify for the highest allowance, placing you in what&#x2019;s called the Support Group. Remember to show your assessor the answers marked <span class="warn">VERY IMPORTANT</span> (below) by printing this page or opening it on your phone. These indicate you could qualify.</p>';
+    return '<p>You may qualify for the Support Group. You may still find it helpful to take a look at the some more questions so that you are better prepared for the assessment.</p>';
   }
 });
 
 Handlebars.registerHelper('qualifyLow', function() {
   if (!db.get('esaAss.high') && db.get('esaAss.low')) {
-    return '<p>You may qualify for the standard ESA allowance, placing you in what&#x2019;s called the Work Related Activity Group. Remember to show your assessor the answers marked <span class="warn amber">IMPORTANT</span> (below) by printing this page or opening it on your phone. These indicate you could qualify.</p>';
+    return '<p>You may qualify for the Work Related Activity Group. You may still find it helpful to take a look at the some more questions so that you are better prepared for the assessment.</p>';
   }
 });
 
 Handlebars.registerHelper('qualifyEither', function() {
   if (db.get('esaAss.high') && db.get('esaAss.low')) {
-    return '<p>It looks like you&#x2019;ll qualify for the standard allowance (placing you in what&#x2019;s called the Work Related Activity Group) or possibly the higher allowance (Support Group). Remember to show your assessor the <strong>Important Answers</strong> (below) by printing this page or opening it on your phone. These are the questions that indicate you qualify.</p>';
+    return '<p>It looks like you&#x2019;ll qualify for the standard allowance (placing you in what&#x2019;s called the Work Related Activity Group) or possibly the higher allowance (Support Group). You may still find it helpful to take a look at the some more questions so that you are better prepared for the assessment.</p>';
   }
 });
 
@@ -15056,4 +15049,49 @@ $(window).on('hashchange', function(e) {
     }
   }
 
+});
+
+// Which c-app site are we?
+var siteTitle = $(document).find("title").text();
+    site = 'c-app';
+    if (siteTitle === 'ESA Assessment Support') {
+      site = 'esa';
+    }
+    if (siteTitle === 'PIP Assessment Support') {
+      site = 'pip';
+    }
+
+var siteAss = site + 'Ass';
+
+// Track all slides as pageviews
+$(window).on('hashchange', function(e) {
+  // @todo add list of # not to track. For now let's call every change a page.
+  var page = window.location.hash;
+  ga('send', 'pageview', page);
+});
+
+// Event on every a click
+$('body').on('click', 'a', function(e) {
+  var page = '';
+      linkText = $(this).text();
+  // Attempt to get the page we came from in the hashHistory.
+  // If that fails, call it unknown.
+  page = _.last(window.hashHistory);
+  if (!page) {
+    page = 'unknown';
+  }
+  ga('send', 'event', page, 'a-link-click', linkText, null);
+});
+
+// Event on every button click
+$('body').on('click', 'button', function(e) {
+  var page = '';
+      linkText = $(this).text();
+  // Attempt to get the page we came from in the hashHistory.
+  // If that fails, call it unknown.
+  page = _.last(window.hashHistory);
+  if (!page) {
+    page = 'unknown';
+  }
+  ga('send', 'event', page, 'button-click', linkText, null);
 });
