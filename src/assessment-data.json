@@ -653,7 +653,7 @@
       ]
     },
     {
-      "question":"If two seats are placed next to each other could you move from one to the other without help from someone else?",
+      "question":"If 2 seats are placed next to each other could you move from one to the other without help from someone else?",
       "hint":null,
       "category":"Sitting and standing",
       "answers":[
@@ -994,7 +994,7 @@
       ]
     },
     {
-      "question":"Does someone need to be with you most of the time to prevent the risk of damage to property or possessions due to a learning impairment or mental disorder?",
+      "question":"How often do you need someone with you for you to stay safe because you are not aware how everyday hazards (such as boiling water or sharp objects) can injure people or cause damage to property?",
       "hint":null,
       "category":"Awareness of hazards or danger",
       "answers":[
@@ -1036,7 +1036,7 @@
       ]
     },
     {
-      "question":"Do you have any learning impairments or mental disorders which mean someone needs to be with you most of the time to prevent significant risk of damage to property or possessions?",
+      "question":"Does someone need to be with you most of the time to prevent the risk of damage to property or possessions due to a learning impairment or mental disorder?",
       "hint":null,
       "category":"Awareness of hazards or danger",
       "answers":[
@@ -1055,7 +1055,7 @@
       ]
     },
     {
-      "question":"Can you learn to do everyday tasks without any difficulty?",
+      "question":"Can you learn to do everyday tasks, such as setting an alarm clock, without difficulty?",
       "hint":null,
       "category":"Learning tasks",
       "answers":[
