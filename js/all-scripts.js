@@ -14596,7 +14596,7 @@ function compileStats() {
   var template = Handlebars.compile(document.getElementById("stats-template").innerHTML);
   var esaAssData = db.get('esaAss');
   var output = template(esaAssData);
-  $('#stats-content').html(output).trigger('stats-analytic-event');
+  $('#stats-content').html(output);
 
 }
 
@@ -15094,4 +15094,26 @@ $('body').on('click', 'button', function(e) {
     page = 'unknown';
   }
   ga('send', 'event', page, 'button-click', linkText, null);
+});
+
+// Event on visit to stats page
+$('#stats-content').on('stats-analytic-event', function(e) {
+  var numAll = window.allQuestions.length;
+      numSeen = db.get(siteAss).seenQuestions.length;
+      numSkipped = db.get(siteAss).skippedQuestions.length;
+      answers = db.get(siteAss).answers;
+      numAnswered = 0;
+
+      $.each(answers, function(key, value) {
+        numAnswered += _.size(value);
+      });
+
+  // Percentage of questions seen and skipped.
+  var percentSkipped = (numSkipped/numSeen).toFixed(2);
+  ga('send', 'event', '#stats', 'question-progress', 'percent skipped', percentSkipped);
+
+  // Percentage of all questions answered (including ones not yet seen).
+  var percentAnswered = (numAnswered/numAll).toFixed(2);
+  ga('send', 'event', '#stats', 'question-progress', 'percent answered', percentAnswered);
+
 });
