@@ -636,19 +636,21 @@ Handlebars.registerHelper('accuracy', function(array) {
 
 Handlebars.registerHelper('qualifyHigh', function() {
   if (db.get('esaAss.high') && !db.get('esaAss.low')) {
-    return '<p>You may qualify for the Support Group. You may still find it helpful to take a look at the some more questions so that you are better prepared for the assessment.</p>';
+    return '<p>You may qualify for the Support Group.</p><p>You may still find it helpful to take a look at some more questions so that you are better prepared for the assessment.</p>';
   }
 });
 
 Handlebars.registerHelper('qualifyLow', function() {
   if (!db.get('esaAss.high') && db.get('esaAss.low')) {
-    return '<p>You may qualify for the Work Related Activity Group. You may still find it helpful to take a look at the some more questions so that you are better prepared for the assessment.</p>';
+    return '<p>You may qualify for the Work Related Activity Group.</p><p>It&#x2019;s still possible that you may qualify for the Support Group. To find out, try some more questions..</p>';
   }
 });
 
+// Can only be in one group or the other so if qualify high
+// and low, just show high test - though we might want @todo show something about the initial WRAG qual being superseded.
 Handlebars.registerHelper('qualifyEither', function() {
   if (db.get('esaAss.high') && db.get('esaAss.low')) {
-    return '<p>It looks like you&#x2019;ll qualify for the standard allowance (placing you in what&#x2019;s called the Work Related Activity Group) or possibly the higher allowance (Support Group). You may still find it helpful to take a look at the some more questions so that you are better prepared for the assessment.</p>';
+    return '<p>You may qualify for the Support Group.</p><p>You may still find it helpful to take a look at some more questions so that you are better prepared for the assessment.</p>';
   }
 });
 
