@@ -13,7 +13,7 @@ if (!Array.prototype.indexOf) {
 var db = $.localStorage;
 
 window.hashHistory = [];
-
+console.log(db.get('esaAss.context'));
 if (db.isEmpty('esaAss')) {
 
   // setup the database esaAss object
@@ -28,18 +28,12 @@ if (db.isEmpty('esaAss')) {
 } else {
 
   // welcome back users or allow new users to restart
+  if (db.get('esaAss.context') === 'deleted') {
+      loadSlide('deleted');
+    }
   loadSlide('resume');
 
 }
-
-$(function() {
-   var isMobile = window.matchMedia("only screen and (max-width: 800px)");
-
-   if (isMobile.matches) {
-       $("#about-esa .expandies button").attr("aria-expanded", "false");
-       $("#about-esa .expandies h2").next().attr("aria-hidden", "true");
-   }
-});
 
 /**********************************************************************
 FUNCTIONS
@@ -357,7 +351,6 @@ function restart() {
   db.set('esaAss.mode', 'unseenQuestions');
   db.set('esaAss.category', null);
   db.set('esaAss.remainingCategories', _.uniq(window.allCategories));
-
   // go to start screen
   loadSlide('start');
 
@@ -812,7 +805,9 @@ $('body').on('click', '[data-action="delete-data"]', function() {
   initAss();
 
   // load the deleted data slide
+
   loadSlide('deleted');
+  window.location.reload(false);
 
 });
 
