@@ -29,27 +29,27 @@ casper.test.begin 'ESA Choose an Activity', 21, (test) ->
 
     .then ->
     # h1 visable
-      test.assertExists '.box.loaded h1',
+      test.assertExists '.loaded h1',
         'Title showing for: ' + @getCurrentUrl()
       # visible loaded h1 is as expected
-      visableTitle = @fetchText '.box.loaded h1'
+      visableTitle = @fetchText '.loaded h1'
       test.assertEquals visableTitle, sectionTitle,
         'Section title displayed as: ' + sectionTitle
       # check for li buttons, data-cat matches display text, return count
       catCount = 0
-      cats = @getElementsAttribute '.box.loaded li button', 'data-category'
+      cats = @getElementsAttribute '.loaded li button', 'data-category'
       test.comment 'Categories Found:'
       for cat in cats
         catCount++
         @echo cat
         if cat && cat != 'random-category'
-          @click '.box.loaded li button[data-category="'+cat+'"]'
+          @click '.loaded li button[data-category="'+cat+'"]'
           h2Activity = @fetchText '.loaded h2 span.activity'
           test.assertEquals h2Activity, 'Activity: ' + cat,
             'Clicking button displays question from: ' + cat
           navToHash hash
 
       # number of categories matches number of buttons
-      test.assertElementCount '.box.loaded li button', catCount
+      test.assertElementCount '.loaded li button', catCount
     .run ->
       test.done()

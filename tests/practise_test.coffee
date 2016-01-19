@@ -84,9 +84,8 @@ clearAndStartPractise = (test, activityName) ->
     #set empty answer obj
     data['answered'] = {}
     # Correct url appears for activity start
-    test.assertUrlMatch url + '/#start',
+    test.assertUrlMatch url + '/#categories',
       'Button press Navigated to ' + @getCurrentUrl()
-    casper.thenClick 'button[data-action="categories"]'
     # visible loaded categories-content
   casper.then (data) ->
     test.assertExists '.loaded#categories-content',
