@@ -15,28 +15,28 @@ var db = $.localStorage;
 window.hashHistory = [];
 
 if (db.get('esaAss.context') === 'justDeleted') {
+
   initAss();
   loadSlide('deleted');
-}
-
-if (db.isEmpty('esaAss')) {
-
-  console.log('empty');
-
-  // setup the database esaAss object
-  initAss();
-
-  // set answered global to false
-  window.answered = false;
-
-  // load the intro slide
-  loadSlide('main-menu');
 
 } else {
 
-  // welcome back users or allow new users to restart
-  loadSlide('resume');
+  if (db.isEmpty('esaAss')) {
 
+    // setup the database esaAss object
+    initAss();
+
+    // set answered global to false
+    window.answered = false;
+
+    // load the intro slide
+    loadSlide('main-menu');
+
+  } else {
+
+    // welcome back users or allow new users to restart
+    loadSlide('resume');
+  }
 }
 
 $(function() {
