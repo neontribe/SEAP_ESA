@@ -14,7 +14,14 @@ var db = $.localStorage;
 
 window.hashHistory = [];
 
+if (db.get('esaAss.context') === 'justDeleted') {
+  initAss();
+  loadSlide('deleted');
+}
+
 if (db.isEmpty('esaAss')) {
+
+  console.log('empty');
 
   // setup the database esaAss object
   initAss();
@@ -155,10 +162,12 @@ function loadSlide(id, type) {
   $('.slide > *').removeClass('loaded');
 
   // set type in local storage or reset to null
-  if (type) {
-    db.set('esaAss.slideType', type);
-  } else {
-    db.set('esaAss.slideType', null);
+  if (!db.isEmpty('esaAss') || db.get('esaAss.context' === 'justDeleted')) {
+    if (type) {
+      db.set('esaAss.slideType', type);
+    } else {
+      db.set('esaAss.slideType', null);
+    }
   }
 
   // go to picked question
@@ -172,7 +181,7 @@ function loadSlide(id, type) {
   // find out if we've gone to one of the locations that don't need saving
   // If you want to be able to return from a break to them, add to validBreakReturn
   // in the click action for break
-  var exclude = _.find(['main-menu', 'stats', 'about-esa', 'resume', 'are-you-sure', 'deleted', 'break-time'],
+  var exclude = _.find(['main-menu', 'stats', 'about-esa', 'resume', 'are-you-sure', 'break-time'],
     function(unsaveable) {
       return unsaveable === id;
     });
@@ -187,7 +196,7 @@ function loadSlide(id, type) {
 
   // Only set context if we were not on a break from excluded (eg stats or about)
   var currentContext = db.get('esaAss.context') ? db.get('esaAss.context') : '';
-  if (currentContext.indexOf('break-from-') === -1) {
+  if (currentContext.indexOf('break-from-') === -1 && !db.isEmpty('esaAss')) {
     // Set context reference (jQuery object)
     db.set('esaAss.context', id);
   }
@@ -777,22 +786,14 @@ $('body').on('click', '[data-action="menu"]', function() {
 
 });
 
-$('body').on('click', '[data-action="remember"]', function() {
-
-  loadSlide('remember');
-
-});
-
 $('body').on('click', '[data-action="clean-up"]', function() {
 
   // set answered global to false
   window.answered = false;
+  window.hashHistory = [];
 
-  // initialize database
-  initAss();
-
-  // load the intro slide
-  loadSlide('main-menu');
+  db.set('esaAss', {});
+  window.location.reload(true);
 
 });
 
@@ -807,12 +808,10 @@ $('body').on('click', '[data-action="delete-data"]', function() {
 
   // set answered global to false
   window.answered = false;
+  window.hashHistory = [];
 
-  // initialize database
-  initAss();
-
-  // load the deleted data slide
-  loadSlide('deleted');
+  db.set('esaAss', {'context' : 'justDeleted'});
+  window.location.reload(true);
 
 });
 
