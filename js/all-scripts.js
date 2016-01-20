@@ -15101,7 +15101,7 @@ function restart() {
   db.set('esaAss.remainingCategories', _.uniq(window.allCategories));
 
   // go to start screen
-  loadSlide('start');
+  loadSlide('categories');
 
 }
 
