@@ -338,7 +338,7 @@ function pickQuestion() {
 
 }
 
-// clear data and go to start screen
+// clear data and go to chose an activity screen
 function restart() {
 
   db.set('esaAss.unseenQuestions', []);
@@ -349,8 +349,8 @@ function restart() {
   db.set('esaAss.category', null);
   db.set('esaAss.remainingCategories', _.uniq(window.allCategories));
 
-  // go to start screen
-  loadSlide('start');
+  // go to chose activity screen
+  loadSlide('categories');
 
 }
 
