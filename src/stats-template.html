@@ -1,11 +1,5 @@
 <h1 tabindex="-1">Your assessment</h1>
 
-<div class="print-box no-print" id="printing-box">
-  <span class="sprite-icons sprite-list" alt="a list of items"></span>
-   <p>This page contains information about the result you may get based on the answers you have given to the questions. You can also see <a href="#about-esa">helpful tips to remember</a>. You can print it out and take it with you or access it when you’re at the assessment from your phone or tablet.</p>
-    <button class="button" onClick="window.print()">Print now</button>
- </div>
-
 <div class="paper">
   <h2>Would you qualify?</h2> {{#if answeredOne}} {{{qualifyHigh}}} {{{qualifyLow}}} {{{qualifyEither}}} {{{qualifyNone}}} {{else}}
   <p>You need to <a href="#start">answer some questions</a> so we can get a more accurate idea of whether or not you would qualify.</p>
@@ -62,6 +56,13 @@
     </li>
   </ul>
 </div>
+
+<div class="print-box no-print" id="printing-box">
+  <span class="sprite-icons sprite-list" alt="a list of items"></span>
+   <p>This page contains information about the result you may get based on the answers you have given to the questions. You can also see <a href="#about-esa">helpful tips to remember</a>. You can print it out and take it with you or access it when you’re at the assessment from your phone or tablet.</p>
+    <button class="button" onClick="window.print()">Print now</button>
+ </div>
+
 <div class="box no-print" id="data-box">
   <h2>Your Data</h2>
   <p>This site does not send any of your data anywhere. It does collect some anonymous information such as how many people have used the tool so we can make improvements.</p>
