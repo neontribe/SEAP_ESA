@@ -28,6 +28,7 @@ casper.test.begin 'ESA Guide', 4, (test) ->
   # Start at home, click about esa button
   casper
     .start url, ->
+      @click 'button[data-action="resume"]'
       @click 'button[data-action="' + hash + '"]'
       test.comment this.getCurrentUrl()
   

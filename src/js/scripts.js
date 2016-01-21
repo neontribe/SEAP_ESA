@@ -14,29 +14,25 @@ var db = $.localStorage;
 
 window.hashHistory = [];
 
-if (db.get('esaAss.context') === 'justDeleted') {
+if (db.isEmpty('esaAss') || db.get('esaAss.context') === 'justDeleted') {
 
-  initAss();
-  loadSlide('deleted');
-
-} else {
-
-  if (db.isEmpty('esaAss')) {
-
+  if (db.get('esaAss.context') === 'justDeleted') {
     // setup the database esaAss object
     initAss();
-
-    // set answered global to false
     window.answered = false;
-
-    // load the intro slide
-    loadSlide('main-menu');
-
+    loadSlide('deleted');
   } else {
-
-    // welcome back users or allow new users to restart
-    loadSlide('resume');
+    // load the intro slide
+    initAss();
+    window.answered = false;
+    loadSlide('main-menu');
   }
+
+} else {
+  console.log('load resume');
+  // welcome back users or allow new users to restart
+  loadSlide('resume');
+
 }
 
 /**********************************************************************
@@ -113,7 +109,6 @@ function getCatQuestionArr(slug) {
 }
 
 function loadSlide(id, type) {
-
   // Oops! we got here without an id to load - probably resuming user
   // session after data deleted. So no esaAss.whereIAm defined but computer
   // thinks user has been here before.
@@ -172,7 +167,7 @@ function loadSlide(id, type) {
   // find out if we've gone to one of the locations that don't need saving
   // If you want to be able to return from a break to them, add to validBreakReturn
   // in the click action for break
-  var exclude = _.find(['main-menu', 'stats', 'about-esa', 'resume', 'are-you-sure', 'break-time'],
+  var exclude = _.find(['main-menu', 'stats', 'about-esa', 'resume', 'deleted', 'are-you-sure', 'break-time'],
     function(unsaveable) {
       return unsaveable === id;
     });
@@ -199,6 +194,9 @@ function loadSlide(id, type) {
 
 // show an unseen question
 function pickQuestion() {
+
+  // For the hash refresh on back. We only want the page to reload if user goes back.
+  window.realPick = true;
 
   qualify(db.get('esaAss.submitPoints'));
 
@@ -930,13 +928,16 @@ $('body').on('click', '[data-action="set-cat"]', function() {
 
 // Fix back button
 $(window).on('hashchange', function(e) {
-
   // If we've gone to a question fragment but we haven't
   // pressed a "pick a question" button to get there...
+  slideType = null;
   if (window.location.hash.substr(0, 9) === '#question') {
-    if (hashHistory.indexOf(window.location.hash > -1)) {
-      loadSlide(window.location.hash.substr(1), 'question');
-    }
+    slideType = 'question';
+  }
+  if (window.hashHistory.indexOf(window.location.hash) > -1) {
+    loadSlide(window.location.hash.substr(1), slideType);
   }
 
+  window.hashHistory.push(window.location.hash);
+  _.uniq(window.hashHistory);
 });
