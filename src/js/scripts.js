@@ -1,4 +1,22 @@
 /**********************************************************************
+ABOUT PAGE VIDEO BUTTONS
+**********************************************************************/
+$(function() {
+
+  $("#video-signed").on("click", function() {
+    var buttonData = $(this);
+    if (buttonData.text() === buttonData.data("text-swap")) {
+      buttonData.text(buttonData.data("text-original"));
+      $( ".video-embed").html("<iframe id='video-iframe' src='https://player.vimeo.com/video/145264947' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>");
+    } else {
+      buttonData.data("text-original", buttonData.text());
+      buttonData.text(buttonData.data("text-swap"));
+      $( ".video-embed").html("<iframe id='video-iframe' src='https://player.vimeo.com/video/139480207' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>");
+    }
+  });
+});
+
+/**********************************************************************
 START UP (DETERMINE IF USER HAS BEEN USING THE APP ALREADY OR NOT)
 **********************************************************************/
 
