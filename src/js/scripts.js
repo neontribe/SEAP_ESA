@@ -34,14 +34,17 @@ window.hashHistory = [];
 
 if (db.isEmpty('esaAss')) {
 
-  // setup the database esaAss object
-  initAss();
+    // init and load the intro slide
+    initAss();
+    window.answered = false;
+    loadSlide('main-menu');
 
-  // set answered global to false
-  window.answered = false;
+} else if (db.get('esaAss.context') === 'justDeleted') {
 
-  // load the intro slide
-  loadSlide('main-menu');
+    // setup the database esaAss object
+    initAss();
+    window.answered = false;
+    loadSlide('deleted');
 
 } else {
 
@@ -124,7 +127,6 @@ function getCatQuestionArr(slug) {
 }
 
 function loadSlide(id, type) {
-
   // Oops! we got here without an id to load - probably resuming user
   // session after data deleted. So no esaAss.whereIAm defined but computer
   // thinks user has been here before.
@@ -164,10 +166,12 @@ function loadSlide(id, type) {
   $('.slide > *').removeClass('loaded');
 
   // set type in local storage or reset to null
-  if (type) {
-    db.set('esaAss.slideType', type);
-  } else {
-    db.set('esaAss.slideType', null);
+  if (!db.isEmpty('esaAss') || db.get('esaAss.context' === 'justDeleted')) {
+    if (type) {
+      db.set('esaAss.slideType', type);
+    } else {
+      db.set('esaAss.slideType', null);
+    }
   }
 
   // go to picked question
@@ -181,7 +185,7 @@ function loadSlide(id, type) {
   // find out if we've gone to one of the locations that don't need saving
   // If you want to be able to return from a break to them, add to validBreakReturn
   // in the click action for break
-  var exclude = _.find(['main-menu', 'stats', 'about-esa', 'resume', 'are-you-sure', 'deleted', 'break-time'],
+  var exclude = _.find(['main-menu', 'stats', 'about-esa', 'resume', 'deleted', 'are-you-sure', 'break-time'],
     function(unsaveable) {
       return unsaveable === id;
     });
@@ -196,7 +200,7 @@ function loadSlide(id, type) {
 
   // Only set context if we were not on a break from excluded (eg stats or about)
   var currentContext = db.get('esaAss.context') ? db.get('esaAss.context') : '';
-  if (currentContext.indexOf('break-from-') === -1) {
+  if (currentContext.indexOf('break-from-') === -1 && !db.isEmpty('esaAss')) {
     // Set context reference (jQuery object)
     db.set('esaAss.context', id);
   }
@@ -786,22 +790,14 @@ $('body').on('click', '[data-action="menu"]', function() {
 
 });
 
-$('body').on('click', '[data-action="remember"]', function() {
-
-  loadSlide('remember');
-
-});
-
 $('body').on('click', '[data-action="clean-up"]', function() {
 
   // set answered global to false
   window.answered = false;
+  window.hashHistory = [];
 
-  // initialize database
-  initAss();
-
-  // load the intro slide
-  loadSlide('main-menu');
+  db.set('esaAss', {});
+  window.location.reload(true);
 
 });
 
@@ -816,12 +812,10 @@ $('body').on('click', '[data-action="delete-data"]', function() {
 
   // set answered global to false
   window.answered = false;
+  window.hashHistory = [];
 
-  // initialize database
-  initAss();
-
-  // load the deleted data slide
-  loadSlide('deleted');
+  db.set('esaAss', {'context' : 'justDeleted'});
+  window.location.reload(true);
 
 });
 
@@ -949,13 +943,16 @@ $('body').on('click', '[data-action="set-cat"]', function() {
 
 // Fix back button
 $(window).on('hashchange', function(e) {
-
   // If we've gone to a question fragment but we haven't
   // pressed a "pick a question" button to get there...
+  slideType = null;
   if (window.location.hash.substr(0, 9) === '#question') {
-    if (hashHistory.indexOf(window.location.hash > -1)) {
-      loadSlide(window.location.hash.substr(1), 'question');
-    }
+    slideType = 'question';
+  }
+  if (window.hashHistory.indexOf(window.location.hash) > -1) {
+    loadSlide(window.location.hash.substr(1), slideType);
   }
 
+  window.hashHistory.push(window.location.hash);
+  _.uniq(window.hashHistory);
 });
