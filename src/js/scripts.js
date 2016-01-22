@@ -47,7 +47,6 @@ if (db.isEmpty('esaAss') || db.get('esaAss.context') === 'justDeleted') {
   }
 
 } else {
-  console.log('load resume');
   // welcome back users or allow new users to restart
   loadSlide('resume');
 
@@ -212,9 +211,6 @@ function loadSlide(id, type) {
 
 // show an unseen question
 function pickQuestion() {
-
-  // For the hash refresh on back. We only want the page to reload if user goes back.
-  window.realPick = true;
 
   qualify(db.get('esaAss.submitPoints'));
 
