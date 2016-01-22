@@ -32,21 +32,22 @@ var db = $.localStorage;
 
 window.hashHistory = [];
 
-if (db.isEmpty('esaAss') || db.get('esaAss.context') === 'justDeleted') {
+if (db.isEmpty('esaAss')) {
 
-  if (db.get('esaAss.context') === 'justDeleted') {
+    // init and load the intro slide
+    initAss();
+    window.answered = false;
+    loadSlide('main-menu');
+
+} else if (db.get('esaAss.context') === 'justDeleted') {
+
     // setup the database esaAss object
     initAss();
     window.answered = false;
     loadSlide('deleted');
-  } else {
-    // load the intro slide
-    initAss();
-    window.answered = false;
-    loadSlide('main-menu');
-  }
 
 } else {
+
   // welcome back users or allow new users to restart
   loadSlide('resume');
 
