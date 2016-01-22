@@ -8,8 +8,9 @@ url = 'http://localhost:9001/build'
 casper.test.begin "Stats Page", 1, (test)->
   casper
     .start url, ->
-      @thenClick 'button[data-action="resume"]'
-      @thenClick 'a[data-action="stats"]'
+      @click 'button[data-action="resume"]'
+    .then ->
+      @click 'a[data-action="stats"]'
     .then ->
       test.assertUrlMatch url+'/#stats', 'press link navigates to stats page'
     .run ->
