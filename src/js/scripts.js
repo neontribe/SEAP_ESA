@@ -212,9 +212,6 @@ function loadSlide(id, type) {
 // show an unseen question
 function pickQuestion() {
 
-  // For the hash refresh on back. We only want the page to reload if user goes back.
-  window.realPick = true;
-
   qualify(db.get('esaAss.submitPoints'));
 
   // If the next question was a followup, load it
