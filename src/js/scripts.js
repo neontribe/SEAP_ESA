@@ -47,7 +47,6 @@ if (db.isEmpty('esaAss') || db.get('esaAss.context') === 'justDeleted') {
   }
 
 } else {
-  console.log('load resume');
   // welcome back users or allow new users to restart
   loadSlide('resume');
 
