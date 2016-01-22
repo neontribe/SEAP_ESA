@@ -9,7 +9,7 @@ casper.test.begin "Stats Page", 1, (test)->
   casper
     .start url, ->
       @click 'button[data-action="resume"]'
-      @click 'a[data-action="stats"]'
+      @thenClick 'a[data-action="stats"]'
     .then ->
       test.assertUrlMatch url+'/#stats', 'press link navigates to stats page'
     .run ->
