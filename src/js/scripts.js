@@ -223,13 +223,6 @@ function pickQuestion() {
     return;
   }
 
-  // If we need to alert user of scoring some points, do it
-  if (db.get('esaAss.score')) {
-    loadSlide('score');
-    db.set('esaAss.score', false);
-    return;
-  }
-
   // If we need to alert user of qualification, do it
   if (db.get('esaAss.show-low')) {
     loadSlide('qualify-low');
@@ -241,6 +234,13 @@ function pickQuestion() {
   if (db.get('esaAss.show-high')) {
     loadSlide('qualify-high');
     db.set('esaAss.show-high', false);
+    return;
+  }
+
+  // If we need to alert user of scoring some points, do it
+  if (db.get('esaAss.score')) {
+    loadSlide('score');
+    db.set('esaAss.score', false);
     return;
   }
 
@@ -452,10 +452,11 @@ function qualify(points) {
 
   var total = tally();
 
-  if (total > 0) {
+  if (total > 0 && total <= 14) {
     db.set('esaAss.score', true);
     console.log('you scored');
   }
+
   else if (total >= 15) {
 
     // if an end question was set to promote from low to high
