@@ -452,10 +452,11 @@ function qualify(points) {
 
   var total = tally();
 
-  if (total > 0 && total <= 14) {
+  if (points > 0 && total <= 14) {
     db.set('esaAss.score', true);
     console.log('you scored');
-    console.log(db.get('esaAss.context'));
+    console.log('context' + db.get('esaAss.context'));
+		console.log('points' + points)
 	}
 
   else if (total >= 15) {
