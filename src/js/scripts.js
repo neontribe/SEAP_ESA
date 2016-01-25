@@ -456,7 +456,7 @@ function qualify(points) {
     db.set('esaAss.score', true);
     console.log('you scored');
     console.log('context' + db.get('esaAss.context'));
-		console.log('points' + points)
+		console.log('points' + points);
 	}
 
   else if (total >= 15) {
