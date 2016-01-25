@@ -227,6 +227,7 @@ function pickQuestion() {
   if (db.get('esaAss.show-low')) {
     loadSlide('qualify-low');
     db.set('esaAss.show-low', false);
+    db.set('esaAss.score', false);
     return;
   }
 
@@ -234,6 +235,7 @@ function pickQuestion() {
   if (db.get('esaAss.show-high')) {
     loadSlide('qualify-high');
     db.set('esaAss.show-high', false);
+    db.set('esaAss.score', false);
     return;
   }
 
@@ -454,10 +456,7 @@ function qualify(points) {
 
   if (points > 0 && total <= 14) {
     db.set('esaAss.score', true);
-    console.log('you scored');
-    console.log('context' + db.get('esaAss.context'));
-		console.log('points' + points);
-	}
+    }
 
   else if (total >= 15) {
 
@@ -468,7 +467,6 @@ function qualify(points) {
       if (!db.get('esaAss.high')) {
 
         db.set('esaAss.show-high', true);
-
       }
 
       // record that low qualification is possible
@@ -482,7 +480,6 @@ function qualify(points) {
       if (!db.get('esaAss.high') && !db.get('esaAss.low')) {
 
         db.set('esaAss.show-low', true);
-
       }
 
       // record that low qualification is possible
