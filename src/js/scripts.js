@@ -82,6 +82,7 @@ function initAss() {
     answers: {}, // the master object of category high scores for tallying
     low: false, // low qualification?
     high: false, // high qualification?
+    score: false, // scored points?
     incomplete: true // whether all the questions have been answered
   };
 
@@ -219,6 +220,13 @@ function pickQuestion() {
   if (db.get('esaAss.followupSlug')) {
     loadSlide(db.get('esaAss.followupSlug'));
     db.set('esaAss.followupSlug', null);
+    return;
+  }
+
+  // If we need to alert user of scoring some points, do it
+  if (db.get('esaAss.score')) {
+    loadSlide('score');
+    db.set('esaAss.score', false);
     return;
   }
 
@@ -444,7 +452,11 @@ function qualify(points) {
 
   var total = tally();
 
-  if (total >= 15) {
+  if (total > 0) {
+    db.set('esaAss.score', true);
+    console.log('you scored');
+  }
+  else if (total >= 15) {
 
     // if an end question was set to promote from low to high
     if (promote() || points === 16) {
