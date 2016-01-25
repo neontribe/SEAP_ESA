@@ -238,7 +238,7 @@ function pickQuestion() {
   }
 
   // If we need to alert user of scoring some points, do it
-  if (db.get('esaAss.score')) {
+  if (db.get('esaAss.score') && db.get('esaAss.context') !== 'score') {
     loadSlide('score');
     db.set('esaAss.score', false);
     return;
@@ -455,7 +455,8 @@ function qualify(points) {
   if (total > 0 && total <= 14) {
     db.set('esaAss.score', true);
     console.log('you scored');
-  }
+    console.log(db.get('esaAss.context'));
+	}
 
   else if (total >= 15) {
 
