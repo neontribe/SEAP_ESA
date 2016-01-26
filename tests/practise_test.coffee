@@ -214,8 +214,9 @@ casper.test.begin 'Qualify low then high with : ' + activityName4, 6, (test) ->
       # verify and click option value 9
       if answerQuestion(9) then data['answered'][question] = 9
       # click ask me another 2 times
-      for i in [0...2] by 1
-        @click '.question-container.loaded button[data-action="pick"]'
+      @click '.question-container.loaded button[data-action="pick"]'
+      @click '.slide.score .loaded button[data-action="pick"]'
+      @click '.question-container.loaded button[data-action="pick"]'
       # click A new activity
       @click '.box.loaded button[data-action="categories"]'
       @click getCategorySectionSelector 'Verbal communication'
