@@ -14905,6 +14905,10 @@ function loadSlide(id, type) {
     compileCategories();
   }
 
+  if (id === 'score') {
+    compileScore();
+  }
+
   if (id === 'category-finished') {
     $('#this-activity').text(db.get('esaAss.category').toLowerCase());
   }
@@ -15250,6 +15254,14 @@ function qualify(points) {
 // helper function to test numeric strings
 function isNumeric(num) {
   return !isNaN(num);
+}
+
+function compileScore() {
+  var template = Handlebars.compile(document.getElementById("score-template").innerHTML);
+  var esaAssData = db.get('esaAss');
+  var output = template(esaAssData);
+  $('#slide-score-content').html(output);
+
 }
 
 function compileStats() {
