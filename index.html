@@ -3875,11 +3875,11 @@
   <div class="slide categories" id="categories">
     <div id="categories-content">
     </div>
-</div>
-    <div class="slide score" id="score">
-      <div id="slide-score-content">
   </div>
-</div>
+  <div class="slide score" id="score">
+    <div id="slide-score-content">
+    </div>
+  </div>
   <footer role="contentinfo">
     <p>Brought to you by
       <a href="http://www.seap.org.uk/" target="_blank" title="The Charity, seAp (link Opens new tab)">
@@ -3903,111 +3903,111 @@
   </script>
   <script src="js/all-scripts.js"></script>
   <script id="stats-template" type="text/x-handlebars-template">
-    <h1 tabindex="-1">Your assessment</h1>
-    
-    <div class="paper">
-      <h2>Would you qualify?</h2>
-      <div class="{{#if answeredOne}}message{{/if}} no-print">
-        {{#if answeredOne}} {{#if incomplete}}
-        <p style="margin-top: 0">You have answered {{accuracy}} of the questions available. <a href="javascript:void(0)" role="button" data-action="pick">Try some more questions</a> to give you a more accurate idea of whether or not you would qualify.</p>{{/if}} {{else}}
-        <p><strong><a href="javascript: void(0)" data-action="start-or-resume">Try some questions <span aria-hidden="true">&#x2192;</span></a></strong></p>
-        {{/if}}
-      </div>
-      {{#if answeredOne}} {{{qualifyHigh}}} {{{qualifyLow}}} {{{qualifyEither}}} {{{qualifyNone}}} {{else}}
-      <p>You need to <a href="#categories">answer some questions</a> so we can get a more accurate idea of whether or not you would qualify.</p>
+  <h1 tabindex="-1">Your assessment</h1>
+  
+  <div class="paper">
+    <h2>Would you qualify?</h2>
+    <div class="{{#if answeredOne}}message{{/if}} no-print">
+      {{#if answeredOne}} {{#if incomplete}}
+      <p style="margin-top: 0">You have answered {{accuracy}} of the questions available. <a href="javascript:void(0)" role="button" data-action="pick">Try some more questions</a> to give you a more accurate idea of whether or not you would qualify.</p>{{/if}} {{else}}
+      <p><strong><a href="javascript: void(0)" data-action="start-or-resume">Try some questions <span aria-hidden="true">&#x2192;</span></a></strong></p>
       {{/if}}
-      <h2>Important answers</h2>
-      {{#if supportAnswers}}
-          <p>These are the answers you gave that count towards qualification. You should mention them in your assessment.</p>
-          <ul class="q-and-a">
-          {{#each supportAnswers}}
-            <li>
-              <p class="warn">Very Important</p>
-              <p><strong>Question:</strong> {{question}}</p>
-              <p><strong>Your answer:</strong> {{answer}}</p>
-              <p class="right no-print"><a href="javascript:void(0)" role="button" data-action="change" data-question="question-{{sluggify question}}">Change your answer?</a></p>
-            </li>
-          {{/each}}
-        </ul>
-      {{/if}}
-      {{#if WRAGAnswers}}
+    </div>
+    {{#if answeredOne}} {{{qualifyHigh}}} {{{qualifyLow}}} {{{qualifyEither}}} {{{qualifyNone}}} {{else}}
+    <p>You need to <a href="#categories">answer some questions</a> so we can get a more accurate idea of whether or not you would qualify.</p>
+    {{/if}}
+    <h2>Important answers</h2>
+    {{#if supportAnswers}}
+        <p>These are the answers you gave that count towards qualification. You should mention them in your assessment.</p>
         <ul class="q-and-a">
-          {{#each WRAGAnswers}}
+        {{#each supportAnswers}}
           <li>
-            <p class="warn amber">Important</p>
+            <p class="warn">Very Important</p>
             <p><strong>Question:</strong> {{question}}</p>
             <p><strong>Your answer:</strong> {{answer}}</p>
             <p class="right no-print"><a href="javascript:void(0)" role="button" data-action="change" data-question="question-{{sluggify question}}">Change your answer?</a></p>
           </li>
         {{/each}}
-        </ul>
-      {{/if}} {{#unless WRAGAnswers}} {{#unless supportAnswers}}
-        <p><strong>So far, you haven&#x2019;t provided any answers which you need to remember to mention in your real assessment</strong>. <strong><a href="javascript: void(0)" data-action="start-or-resume">Try some questions <span aria-hidden="true">&#x2192;</span></a></strong></p>
-        {{/unless}} {{/unless}}
       </ul>
-      <ul aria-label="menu">
+    {{/if}}
+    {{#if WRAGAnswers}}
+      <ul class="q-and-a">
+        {{#each WRAGAnswers}}
         <li>
-          {{#if incomplete}}
-          <button class="nav-link pick" data-action="start-or-resume">Try some questions</button>
-          {{else}}
-          <button class="nav-link pick" data-action="restart">Try again</button>
-          {{/if}}
+          <p class="warn amber">Important</p>
+          <p><strong>Question:</strong> {{question}}</p>
+          <p><strong>Your answer:</strong> {{answer}}</p>
+          <p class="right no-print"><a href="javascript:void(0)" role="button" data-action="change" data-question="question-{{sluggify question}}">Change your answer?</a></p>
         </li>
-        <li>
-          <button class="nav-link break" data-action="break">I&#x2019;ll have a break</button>
-        </li>
-        <li>
-          <button class="nav-link" data-action="about-esa">Read more about ESA</button>
-        </li>
+      {{/each}}
       </ul>
-    </div>
-    
-    <div class="print-box no-print" id="printing-box">
-      <span class="sprite-icons sprite-list" alt="a list of items"></span>
-       <p>This page contains information about the result you may get based on the answers you have given to the questions. You can also see <a href="#about-esa">helpful tips to remember</a>. You can print it out and take it with you or access it when you’re at the assessment from your phone or tablet.</p>
-        <button class="button print" onClick="window.print()">Print now</button>
-     </div>
-    
-    <div class="box no-print" id="data-box">
-      <h2>Your Data</h2>
-      <p>This site does not send any of your data anywhere. It does collect some anonymous information such as how many people have used the tool so we can make improvements.</p>
-      <p>However, it does save some data just on the computer you’re using in order to work properly. If this is not your computer, tablet or phone you can delete all this data when you are done using the site. This way, no one else will see it.</p>
-      <ul aria-label="menu">
-        <li>
-          <button class="nav-link red" data-action="delete-are-you-sure">I&#x2019;m done! Delete my stuff</button>
-        </li>
-        <li>
-          <button class="nav-link print" onClick="window.print()">Print my information</button>
-        <li>
-          <button class="nav-link" data-action="menu" role="link">Home</button>
-        </li>
-      </ul>
-    </div>
-    <!--<div class="feedback">
-      <p>Give feedback about c-App</p>
-    </div>-->
-    
+    {{/if}} {{#unless WRAGAnswers}} {{#unless supportAnswers}}
+      <p><strong>So far, you haven&#x2019;t provided any answers which you need to remember to mention in your real assessment</strong>. <strong><a href="javascript: void(0)" data-action="start-or-resume">Try some questions <span aria-hidden="true">&#x2192;</span></a></strong></p>
+      {{/unless}} {{/unless}}
+    </ul>
+    <ul aria-label="menu">
+      <li>
+        {{#if incomplete}}
+        <button class="nav-link pick" data-action="start-or-resume">Try some questions</button>
+        {{else}}
+        <button class="nav-link pick" data-action="restart">Try again</button>
+        {{/if}}
+      </li>
+      <li>
+        <button class="nav-link break" data-action="break">I&#x2019;ll have a break</button>
+      </li>
+      <li>
+        <button class="nav-link" data-action="about-esa">Read more about ESA</button>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="print-box no-print" id="printing-box">
+    <span class="sprite-icons sprite-list" alt="a list of items"></span>
+     <p>This page contains information about the result you may get based on the answers you have given to the questions. You can also see <a href="#about-esa">helpful tips to remember</a>. You can print it out and take it with you or access it when you’re at the assessment from your phone or tablet.</p>
+      <button class="button print" onClick="window.print()">Print now</button>
+   </div>
+  
+  <div class="box no-print" id="data-box">
+    <h2>Your Data</h2>
+    <p>This site does not send any of your data anywhere. It does collect some anonymous information such as how many people have used the tool so we can make improvements.</p>
+    <p>However, it does save some data just on the computer you’re using in order to work properly. If this is not your computer, tablet or phone you can delete all this data when you are done using the site. This way, no one else will see it.</p>
+    <ul aria-label="menu">
+      <li>
+        <button class="nav-link red" data-action="delete-are-you-sure">I&#x2019;m done! Delete my stuff</button>
+      </li>
+      <li>
+        <button class="nav-link print" onClick="window.print()">Print my information</button>
+      <li>
+        <button class="nav-link" data-action="menu" role="link">Home</button>
+      </li>
+    </ul>
+  </div>
+  <!--<div class="feedback">
+    <p>Give feedback about c-App</p>
+  </div>-->
+  
   </script>
   <script id="categories-template" type="text/x-handlebars-template">
-    <h1 tabindex="-1">Choose an activity affected by your condition</h1>
-    <div class="flex-center">
-      <p>Each activity has a maximum of 8 questions to answer. You can have a break at any time and come back to where you left off. If you aren't sure which sort of activity to look at first, we can <a data-action="set-cat" data-category="random-category">pick one for you at random<a/>.</p>
-    </div>
-    <div class="category-list" role="toolbar" aria-label="menu options">
-      <ul>
-        {{#each allCategories}}
-        <li class="real-cat">
-          <button data-action="set-cat" data-category="{{this}}">{{this}}</button>
-        </li>
-        {{/each}}
-      </ul>
-    </div>
-    
+  <h1 tabindex="-1">Choose an activity affected by your condition</h1>
+  <div class="flex-center">
+    <p>Each activity has a maximum of 8 questions to answer. You can have a break at any time and come back to where you left off. If you aren't sure which sort of activity to look at first, we can <a data-action="set-cat" data-category="random-category">pick one for you at random<a/>.</p>
+  </div>
+  <div class="category-list" role="toolbar" aria-label="menu options">
+    <ul>
+      {{#each allCategories}}
+      <li class="real-cat">
+        <button data-action="set-cat" data-category="{{this}}">{{this}}</button>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+  
   </script>
   <script id="about-buttons-template" type="text/x-handlebars-template">
   <ul aria-label="menu">
     <li>
-      <button class="nav-link" data-action="start-or-resume" role="link">Hi HI HITry some questions</button>
+      <button class="nav-link" data-action="start-or-resume" role="link">Try some questions</button>
     </li>
     <li>
       <button class="nav-link" data-action="about-esa" role="link">More information</button>
@@ -4017,43 +4017,42 @@
     </li>
   </ul>
   
-</script>
-<script id="score-template" type="text/x-handlebars-template">
-<div class="box green">
-    <h1 tabindex="-1">
-      You scored<br/>
-      <strong>Important Answer</strong>
-    </h1>
-
-    <div class="{{#if answeredOne}}message{{/if}} no-print">
-      {{#if answeredOne}} {{#if incomplete}}
-      <p style="margin-top: 0">You have answered {{accuracy}} of the questions available. <a href="javascript:void(0)" role="button" data-action="pick">Try some more questions</a> to give you a more accurate idea of whether or not you would qualify.</p>{{/if}} {{else}}
-      <p><strong><a href="javascript: void(0)" data-action="start-or-resume">Try some questions <span aria-hidden="true">&#x2192;</span></a></strong></p>
-      {{/if}}
+  </script>
+  <script id="score-template" type="text/x-handlebars-template">
+  <div class="box green">
+      <h1 tabindex="-1">
+        You scored<br/>
+        <strong>Important Answer</strong>
+      </h1>
+  
+      <div class="{{#if answeredOne}}message{{/if}} no-print">
+        {{#if answeredOne}} {{#if incomplete}}
+        <p style="margin-top: 0">You have answered {{accuracy}} of the questions available. <a href="javascript:void(0)" role="button" data-action="pick">Try some more questions</a> to give you a more accurate idea of whether or not you would qualify.</p>{{/if}} {{else}}
+        <p><strong><a href="javascript: void(0)" data-action="start-or-resume">Try some questions <span aria-hidden="true">&#x2192;</span></a></strong></p>
+        {{/if}}
+      </div>
+  
+  
+      <p>
+        Your answer to this questions scored some points.
+      </p>
+      <p>
+        You may still find it helpful to take a look at some more questions so that you are better prepared for the assessment.
+      </p>
+      <ul aria-label="menu">
+        <li>
+          <button class="nav-link" data-action="pick">Another question</button>
+        </li>
+        <li>
+          <button class="nav-link" data-action="stats" role="link">Your assessment so far</button>
+        </li>
+        <li>
+          <button class="nav-link" data-action="about-esa" role="link">More information</button>
+        </li>
+      </ul>
     </div>
-
-
-    <p>
-      Your answer to this questions scored some points.
-    </p>
-    <p>
-      You may still find it helpful to take a look at some more questions so that you are better prepared for the assessment.
-    </p>
-    <ul aria-label="menu">
-      <li>
-        <button class="nav-link" data-action="pick">Another question</button>
-      </li>
-      <li>
-        <button class="nav-link" data-action="stats" role="link">Your assessment so far</button>
-      </li>
-      <li>
-        <button class="nav-link" data-action="about-esa" role="link">More information</button>
-      </li>
-    </ul>
-  </div>
-
-</script>
-
+  
+  </script>
 </body>
 
 </html>
