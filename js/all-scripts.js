@@ -14833,7 +14833,6 @@ function initAss() {
     answers: {}, // the master object of category high scores for tallying
     low: false, // low qualification?
     high: false, // high qualification?
-    score: false, // scored points?
     incomplete: true // whether all the questions have been answered
   };
 
@@ -14978,7 +14977,7 @@ function pickQuestion() {
   if (db.get('esaAss.show-low')) {
     loadSlide('qualify-low');
     db.set('esaAss.show-low', false);
-    db.set('esaAss.score', false);
+    db.set('esaAss.showScore', false);
     return;
   }
 
@@ -14986,15 +14985,15 @@ function pickQuestion() {
   if (db.get('esaAss.show-high')) {
     loadSlide('qualify-high');
     db.set('esaAss.show-high', false);
-    db.set('esaAss.score', false);
+    db.set('esaAss.showScore', false);
     return;
   }
 
   // If we need to alert user of scoring some points, do it
-  if (db.get('esaAss.score') && db.get('esaAss.context') !== 'score') {
+  if (db.get('esaAss.showScore') && db.get('esaAss.context') !== 'showScore') {
     loadSlide('score');
     db.set('esaAss.submitPoints', 0);
-    db.set('esaAss.score', false);
+    db.set('esaAss.showScore', false);
     return;
   }
 
@@ -15207,7 +15206,7 @@ function qualify(points) {
   var total = tally();
 
   if (points > 0 && total <= 14) {
-    db.set('esaAss.score', true);
+    db.set('esaAss.showScore', true);
     }
 
   else if (total >= 15) {
