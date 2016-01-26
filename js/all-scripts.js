@@ -14833,6 +14833,7 @@ function initAss() {
     answers: {}, // the master object of category high scores for tallying
     low: false, // low qualification?
     high: false, // high qualification?
+    score: false, // scored points?
     incomplete: true // whether all the questions have been answered
   };
 
@@ -14850,7 +14851,7 @@ function getCatQuestions(slug) {
     // Select a random category containing unseen questions
     var nextCat = _.sample(db.get('esaAss.remainingCategories'));
     db.set('esaAss.category', nextCat);
-    loadSlide('choose-random-category');
+    loadSlide('chose-random-category');
     return;
 
   } else {
@@ -14909,9 +14910,9 @@ function loadSlide(id, type) {
     $('#this-activity').text(db.get('esaAss.category').toLowerCase());
   }
 
-  if (id === 'choose-random-category') {
-    $('#choose-random-category button').attr('data-category', db.get('esaAss.category'));
-    $('#choose-random-category #unseen-category').text(db.get('esaAss.category'));
+  if (id === 'chose-random-category') {
+    $('#chose-random-category button').attr('data-category', db.get('esaAss.category'));
+    $('#chose-random-category #unseen-category').text(db.get('esaAss.category'));
   }
 
   $('.slide > *').removeClass('loaded');
@@ -14977,6 +14978,7 @@ function pickQuestion() {
   if (db.get('esaAss.show-low')) {
     loadSlide('qualify-low');
     db.set('esaAss.show-low', false);
+    db.set('esaAss.score', false);
     return;
   }
 
@@ -14984,6 +14986,15 @@ function pickQuestion() {
   if (db.get('esaAss.show-high')) {
     loadSlide('qualify-high');
     db.set('esaAss.show-high', false);
+    db.set('esaAss.score', false);
+    return;
+  }
+
+  // If we need to alert user of scoring some points, do it
+  if (db.get('esaAss.score') && db.get('esaAss.context') !== 'score') {
+    loadSlide('score');
+    db.set('esaAss.submitPoints', 0);
+    db.set('esaAss.score', false);
     return;
   }
 
@@ -15195,7 +15206,11 @@ function qualify(points) {
 
   var total = tally();
 
-  if (total >= 15) {
+  if (points > 0 && total <= 14) {
+    db.set('esaAss.score', true);
+    }
+
+  else if (total >= 15) {
 
     // if an end question was set to promote from low to high
     if (promote() || points === 16) {
@@ -15204,7 +15219,6 @@ function qualify(points) {
       if (!db.get('esaAss.high')) {
 
         db.set('esaAss.show-high', true);
-
       }
 
       // record that low qualification is possible
@@ -15218,7 +15232,6 @@ function qualify(points) {
       if (!db.get('esaAss.high') && !db.get('esaAss.low')) {
 
         db.set('esaAss.show-low', true);
-
       }
 
       // record that low qualification is possible
