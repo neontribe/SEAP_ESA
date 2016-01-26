@@ -242,6 +242,7 @@ function pickQuestion() {
   // If we need to alert user of scoring some points, do it
   if (db.get('esaAss.score') && db.get('esaAss.context') !== 'score') {
     loadSlide('score');
+    db.set('esaAss.submitPoints', 0);
     db.set('esaAss.score', false);
     return;
   }
