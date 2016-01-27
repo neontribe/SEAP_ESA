@@ -55,7 +55,6 @@ $(function() {
       onPlay();
       onFinish();
   }
-
   $('#about-esa a, .about-buttons-content, .to-main-menu').on("click", function() {
       console.log('unload');
       player1.api('unload');
