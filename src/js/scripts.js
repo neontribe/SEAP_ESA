@@ -7,12 +7,58 @@ $(function() {
     var buttonData = $(this);
     if (buttonData.text() === buttonData.data("text-swap")) {
       buttonData.text(buttonData.data("text-original"));
-      $( ".video-embed").html("<iframe id='video-iframe' src='https://player.vimeo.com/video/145264947' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>");
+      $( ".video-embed").html("<iframe id='video-iframe' src='https://player.vimeo.com/video/145264947?api=1&player_id=video-iframe' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>");
     } else {
       buttonData.data("text-original", buttonData.text());
       buttonData.text(buttonData.data("text-swap"));
-      $( ".video-embed").html("<iframe id='video-iframe' src='https://player.vimeo.com/video/139480207' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>");
+      $( ".video-embed").html("<iframe id='video-iframe' src='https://player.vimeo.com/video/139480207?api=1&player_id=video-iframe' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>");
     }
+  });
+});
+
+
+/**********************************************************************
+ABOUT PAGE UNLOAD VIDEO WHEN LEAVING SLIDE
+**********************************************************************/
+$(function() {
+  var iframe1 = $('#video-iframe')[0];
+  var player1 = $f(iframe1);
+
+  player1.addEvent('ready', ready);
+
+  function addEvent(element, eventName, callback) {
+      if (element.addEventListener) {
+          element.addEventListener(eventName, callback, false);
+      }
+      else {
+          element.attachEvent(eventName, callback, false);
+      }
+  }
+
+  function ready(player_id) {
+      console.log('ready!');
+      var froogaloop = $f(player_id);
+
+      function onPlay() {
+          froogaloop.addEvent('play', function(data) {
+              console.log('play');
+          });
+      }
+
+
+      function onFinish() {
+          froogaloop.addEvent('finish', function(data) {
+              console.log('finish');
+          });
+      }
+
+      onPlay();
+      onFinish();
+  }
+
+  $('#about-esa a').on("click", function() {
+      console.log('unload');
+      player1.api('unload');
   });
 });
 
