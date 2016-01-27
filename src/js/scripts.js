@@ -1,6 +1,6 @@
 $(function() {
     if ( document.location.href.indexOf('neontribe.github.io') > -1 ) {
-        console.log('hi');
+        $('.staging-banner').show();
     }
 });
 
