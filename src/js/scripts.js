@@ -56,7 +56,7 @@ $(function() {
       onFinish();
   }
 
-  $('#about-esa a').on("click", function() {
+  $('#about-esa a, .about-buttons-content, .to-main-menu').on("click", function() {
       console.log('unload');
       player1.api('unload');
   });
