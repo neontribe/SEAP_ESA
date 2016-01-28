@@ -15740,9 +15740,13 @@ $('body').on('click', '[data-action="set-cat"]', function() {
 $(window).on('hashchange', function(e) {
   //If we navigate away from the page and the video is playing pause the video
 
-  if (db.get('esaAss.videoLoaded')) {
-    var message = {"method":"pause"};
-    player1.postMessage(message, "*");
+  try {
+    if (db.get('esaAss.videoLoaded')) {
+      var message = {"method":"pause"};
+      player1.postMessage(message, "*");
+    }
+  } catch (err) {
+    // catches error when refreshing browser on the about page
   }
 
   // If we've gone to a question fragment but we haven't
