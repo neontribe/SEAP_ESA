@@ -1,3 +1,9 @@
+$(function() {
+    if ( document.location.href.indexOf('neontribe.github.io') > -1 ) {
+        $('.staging-banner').show();
+    }
+});
+
 /**********************************************************************
 ABOUT PAGE VIDEO BUTTONS
 **********************************************************************/
