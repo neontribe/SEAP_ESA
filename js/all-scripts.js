@@ -14797,7 +14797,16 @@ FUNCTIONS
 **********************************************************************/
 
 function initAss() {
-  // model the database 'esaAss' object
+  // resets the video to start
+  try {
+    if (db.get('esaAss.videoLoaded')) {
+      var message = {"method":"unload"};
+      player1.postMessage(message, "*");
+    }
+  } catch (err) {
+    // catches error when refreshing browser on the about page
+  }
+    // model the database 'esaAss' object
   var assTemplate = { // the questions which haven't been viewed
     unseenQuestions: [],
     seenQuestions: [],
