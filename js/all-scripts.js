@@ -14756,24 +14756,6 @@ $(function() {
 });
 
 /**********************************************************************
-ABOUT PAGE VIDEO BUTTONS
-**********************************************************************/
-$(function() {
-
-  $("#video-signed").on("click", function() {
-    var buttonData = $(this);
-    if (buttonData.text() === buttonData.data("text-swap")) {
-      buttonData.text(buttonData.data("text-original"));
-      $( ".video-embed").html("<iframe id='video-iframe' src='https://player.vimeo.com/video/145264947' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>");
-    } else {
-      buttonData.data("text-original", buttonData.text());
-      buttonData.text(buttonData.data("text-swap"));
-      $( ".video-embed").html("<iframe id='video-iframe' src='https://player.vimeo.com/video/139480207' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>");
-    }
-  });
-});
-
-/**********************************************************************
 START UP (DETERMINE IF USER HAS BEEN USING THE APP ALREADY OR NOT)
 **********************************************************************/
 
@@ -14839,7 +14821,8 @@ function initAss() {
     answers: {}, // the master object of category high scores for tallying
     low: false, // low qualification?
     high: false, // high qualification?
-    incomplete: true // whether all the questions have been answered
+    incomplete: true, // whether all the questions have been answered
+    videoLoaded: false // has the iframe video been loaded
   };
 
   // Save the virgin ass to local storage
@@ -15472,6 +15455,37 @@ function sluggify(string) {
 }
 
 /**********************************************************************
+ABOUT PAGE VIDEO BUTTONS
+**********************************************************************/
+$(function() {
+
+  $("#video-signed").on("click", function() {
+    var buttonData = $(this);
+    if (buttonData.text() === buttonData.data("text-swap")) {
+      buttonData.text(buttonData.data("text-original"));
+      $( ".video-embed").html("<iframe id='video-iframe' src='https://player.vimeo.com/video/145264947?api=1&player_id=video-iframe' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>");
+    } else {
+      buttonData.data("text-original", buttonData.text());
+      buttonData.text(buttonData.data("text-swap"));
+      $( ".video-embed").html("<iframe id='video-iframe' src='https://player.vimeo.com/video/139480207?api=1&player_id=video-iframe' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>");
+    }
+  });
+});
+
+
+/**********************************************************************
+ABOUT PAGE UNLOAD VIDEO WHEN LEAVING SLIDE
+**********************************************************************/
+$(function() {
+  var iframe1 = $('#video-iframe')[0];
+
+      player1 = iframe1.contentWindow;
+
+  db.set('esaAss.videoLoaded', true);
+
+});
+
+/**********************************************************************
 EVENTS
 **********************************************************************/
 
@@ -15724,6 +15738,13 @@ $('body').on('click', '[data-action="set-cat"]', function() {
 
 // Fix back button
 $(window).on('hashchange', function(e) {
+  //If we navigate away from the page and the video is playing pause the video
+
+  if (db.get('esaAss.videoLoaded')) {
+    var message = { "method":"pause"};
+    player1.postMessage(message, "*");
+  }
+
   // If we've gone to a question fragment but we haven't
   // pressed a "pick a question" button to get there...
   slideType = null;
