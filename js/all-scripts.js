@@ -14888,7 +14888,7 @@ function loadSlide(id, type) {
 
   if (id === 'about-esa') {
     compileAboutButtons();
-    getPlayer();
+    setPlayer();
   }
 
   if (id === 'categories') {
@@ -15455,14 +15455,14 @@ function sluggify(string) {
 
 }
 
-function getPlayer() {
+// sets up the video player
+function setPlayer() {
   var iframe1 = $('#video-iframe')[0];
       player1 = iframe1.contentWindow;
 
   db.set('esaAss.videoLoaded', true);
 
 }
-
 
 /**********************************************************************
 ABOUT PAGE VIDEO BUTTONS
@@ -15475,12 +15475,12 @@ $(function() {
     if (buttonData.text() === buttonData.data("text-swap")) {
       buttonData.text(buttonData.data("text-original"));
       $( ".video-embed").html("<iframe id='video-iframe' src='https://player.vimeo.com/video/145264947' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>");
-      getPlayer();
+      setPlayer();
     } else {
       buttonData.data("text-original", buttonData.text());
       buttonData.text(buttonData.data("text-swap"));
       $( ".video-embed").html("<iframe id='video-iframe' src='https://player.vimeo.com/video/139480207' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>");
-      getPlayer();
+      setPlayer();
     }
   });
 });
