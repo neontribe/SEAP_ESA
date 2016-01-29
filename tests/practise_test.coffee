@@ -84,7 +84,7 @@ clearAndStartPractise = (test, activityName) ->
     #set empty answer obj
     data['answered'] = {}
     # Correct url appears for activity start
-    test.assertUrlMatch url + '/#categories',
+    test.assertUrlMatch url + '/#activities',
       'Button press Navigated to ' + @getCurrentUrl()
     # visible loaded categories-content
   casper.then (data) ->
@@ -131,7 +131,7 @@ casper.test.begin 'Answer all questions using: ' + activityName1, 6, (test) ->
         break unless isNext
     .then (data) ->
       # verify we are on the category-finished page
-      test.assertUrlMatch url + '/#category-finished',
+      test.assertUrlMatch url + '/#activity-finished',
         'Landed on category finished page'
       # verify category name as expected
       test.assertSelectorHasText '.box.loaded p strong',
@@ -218,7 +218,7 @@ casper.test.begin 'Qualify low then high with : ' + activityName4, 6, (test) ->
       @click '.slide.score .loaded button[data-action="pick"]'
       @click '.question-container.loaded button[data-action="pick"]'
       # click A new activity
-      @click '.box.loaded button[data-action="categories"]'
+      @click '.box.loaded button[data-action="activities"]'
       @click getCategorySectionSelector 'Verbal communication'
       @click '.question-container.loaded button[data-action="pick"]'
       question = @fetchText '.question-container.loaded h2 em'
@@ -234,7 +234,7 @@ casper.test.begin 'Qualify low then high with : ' + activityName4, 6, (test) ->
       # ask another then new act eating and drink answer no.
       # should qualify high
       @click '.box.loaded button[data-action="pick"]'
-      @click '.box.loaded button[data-action="categories"]'
+      @click '.box.loaded button[data-action="activities"]'
       @click getCategorySectionSelector 'Eating and drinking'
       if answerQuestion('*') then data['answered'][question] = '*'
       # click ask me another
