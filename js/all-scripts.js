@@ -15285,7 +15285,7 @@ function compileStats() {
 
 }
 
-function doneCats() {
+function disabledCats() {
 
   var remaining = db.get('esaAss.remainingCategories');
 
@@ -15293,11 +15293,13 @@ function doneCats() {
 
     var button = $('button', this);
 
+    button.attr('disabled', null);
+
     var catName = button.attr('data-category');
 
     if (!_.contains(remaining, catName)) {
 
-      button.addClass('done');
+      button.attr('disabled', 'disabled');
 
     }
 
@@ -15324,7 +15326,7 @@ function compileCategories() {
   $('#categories-content').html(output);
 
   // disable seen categories
-  doneCats();
+  disabledCats();
 
 }
 
