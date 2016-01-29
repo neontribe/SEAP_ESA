@@ -149,7 +149,7 @@ function loadSlide(id, type) {
     setPlayer();
   }
 
-  if (id === 'categories') {
+  if (id === 'activities') {
     compileCategories();
   }
 
@@ -157,7 +157,7 @@ function loadSlide(id, type) {
     compileScore();
   }
 
-  if (id === 'category-finished') {
+  if (id === 'activity-finished') {
     $('#this-activity').text(db.get('esaAss.category').toLowerCase());
   }
 
@@ -286,7 +286,7 @@ function pickQuestion() {
           return;
         }
       } else {
-        loadSlide('category-finished');
+        loadSlide('activity-finished');
         return;
       }
     }
@@ -385,7 +385,7 @@ function restart() {
   db.set('esaAss.remainingCategories', _.uniq(window.allCategories));
 
   // go to chose activity screen
-  loadSlide('categories');
+  loadSlide('activities');
 
 }
 
@@ -785,7 +785,7 @@ $('body').on('click', '[data-action="start-or-resume"]', function() {
 
   } else {
 
-    loadSlide('categories');
+    loadSlide('activities');
 
   }
 
@@ -964,9 +964,9 @@ $('body').on('change', '[type="radio"]', function() {
 
 });
 
-$('body').on('click', '[data-action="categories"]', function() {
+$('body').on('click', '[data-action="activities"]', function() {
 
-  loadSlide('categories');
+  loadSlide('activities');
 
 });
 
