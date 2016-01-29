@@ -534,7 +534,7 @@ function compileStats() {
 
 }
 
-function disabledCats() {
+function doneCats() {
 
   var remaining = db.get('esaAss.remainingCategories');
 
@@ -573,7 +573,7 @@ function compileCategories() {
   $('#categories-content').html(output);
 
   // disable seen categories
-  disabledCats();
+  doneCats();
 
 }
 
