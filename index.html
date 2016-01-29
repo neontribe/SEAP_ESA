@@ -3398,9 +3398,7 @@
   <div class="slide get-started" id="resume">
     <div class="box">
       <h1 tabindex="-1">Hello again</h1>
-      <div class="flex-center">
-        <p>It looks like you&#x2019;ve been here before. If that&#x2019;s the case you can &#x201c;Continue&#x201d; to pick up where you left off or &#x201c;Start over&#x201d; to clear what you&#x2019;ve done before and try any of the questions again. If you haven’t been here before choose &#x201c;Start over&#x201d;.</p>
-      </div>
+      <p>It looks like you&#x2019;ve been here before. If that&#x2019;s the case you can &#x201c;Continue&#x201d; to pick up where you left off or &#x201c;Start over&#x201d; to clear what you&#x2019;ve done before and try any of the questions again. If you haven’t been here before choose &#x201c;Start over&#x201d;.</p>
       <ul aria-label="menu">
         <li>
           <button class="nav-link" data-action="resume">Continue</button>
@@ -3866,9 +3864,9 @@
   <div class="slide chose-random-category" id="chose-random-category">
     <div class="box">
       <h1 tabindex="-1">Assorted questions</h1>
-      <div class="flex-center">
-        <p>Because you chose &#x201c;Pick at random&#x201d;, we have selected an activity containing questions you haven&#x2019;t seen yet. Remember: You can <a role="button" href="#break-time" data-action="break">take a break</a> at any time.</p>
-      </div>
+      <p>
+        Because you chose &#x201c;Pick at random&#x201d;, we have selected an activity containing questions you haven&#x2019;t seen yet. Remember: You can <a role="button" href="#break-time" data-action="break">take a break</a> at any time.
+      </p>
       <ul aria-label="menu">
         <li>
           <button class="nav-link" data-action="set-cat" data-category="random-category"><span id="unseen-category">Unseen category</span></button>
@@ -4025,20 +4023,17 @@
   <script id="score-template" type="text/x-handlebars-template">
   <div class="box green">
       <h1 tabindex="-1">
-        You scored<br/>
+        That's an<br/>
         <strong>Important Answer</strong>
       </h1>
-  
       <div class="{{#if answeredOne}}message{{/if}} no-print">
         {{#if answeredOne}} {{#if incomplete}}
         <p style="margin-top: 0">You have answered {{accuracy}} of the questions available. <a href="javascript:void(0)" role="button" data-action="pick">Try some more questions</a> to give you a more accurate idea of whether or not you would qualify.</p>{{/if}} {{else}}
         <p><strong><a href="javascript: void(0)" data-action="start-or-resume">Try some questions <span aria-hidden="true">&#x2192;</span></a></strong></p>
         {{/if}}
       </div>
-  
-  
       <p>
-        Your answer to this questions scored some points.
+        That answer will count towards qualification. You should mention it in your assessment.
       </p>
       <p>
         You may still find it helpful to take a look at some more questions so that you are better prepared for the assessment.
