@@ -14802,7 +14802,6 @@ function initAss() {
     if (db.get('esaAss.videoLoaded')) {
       var message = {"method":"unload"};
       player1.postMessage(message, "*");
-      console.log('ARG');
     }
   } catch (err) {
     // catches error when refreshing browser on the about page
