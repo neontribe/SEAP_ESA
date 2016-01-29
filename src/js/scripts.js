@@ -542,13 +542,11 @@ function disabledCats() {
 
     var button = $('button', this);
 
-    button.attr('disabled', null);
-
     var catName = button.attr('data-category');
 
     if (!_.contains(remaining, catName)) {
 
-      button.attr('disabled', 'disabled');
+      button.addClass('done');
 
     }
 
