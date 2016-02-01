@@ -26,6 +26,9 @@
     </ul>
   {{/if}}
   {{#if WRAGAnswers}}
+    {{#unless supportAnswers}}
+      <p>These are the answers you gave that count towards qualification. You should mention them in your assessment.</p>
+    {{/unless}}
     <ul class="q-and-a">
       {{#each WRAGAnswers}}
       <li>
