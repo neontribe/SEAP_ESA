@@ -877,6 +877,13 @@ $('body').on('click', '[data-action="stats"]', function() {
 
 });
 
+$('body').on('click', '[data-action="guide"]', function() {
+
+  // load the stats slide
+  loadSlide('guide');
+
+});
+
 $('body').on('click', '[data-action="about-esa"]', function() {
 
   // load slide
