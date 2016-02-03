@@ -132,7 +132,7 @@ function loadSlide(id, type) {
     id = 'main-menu';
   }
 
-  if (id === 'stats') {
+  if (id === 'your-assessment') {
 
     // if you ran out of unseen questions and didn't skip any
     if (_.isEmpty(db.get('esaAss.unseenQuestions')) && _.isEmpty(db.get('esaAss.skippedQuestions')) && _.isEmpty(db.get('esaAss.remainingCategories')) && db.get('esaAss.started')) {
@@ -188,7 +188,7 @@ function loadSlide(id, type) {
   // find out if we've gone to one of the locations that don't need saving
   // If you want to be able to return from a break to them, add to validBreakReturn
   // in the click action for break
-  var exclude = _.find(['main-menu', 'stats', 'about-esa', 'resume', 'deleted', 'are-you-sure', 'break-time'],
+  var exclude = _.find(['main-menu', 'your-assessment', 'about-esa', 'resume', 'deleted', 'are-you-sure', 'break-time'],
     function(unsaveable) {
       return unsaveable === id;
     });
@@ -227,7 +227,7 @@ function pickQuestion() {
 
   // If we need to alert user of qualification, do it
   if (db.get('esaAss.show-low')) {
-    loadSlide('qualify-low');
+    loadSlide('qualify-wrag');
     db.set('esaAss.show-low', false);
     db.set('esaAss.showScore', false);
     return;
@@ -235,7 +235,7 @@ function pickQuestion() {
 
   // same for high qualification
   if (db.get('esaAss.show-high')) {
-    loadSlide('qualify-high');
+    loadSlide('qualify-support-group');
     db.set('esaAss.show-high', false);
     db.set('esaAss.showScore', false);
     return;
@@ -794,7 +794,7 @@ $('body').on('click', '[data-action="start-or-resume"]', function() {
 $('body').on('click', '[data-action="break"]', function() {
 
   // If we are on one of these pages when we take a break, save our place.
-  var validBreakReturn = ['stats', 'about-esa', 'transcript'];
+  var validBreakReturn = ['your-assessment', 'about-esa', 'transcript'];
     currentContext = db.get('esaAss.context');
 
   // If we are taking a break from excluded page but want to save our place
@@ -870,10 +870,10 @@ $('body').on('click', '[data-action="delete-data"]', function() {
 
 });
 
-$('body').on('click', '[data-action="stats"]', function() {
+$('body').on('click', '[data-action="your-assessment"]', function() {
 
-  // load the stats slide
-  loadSlide('stats');
+  // load the your-assessment slide
+  loadSlide('your-assessment');
 
 });
 

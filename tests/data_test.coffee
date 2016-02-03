@@ -5,12 +5,12 @@
 
 url = 'http://localhost:9001/build'
 
-casper.test.begin "Stats Page", 1, (test)->
+casper.test.begin "Your Assessment Page", 1, (test)->
   casper
     .start url, ->
-      @click 'a[data-action="stats"]'
+      @click 'a[data-action="your-assessment"]'
     .then ->
-      test.assertUrlMatch url+'/#stats', 'press link navigates to stats page'
+      test.assertUrlMatch url+'/#your-assessment', 'press link navigates to your-assessment page'
     .run ->
       # display results
       test.done()

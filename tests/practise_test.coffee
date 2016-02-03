@@ -66,7 +66,7 @@ getCategorySectionSelector = (activityName) ->
 
 # Helper to clear data from session and return home
 clearData = (test) ->
-  casper.click 'a[data-action="stats"]'
+  casper.click 'a[data-action="your-assessment"]'
   casper.thenClick 'button[data-action="delete-data"]'
   # Make sure we get the deleted message
   casper.then ->
