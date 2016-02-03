@@ -227,7 +227,7 @@ function pickQuestion() {
 
   // If we need to alert user of qualification, do it
   if (db.get('esaAss.show-low')) {
-    loadSlide('qualify-low');
+    loadSlide('qualify-wrag');
     db.set('esaAss.show-low', false);
     db.set('esaAss.showScore', false);
     return;
@@ -235,7 +235,7 @@ function pickQuestion() {
 
   // same for high qualification
   if (db.get('esaAss.show-high')) {
-    loadSlide('qualify-high');
+    loadSlide('qualify-support-group');
     db.set('esaAss.show-high', false);
     db.set('esaAss.showScore', false);
     return;
