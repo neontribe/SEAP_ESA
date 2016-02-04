@@ -151,10 +151,16 @@ casper.test.begin 'Qualify high with : ' + activityName2, 5, (test) ->
     .start url, ->
       clearAndStartPractise test, activityName2
     .then (data) ->
-      question = @fetchText '.question-container.loaded h2 em'
-      test.comment question
+      # click ask me another
+      @click '.question-container.loaded button[data-action="pick"]'
+       # click ask me another
+      @click '.question-container.loaded button[data-action="pick"]'
+      # click ask me another
+      @click '.question-container.loaded button[data-action="pick"]'
       # verify and click option value 16
       if answerQuestion(16) then data['answered'][question] = 16
+      question = @fetchText '.question-container.loaded h2 em'
+      test.comment question
       # click ask me another
       @click '.question-container.loaded button[data-action="pick"]'
       # verify Support Group Qualifier message
