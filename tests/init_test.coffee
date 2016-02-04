@@ -1,12 +1,13 @@
 # Check site is serving
 # Check title is ESA Assessment Support
-# Check count 3 menu links in main nav (Home, my assessment, my data)
+# Check count 2 menu links in main nav (Home, your assessment)
 # Make sure we aren't on resume screen, then
-# Check count 3 option buttons - (guide, practise, my assessment)
+# Check count 2 option buttons - (guide, practise)
+# Check for Survey and Privacy link in footer
 
 url = 'http://localhost:9001/build'
 
-casper.test.begin 'Title page', 4, (test)->
+casper.test.begin 'Title page', 6, (test)->
   casper
     .start url, ->
       test.comment @getCurrentUrl()
@@ -18,7 +19,11 @@ casper.test.begin 'Title page', 4, (test)->
       @click 'button[data-action="resume"]'
       @click 'a[data-action="menu"]'
     .then ->
-      # 2 buttons
+      # body content 2 buttons
       test.assertElementCount '.flow.loaded button', 2, '2 buttons in view'
+    .then ->
+      #footer content
+      test.assertSelectorHasText 'footer #feedback', 'Is there anything wrong with this page?', 'Found survey link in footer'
+      test.assertSelectorHasText 'footer .privacy-link a', 'Privacy & terms of use', 'Found privacy link in footer'
     .run ->
       test.done()
