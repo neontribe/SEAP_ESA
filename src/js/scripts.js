@@ -962,7 +962,51 @@ $('body').on('change', '[type="radio"]', function() {
     db.set('esaAss.submitPoints', points);
   }
 
+  var triggerButtons = ['Most of the time', 'Not very often'];
+  triggerText = $(':checked', '#' + context).next().text();
+
+  if (_.indexOf(triggerButtons, triggerText) !== -1) {
+    switch (triggerText) {
+      case 'Most of the time':
+        var checkedScore = $('input:checked').val();
+        if (checkedScore > 0) {
+          flagMost();
+        }
+        break;
+      case 'Not very often':
+        checkedScore = $('input:checked').val();
+        if (checkedScore > 0) {
+          flagNot();
+        }
+        break;
+      default:
+        flagSometimes();
+    }
+  }
+  if ($(':checked', '#' + context).next().text() !== 'Most of the time') {
+    $('#flag-most').remove();
+  }
+  if ($(':checked', '#' + context).next().text() !== 'Not very often') {
+    $('#flag-not').remove();
+  }
+
 });
+
+var showMessage = function(message) {
+  var context = db.get('esaAss.context');
+  $('[role="alert"]', '#' + context)
+    .append(message);
+};
+
+var flagMost = _.once(function() {
+  showMessage('<p id="flag-most"><strong>Your condition probably varies from day to day. The assessment takes this into account. The easiest way to understand this is that if you can’t do something most of the time, you will score points on that activity.</p>');
+});
+
+var flagNot = _.once(function() {
+  showMessage('<p id="flag-not"><strong>Your condition probably varies from day to day. The assessment takes this into account. The easiest way to understand this is that if you can\'t do something very often, you will score points on that activity.</strong></p>');
+});
+
+
 
 $('body').on('click', '[data-action="activities"]', function() {
 
