@@ -907,16 +907,16 @@
       "answers":[
         {
           "label":"Yes",
-          "value":"Can/Could you travel to your face-to-face assessment?"
+          "value":"Can / Could you travel to your face-to-face assessment?"
         },
         {
           "label":"No",
-          "value":"Can/Could you travel to your face-to-face assessment?"
+          "value":"Can / Could you travel to your face-to-face assessment?"
         }
       ]
     },
     {
-      "question":"Can/Could you travel to your face-to-face assessment?",
+      "question":"Can / Could you travel to your face-to-face assessment?",
       "hint":null,
       "category":"*Getting about",
       "answers":[
