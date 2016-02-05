@@ -166,6 +166,10 @@ function loadSlide(id, type) {
     $('#activity-selection #unseen-category').text(db.get('esaAss.category'));
   }
 
+  if (id === 'assessment-checklist') {
+    compileRemember();
+  }
+
   $('.slide > *').removeClass('loaded');
 
   // set type in local storage or reset to null
@@ -563,6 +567,14 @@ function compileAboutButtons() {
 
 }
 
+function compileRemember() {
+  var template = Handlebars.compile(document.getElementById("remember-template").innerHTML);
+  var esaAssData = db.get('esaAss');
+  var output = template(esaAssData);
+  $('#remember-slide-content').html(output);
+
+}
+
 function compileCategories() {
 
   // template up the stats with handlebars and
@@ -775,6 +787,13 @@ $('body').on('click', '[data-action="restart"]', function() {
 
 });
 
+$('body').on('click', '[data-action="view-assessment"]', function() {
+
+  // run restart function defined in FUNCTIONS block
+  loadSlide('assessment-checklist');
+
+});
+
 // restart the app
 $('body').on('click', '[data-action="start-or-resume"]', function() {
 
@@ -888,6 +907,13 @@ $('body').on('click', '[data-action="transcript"]', function() {
 
   // load slide
   loadSlide('transcript');
+
+});
+
+$('body').on('click', '[data-action="view-assessment"]', function() {
+
+  // load slide
+  loadSlide('assessment-checklist');
 
 });
 
