@@ -348,8 +348,19 @@
     <div class="flow">
       <h2>Your assessment checklist</h2>
       <div id="checklist-content">
-
+      <!--Jquery inserts content -->
       </div>
+      <ul aria-label="menu">
+      <li>
+        <button class="nav-link print" onclick="window.print()">Print my information</button>
+      </li>
+      <li>
+        <button class="nav-link" data-action="guide">Read more</button>
+      </li>
+      <li>
+        <button class="nav-link" data-action="start-or-resume">Try some questions</button>
+      </li>
+    </ul>
     </div>
   </div>
 
