@@ -167,9 +167,7 @@ function loadSlide(id, type) {
   }
 
   if (id === 'assessment-checklist') {
-        var qandaContent = $('#paper');
-            rememberContent = $('#remember-content');
-    $('#checklist-content').empty().prepend( qandaContent, rememberContent );
+    compileRemember();
   }
 
   $('.slide > *').removeClass('loaded');
@@ -569,6 +567,14 @@ function compileAboutButtons() {
 
 }
 
+function compileRemember() {
+  var template = Handlebars.compile(document.getElementById("remember-template").innerHTML);
+  var esaAssData = db.get('esaAss');
+  var output = template(esaAssData);
+  $('#remember-slide-content').html(output);
+
+}
+
 function compileCategories() {
 
   // template up the stats with handlebars and
@@ -778,6 +784,13 @@ $('body').on('click', '[data-action="restart"]', function() {
 
   // run restart function defined in FUNCTIONS block
   restart();
+
+});
+
+$('body').on('click', '[data-action="view-assessment"]', function() {
+
+  // run restart function defined in FUNCTIONS block
+  loadSlide('assessment-checklist');
 
 });
 
