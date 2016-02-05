@@ -166,6 +166,12 @@ function loadSlide(id, type) {
     $('#activity-selection #unseen-category').text(db.get('esaAss.category'));
   }
 
+  if (id === 'assessment-checklist') {
+        var qandaContent = $('#paper');
+            rememberContent = $('#remember-content');
+    $('#checklist-content').empty().prepend( qandaContent, rememberContent );
+  }
+
   $('.slide > *').removeClass('loaded');
 
   // set type in local storage or reset to null
@@ -888,6 +894,13 @@ $('body').on('click', '[data-action="transcript"]', function() {
 
   // load slide
   loadSlide('transcript');
+
+});
+
+$('body').on('click', '[data-action="view-assessment"]', function() {
+
+  // load slide
+  loadSlide('assessment-checklist');
 
 });
 
