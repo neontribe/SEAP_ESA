@@ -1008,7 +1008,7 @@ var showMessage = function(message) {
 };
 
 var flagTravel = function() {
-  showMessage('<p id="flag-travel"><strong>You’ve clicked that you cannot / could not attend a face to face assessment. You have the right to request that your face to face assessment is held at your home if you can’t travel because of your health / disability. You will be asked to provide evidence for this. If you can’t travel, contact Maximus immediately if already you’ve been given an appointment at an assessment centre. If you’re still waiting, do so as soon as you get your appointment letter.</strong></p>');
+  showMessage('<p id="flag-travel"><strong>You’ve clicked that you cannot / could not attend a face to face assessment. You have the right to request that your face to face assessment is held at your home if you can’t travel because of your health / disability. You will be asked to provide evidence for this. If you can’t travel, contact Maximus immediately if you’ve already been given an appointment at an assessment centre. If you’re still waiting, do so as soon as you get your appointment letter.</strong></p>');
 };
 
 var flagMost = _.once(function() {
