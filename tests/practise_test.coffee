@@ -66,7 +66,7 @@ getCategorySectionSelector = (activityName) ->
 
 # Helper to clear data from session and return home
 clearData = (test) ->
-  casper.click 'a[data-action="stats"]'
+  casper.click 'a[data-action="your-assessment"]'
   casper.thenClick 'button[data-action="delete-data"]'
   # Make sure we get the deleted message
   casper.then ->
@@ -151,10 +151,16 @@ casper.test.begin 'Qualify high with : ' + activityName2, 5, (test) ->
     .start url, ->
       clearAndStartPractise test, activityName2
     .then (data) ->
-      question = @fetchText '.question-container.loaded h2 em'
-      test.comment question
+      # click ask me another
+      @click '.question-container.loaded button[data-action="pick"]'
+       # click ask me another
+      @click '.question-container.loaded button[data-action="pick"]'
+      # click ask me another
+      @click '.question-container.loaded button[data-action="pick"]'
       # verify and click option value 16
       if answerQuestion(16) then data['answered'][question] = 16
+      question = @fetchText '.question-container.loaded h2 em'
+      test.comment question
       # click ask me another
       @click '.question-container.loaded button[data-action="pick"]'
       # verify Support Group Qualifier message

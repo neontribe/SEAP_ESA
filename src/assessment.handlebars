@@ -52,7 +52,7 @@
           <a href="#main-menu" data-action="menu">Home</a>
         </li>
         <li>
-          <a href="javascript:void(0)" data-action="stats">Your assessment</a>
+          <a href="javascript:void(0)" data-action="your-assessment">Your assessment</a>
         </li>
       </ul>
     </nav>
@@ -82,7 +82,7 @@
 						<span class="activity"><strong>Follow up question:</strong></span>
 					{{/if}}
 					<span class="vh">Question:</span>
-					<em>{{question}}</em>
+					<em>{{{question}}}</em>
 					<span aria-labelledby="category-{{sluggify question}}"></span>
 				</h2>
       <div class="answers">
@@ -101,7 +101,7 @@
           <button data-followup="#{{followUp}}" class="nav-link pick" data-action="pick">Try another</button>
         </li>
         <li>
-          <button class="nav-link stats" data-action="stats" role="link">Your assessment so far</button>
+          <button class="nav-link your-assessment" data-action="your-assessment" role="link">Your assessment so far</button>
         </li>
         <li>
           <button class="nav-link break" data-action="break">I need a break</button>
@@ -110,7 +110,7 @@
     </div>
   </div>
   {{/each}}
-  <div class="slide qualify" id="qualify-high">
+  <div class="slide qualify" id="qualify-support-group">
     <div class="box green">
       <h1 tabindex="-1">
         You may qualify for the<br/>
@@ -120,14 +120,14 @@
         Your answer to that question shows you may qualify for the Support Group.
       </p>
       <p>
-        You may still find it helpful to take a look at some more questions so that you are better prepared for the assessment.
+        Have a look at some more questions to see what else you might be asked in your assessment, and if there are other things you should make sure you mention.
       </p>
       <ul aria-label="menu">
         <li>
           <button class="nav-link" data-action="pick">Another question</button>
         </li>
         <li>
-          <button class="nav-link" data-action="stats" role="link">Your assessment so far</button>
+          <button class="nav-link" data-action="your-assessment" role="link">Your assessment so far</button>
         </li>
         <li>
           <button class="nav-link" data-action="about-esa" role="link">More information</button>
@@ -135,7 +135,7 @@
       </ul>
     </div>
   </div>
-  <div class="slide qualify" id="qualify-low">
+  <div class="slide qualify" id="qualify-wrag">
     <div class="box green">
       <h1 tabindex="-1">
         You may qualify for the<br/>
@@ -145,14 +145,14 @@
         Your answer to that question shows you may qualify for the Work Related Activity Group.
       </p>
       <p>
-        It&#x2019;s still possible that you may qualify for the Support Group. To find out, try some more questions.
+        Try some more questions to see if you qualify for the Support Group.
       </p>
       <ul aria-label="menu">
         <li>
           <button class="nav-link" data-action="pick">Another question</button>
         </li>
         <li>
-          <button class="nav-link" data-action="stats" role="link">Your assessment so far</button>
+          <button class="nav-link" data-action="your-assessment" role="link">Your assessment so far</button>
         </li>
         <li>
           <button data-action="about-esa" class="nav-link" role="link">More information</button>
@@ -215,7 +215,7 @@
           <button class="nav-link" data-action="skipped">Answer skipped questions</button>
         </li>
         <li>
-          <button class="nav-link" data-action="stats" role="link">Your assessment so far</button>
+          <button class="nav-link" data-action="your-assessment" role="link">Your assessment so far</button>
         </li>
       </ul>
     </div>
@@ -226,7 +226,7 @@
       <p>You&#x2019;ve answered all the questions available, so you&#x2019;re pretty well versed now. What would you like to do next?</p>
       <ul aria-label="menu">
         <li>
-          <button class="nav-link" data-action="stats" role="link">How your assessment went</button>
+          <button class="nav-link" data-action="your-assessment" role="link">How your assessment went</button>
         </li>
         <li>
           <button class="nav-link" data-action="restart">Try again</button>
@@ -253,7 +253,7 @@
       </ul>
     </div>
   </div>
-  <div class="slide stats" id="stats">
+  <div class="slide your-assessment" id="your-assessment">
     <div class="stats-container">
       <div id="stats-content" class="flow"></div>
     </div>
@@ -577,7 +577,7 @@
     <div class="expandies information">
       <h2><button aria-controls="getting-started" aria-expanded="false">Getting started</button></h2>
         <div id="getting-started" aria-hidden="true">
-          <p>To start your application for <abbr title="Employment And Support Allowance">ESA</abbr>, you will need to do one of the following:</p>
+          <p>To start your application for <abbr title="Employment And Support Allowance">ESA</abbr>, you will need to do <strong>one</strong> of the following:</p>
             <ul class="ticks">
               <li>Phone <a href="tel:08000556688">0800 055 6688</a></li>
               <li>Textphone <a href="tel:08000234888">0800 023 4888</a></li>
@@ -1434,7 +1434,7 @@
           <button class="nav-link" data-action="activities" role="link">A new activity</button>
         </li>
         <li>
-          <button class="nav-link" data-action="stats" role="link">Your assessment so far</button>
+          <button class="nav-link" data-action="your-assessment" role="link">Your assessment so far</button>
         </li>
         <li>
           <button class="nav-link" data-action="about-esa" role="link">Guide to ESA</button>
