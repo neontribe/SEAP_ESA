@@ -166,6 +166,10 @@ function loadSlide(id, type) {
     $('#activity-selection #unseen-category').text(db.get('esaAss.category'));
   }
 
+  if (id === 'assessment-checklist') {
+    compileRemember();
+  }
+
   $('.slide > *').removeClass('loaded');
 
   // set type in local storage or reset to null
@@ -563,6 +567,14 @@ function compileAboutButtons() {
 
 }
 
+function compileRemember() {
+  var template = Handlebars.compile(document.getElementById("remember-template").innerHTML);
+  var esaAssData = db.get('esaAss');
+  var output = template(esaAssData);
+  $('#remember-slide-content').html(output);
+
+}
+
 function compileCategories() {
 
   // template up the stats with handlebars and
@@ -775,6 +787,13 @@ $('body').on('click', '[data-action="restart"]', function() {
 
 });
 
+$('body').on('click', '[data-action="view-assessment"]', function() {
+
+  // run restart function defined in FUNCTIONS block
+  loadSlide('assessment-checklist');
+
+});
+
 // restart the app
 $('body').on('click', '[data-action="start-or-resume"]', function() {
 
@@ -898,6 +917,13 @@ $('body').on('click', '[data-action="transcript"]', function() {
 
 });
 
+$('body').on('click', '[data-action="view-assessment"]', function() {
+
+  // load slide
+  loadSlide('assessment-checklist');
+
+});
+
 $('body').on('change', '[data-action="save-basic-info"]', function() {
 
   db.set('esaAss.' + $(this).attr('id'), $(this).val());
@@ -969,6 +995,61 @@ $('body').on('change', '[type="radio"]', function() {
     db.set('esaAss.submitPoints', points);
   }
 
+  var triggerButtons = ['Most of the time', 'Not very often'];
+  triggerQuestion = "Can / Could you travel to your face-to-face assessment?";
+  triggerText = $(':checked', '#' + context).next().text();
+
+  if (question === triggerQuestion) {
+    if (triggerText === 'No') {
+      flagTravel();
+    }
+  }
+
+  if (_.indexOf(triggerButtons, triggerText) !== -1) {
+    switch (triggerText) {
+      case 'Most of the time':
+        var checkedScore = $('input:checked').val();
+        if (checkedScore > 0) {
+          flagMost();
+        }
+        break;
+      case 'Not very often':
+        checkedScore = $('input:checked').val();
+        if (checkedScore > 0) {
+          flagNot();
+        }
+        break;
+      default:
+        flagMost();
+    }
+  }
+  if ($(':checked', '#' + context).next().text() !== 'Most of the time') {
+    $('#flag-most').remove();
+  }
+  if ($(':checked', '#' + context).next().text() !== 'Not very often') {
+    $('#flag-not').remove();
+  }
+  if ($(':checked', '#' + context).next().text() !== 'No') {
+    $('#flag-travel').remove();
+  }
+});
+
+var showMessage = function(message) {
+  var context = db.get('esaAss.context');
+  $('[role="alert"]', '#' + context)
+    .append(message);
+};
+
+var flagTravel = function() {
+  showMessage('<p id="flag-travel"><strong>You’ve clicked that you cannot / could not attend a face to face assessment. You have the right to request that your face to face assessment is held at your home if you can’t travel because of your health / disability. You will be asked to provide evidence for this. If you can’t travel, contact Maximus immediately if you’ve already been given an appointment at an assessment centre. If you’re still waiting, do so as soon as you get your appointment letter.</strong></p>');
+};
+
+var flagMost = _.once(function() {
+  showMessage('<p id="flag-most"><strong>Your condition probably varies from day to day. The assessment takes this into account. The easiest way to understand this is that if you can’t do something most of the time, you will score points on that activity.</p>');
+});
+
+var flagNot = _.once(function() {
+  showMessage('<p id="flag-not"><strong>Your condition probably varies from day to day. The assessment takes this into account. The easiest way to understand this is that if you can\'t do something very often, you will score points on that activity.</strong></p>');
 });
 
 $('body').on('click', '[data-action="activities"]', function() {
