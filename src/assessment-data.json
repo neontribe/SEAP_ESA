@@ -1452,10 +1452,6 @@
         {
           "label":"No",
           "value":"*"
-        },
-        {
-          "label":"It varies",
-          "value":0
         }
       ]
     },
@@ -1471,10 +1467,6 @@
         {
           "label":"No",
           "value":"*"
-        },
-        {
-          "label":"It varies",
-          "value":0
         }
       ]
     },
@@ -1490,10 +1482,6 @@
         {
           "label":"No",
           "value":"*"
-        },
-        {
-          "label":"It varies",
-          "value":0
         }
       ]
     },
@@ -1509,10 +1497,6 @@
         {
           "label":"No",
           "value":0
-        },
-        {
-          "label":"It varies",
-          "value":0
         }
       ]
     },
@@ -1527,10 +1511,6 @@
         },
         {
           "label":"No",
-          "value":0
-        },
-        {
-          "label":"It varies",
           "value":0
         }
       ]
@@ -1589,10 +1569,6 @@
         {
           "label":"Yes, but not all the time",
           "value":0
-        },
-        {
-          "label":"It varies",
-          "value":0
         }
       ]
     },
@@ -1608,10 +1584,6 @@
         {
           "label":"No",
           "value":0
-        },
-        {
-          "label":"It varies",
-          "value":0
         }
       ]
     },
@@ -1626,10 +1598,6 @@
         },
         {
           "label":"No",
-          "value":0
-        },
-        {
-          "label":"It varies",
           "value":0
         }
       ]
