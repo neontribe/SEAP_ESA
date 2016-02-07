@@ -117,7 +117,11 @@
           "value":0
         },
         {
-          "label":"It varies",
+          "label":"Most of the time",
+          "value":0
+        },
+        {
+          "label":"Not very often",
           "value":0
         }
       ]
@@ -133,6 +137,14 @@
         },
         {
           "label":"No",
+          "value":16
+        },
+        {
+          "label":"Most of the time",
+          "value":0
+        },
+        {
+          "label":"Not very often",
           "value":16
         },
         {
@@ -194,6 +206,14 @@
         },
         {
           "label":"No",
+          "value":6
+        },
+        {
+          "label":"Most of the time",
+          "value":0
+        },
+        {
+          "label":"Not very often",
           "value":6
         },
         {
