@@ -192,7 +192,7 @@ function loadSlide(id, type) {
   // find out if we've gone to one of the locations that don't need saving
   // If you want to be able to return from a break to them, add to validBreakReturn
   // in the click action for break
-  var exclude = _.find(['main-menu', 'your-assessment', 'about-esa', 'resume', 'deleted', 'are-you-sure', 'break-time'],
+  var exclude = _.find(['main-menu', 'your-assessment', 'about-esa', 'resume', 'deleted', 'are-you-sure', 'break-time', 'guide'],
     function(unsaveable) {
       return unsaveable === id;
     });
