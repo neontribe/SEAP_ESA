@@ -161,12 +161,12 @@
         },
         {
           "label":"Give me another example",
-          "value":"Could you make yourself a hot drink if you wanted to?"
+          "value":"Could you lift a kettle or a bottle of milk if you wanted to make yourself a hot drink?"
         }
       ]
     },
     {
-      "question":"Could you make yourself a hot drink if you wanted to?",
+      "question":"Could you lift a kettle or a bottle of milk if you wanted to make yourself a hot drink?",
       "hint":null,
       "category":"*Picking up and moving things",
       "answers":[
@@ -175,12 +175,16 @@
           "value":0
         },
         {
-          "label":"I can't lift the items needed to do that, such as a kettle or bottle of milk",
+          "label":"No",
           "value":15
         },
         {
-          "label":"I could not do this for a different reason",
+          "label":"Most of the time",
           "value":0
+        },
+        {
+          "label":"Not very often",
+          "value":15
         }
       ]
     },
