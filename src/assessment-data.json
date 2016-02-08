@@ -14,6 +14,14 @@
           "value":0
         },
         {
+          "label":"Most of the time",
+          "value":0
+        },
+        {
+          "label":"Not very often",
+          "value":0
+        },
+        {
           "label":"Give me another example",
           "value":"Can you reach clothes, for example, on a shelf or in a cupboard?"
         }
@@ -75,8 +83,12 @@
           "value":9
         },
         {
-          "label":"It varies",
+          "label":"Most of the time",
           "value":"Can you put on a hat without difficulty and pain?"
+        },
+        {
+          "label":"Not very often",
+          "value":9
         }
       ]
     },
@@ -232,12 +244,16 @@
           "value":0
         },
         {
-          "label":"I could not pick up something like a pillow",
+          "label":"No",
           "value":6
         },
         {
-          "label":"It varies from day to day",
+          "label":"Most of the time",
           "value":0
+        },
+        {
+          "label":"Not very often",
+          "value":6
         }
       ]
     },
@@ -252,6 +268,14 @@
         },
         {
           "label":"No",
+          "value":9
+        },
+        {
+          "label":"Most of the time",
+          "value":0
+        },
+        {
+          "label":"Not very often",
           "value":9
         }
       ]
@@ -268,6 +292,14 @@
         {
           "label":"No",
           "value":9
+        },
+        {
+          "label":"Most of the time",
+          "value":0
+        },
+        {
+          "label":"Not very often",
+          "value":9
         }
       ]
     },
@@ -282,6 +314,14 @@
         },
         {
           "label":"No",
+          "value":15
+        },
+        {
+          "label":"Most of the time",
+          "value":0
+        },
+        {
+          "label":"Not very often",
           "value":15
         },
         {
@@ -304,7 +344,11 @@
           "value":16
         },
         {
-          "label":"It varies",
+          "label":"Not very often",
+          "value":16
+        },
+        {
+          "label":"Most of the time",
           "value":"You said it varies whether or not you can turn the pages of a book, when could you do this?"
         }
       ]
@@ -323,8 +367,12 @@
           "value":16
         },
         {
-          "label":"It varies",
+          "label":"Most of the time",
           "value":0
+        },
+        {
+          "label":"Not very often",
+          "value":16
         }
       ]
     },
@@ -363,6 +411,14 @@
         {
           "label":"No",
           "value":"Can you use a keypad at a cash machine?"
+        },
+        {
+          "label":"Most of the time",
+          "value":0
+        },
+        {
+          "label":"Not very often",
+          "value":"Can you use a keypad at a cash machine?"
         }
       ]
     },
@@ -377,6 +433,14 @@
         },
         {
           "label":"No",
+          "value":15
+        },
+        {
+          "label":"Most of the time",
+          "value":0
+        },
+        {
+          "label":"Not very often",
           "value":15
         }
       ]
@@ -1091,7 +1155,7 @@
       ]
     },
     {
-      "question":"Can you learn to do everyday tasks, such as setting an alarm clock, without difficulty?",
+      "question":"Can you learn to do everyday tasks without difficulty?",
       "hint":null,
       "category":"Learning tasks",
       "answers":[
@@ -1106,7 +1170,7 @@
       ]
     },
     {
-      "question":"Can you learn something more complicated than how to use a washing machine, such as how to record a programme from the TV?",
+      "question":"Can you learn to do something complicated such as how to programme a TV?",
       "hint":null,
       "category":"Learning tasks",
       "answers":[
@@ -1121,7 +1185,7 @@
       ]
     },
     {
-      "question":"Can you learn something complex such as how to use washing machine?",
+      "question":"Can you learn to do something a bit complicated such as how to use a washing machine?",
       "hint":null,
       "category":"Learning tasks",
       "answers":[
@@ -1345,6 +1409,10 @@
         },
         {
           "label":"Neither of these",
+          "value":0
+        },
+        {
+          "label":"Both of these",
           "value":0
         }
       ]
