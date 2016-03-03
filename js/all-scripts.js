@@ -14751,7 +14751,7 @@ var __module0__ = (function(__dependency1__, __dependency2__, __dependency3__, _
 
 $(function() {
     if ( document.location.href.indexOf('neontribe.github.io') > -1 ) {
-        $('.staging-banner').show();
+        $('.staging-banner').append("<p>This is our test site<br/>Please visit<br/> www.esa-assessment.support</p>").show();
     }
 });
 
