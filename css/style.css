@@ -898,13 +898,11 @@ header span {
 ---------------------------------------------*/
 
 .slide > * {
-  -webkit-transition: all 0.5s ease;
-          transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .slide > .box {
-  -webkit-transition: none;
-          transition: none;
+  transition: none;
 }
 
 .question-container {
