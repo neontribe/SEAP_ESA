@@ -4,7 +4,7 @@ node_js:
 sudo: required
 before_install:
 - npm install -g grunt-cli
-- npm install -g casperjs@1.1.0-beta3
+- npm install -g casperjs
 before_script:
 - phantomjs --version
 - casperjs --version
