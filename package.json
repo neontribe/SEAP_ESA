@@ -20,7 +20,7 @@
     "grunt-remove": "^0.1.0",
     "matchdep": "*",
     "seap_core": "git://github.com/neontribe/seap_core.git"
-	},
+  },
   "scripts": {
     "build": "grunt generate",
     "postinstall": "npm run build",
