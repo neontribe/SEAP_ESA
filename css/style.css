@@ -588,8 +588,7 @@ noscript {
   opacity: .9;
   padding: 0 !important;
   background: red;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .no-js {
@@ -601,8 +600,7 @@ noscript {
   opacity: .9;
   padding: 0 !important;
   background: red;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .staging-banner p,
@@ -777,14 +775,11 @@ header span {
 
 .flex-center {
 
-  display: -webkit-box;
-
   display: -ms-flexbox;
 
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+      justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -792,18 +787,14 @@ header span {
 ---------------------------------------------*/
 
 .big-buttons {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+      flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
   margin-top: 0.5em;
 }
 
@@ -906,109 +897,54 @@ header span {
 }
 
 .question-container {
-  -webkit-transform: scale(0.5);
-          transform: scale(0.5);
+  transform: scale(0.5);
   opacity: 0;
 }
 
 .question-container.loaded {
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   opacity: 1;
-}
-
-@-webkit-keyframes wobble {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  25% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  50% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  75% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
 }
 
 @keyframes wobble {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   25% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   50% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   75% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-}
-
-@-webkit-keyframes zoomzoom {
-  0% {
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95)
-  }
-  25% {
-    -webkit-transform: scale(1);
-            transform: scale(1)
-  }
-  50% {
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95)
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: rotate(0deg);
   }
 }
 
 @keyframes zoomzoom {
   0% {
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95)
+    transform: scale(0.95)
   }
   25% {
-    -webkit-transform: scale(1);
-            transform: scale(1)
+    transform: scale(1)
   }
   50% {
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95)
+    transform: scale(0.95)
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
 
 .box.loaded {
-  -webkit-animation: wobble 0.25s linear 1;
-          animation: wobble 0.25s linear 1;
+  animation: wobble 0.25s linear 1;
 }
 
 .box.green.loaded {
-  -webkit-animation: zoomzoom 0.5s linear 1;
-          animation: zoomzoom 0.5s linear 1;
+  animation: zoomzoom 0.5s linear 1;
 }
 /* my assessment
 ---------------------------------------------*/
@@ -1213,6 +1149,10 @@ footer {
   line-height: 3em;
 }
 
+.c-app footer {
+  line-height: inherit;
+}
+
 footer p {
   text-align: right;
   padding-right: 0.75em;
@@ -1227,12 +1167,10 @@ footer .privacy .larger {
 }
 
 footer .privacy-link {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin: 0;
@@ -1248,6 +1186,12 @@ footer #feedback {
 }
 
 /*footer sprites*/
+.logo-image {
+  display: inline-block;
+  height: 2.6em;
+  width: auto;
+}
+
 .sprite {
   background-image: url(../images/spritesheet.png);
   background-repeat: no-repeat;
@@ -1318,18 +1262,6 @@ footer #feedback {
   font-weight: bold;
 }
 
-@-webkit-keyframes prompt {
-  0% {
-    background: transparent;
-  }
-  20% {
-    background: #3389c1;
-  }
-  100% {
-    background: transparent;
-  }
-}
-
 @keyframes prompt {
   0% {
     background: transparent;
@@ -1347,8 +1279,7 @@ footer #feedback {
   max-width: 700px;
   margin: 0.5em auto;
   text-align: justify;
-  -webkit-animation: prompt 0.75s linear 1;
-          animation: prompt 0.75s linear 1;
+  animation: prompt 0.75s linear 1;
   border: 1px solid;
 }
 
@@ -1364,7 +1295,7 @@ footer #feedback {
 .c-app .wrapper {
   max-width: 850px;
   margin: 0 auto;
-  padding: 0 1.5em 5em 1.5em;
+  padding: 0 1.5em 10em 1.5em;
 }
 
 .c-app .wrapper button {
@@ -1385,6 +1316,7 @@ footer #feedback {
   width: 46%;
   margin-bottom: 1em;
 }
+
 .c-app .esa-section {
   float: left;
 }
@@ -1398,17 +1330,52 @@ footer #feedback {
 }
 
 .c-app footer {
-  height: auto;
+  padding: 0 1.5em 0em 1.5em;
+  margin: auto;
+  display: -ms-flexbox;
+  display: flex;
 }
 
+.c-app .footer-container {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -ms-flex-preferred-size: 33%;
+      flex-basis: 33%;
+}
+
+.c-app .footer-container:nth-child(1) {
+  color: red;
+  line-height: 1em;
+  margin-bottom: 1em;
+}
+
+
 .c-app footer .privacy-link {
-  -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  display: inline-block;
+}
+
+.c-app .sponsor-images {
+  margin-bottom: 1rem;
+  text-align: right;
+  padding: 0;
+}
+
+.c-app .sponsor-text {
+  line-height: 1rem;
+  text-align: right;
+}
+
+.winner {
+  display: block;
+  height: 4em;
+  width: auto;
+  margin: 0 auto 1.5em auto;
 }
 
 .c-app .outro {
-  clear:both;
+  clear: both;
 }
 
 /* PROFILE BUTTONS ------------------------------------------------- */
@@ -1416,8 +1383,8 @@ footer #feedback {
 .social-profile-buttons,
 .social-profile-buttons div {
   display: inline-block;
-  float: left;
-  margin: 2em 0 0 1.5em;
+  margin: 2em 0 0 0;
+  width: 100%;
 }
 
 .social-profile-buttons a {
@@ -1429,6 +1396,7 @@ footer #feedback {
 
 .social-profile-buttons ul {
   margin: 0;
+  height: 2em;
 }
 
 .social-profile-buttons ul li {
@@ -1464,9 +1432,8 @@ footer #feedback {
 
   .category-list li {
     min-width: 50% !important;
-    -webkit-box-flex: 1 !important;
-        -ms-flex: 1 0 50% !important;
-            flex: 1 0 50% !important;
+    -ms-flex: 1 0 50% !important;
+        flex: 1 0 50% !important;
   }
 
   .box {
@@ -1525,9 +1492,8 @@ footer #feedback {
 
   .category-list li {
     min-width: 100% !important;
-    -webkit-box-flex: 1 !important;
-        -ms-flex: 1 0 100% !important;
-            flex: 1 0 100% !important;
+    -ms-flex: 1 0 100% !important;
+        flex: 1 0 100% !important;
   }
 
   .c-app .esa-section, .c-app .pip-section {
@@ -1569,7 +1535,6 @@ footer #feedback {
 
 @media (min-width: 600px) {
   [aria-label="menu options"] ul {
-    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-flow: row wrap;
@@ -1581,9 +1546,8 @@ footer #feedback {
   [aria-label="menu options"] li {
     width: 100%;
     padding: 0.5em;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 auto;
-            flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
     position: relative;
   }
 
@@ -1597,32 +1561,27 @@ footer #feedback {
   }
 
   .category-list ul {
-    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
+    -ms-flex-align: stretch;
+        align-items: stretch;
   }
 
   .category-list li {
-    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-flow: column;
         flex-flow: column;
     min-width: 33.333%;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 33.333%;
-            flex: 1 0 33.333%;
+    -ms-flex: 1 0 33.333%;
+        flex: 1 0 33.333%;
     min-height: 3em;
   }
 
   .category-list li button {
     height: 100%;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0;
-            flex: 1 0;
+    -ms-flex: 1 0;
+        flex: 1 0;
     min-height: 3.25em;
   }
 }
@@ -1642,11 +1601,11 @@ footer #feedback {
 
   .big-buttons,
   .flex-center {
-    display:block;
+    display: block;
   }
 
   .to-main-menu {
-    float:none;
+    float: none;
   }
 
   header .logo {
@@ -1688,17 +1647,75 @@ footer #feedback {
   }
 
   .c-app .wrapper {
-    padding-bottom: 9em;
+    padding-bottom: 14rem;
   }
 
   .c-app .privacy-link {
     -ms-flex-item-align: end;
         align-self: flex-end;
+    text-align: left;
   }
-
+  
+  .c-app footer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    margin: 0;
+    padding: 1.5em;
+  }
+  
+  /* Social block */
+  .c-app .footer-container:nth-child(1) {
+    margin: 0;
+    -ms-flex-order: 3;
+        order: 3;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  
+  /* Award winner block */
+  .c-app .footer-container:nth-child(2) {
+    margin: 0;
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
+  
+  .c-app .footer-container:nth-child(2) > img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* "Brought to you by" block */
+  .c-app .footer-container:nth-child(3) {
+    margin: 0;
+    -ms-flex-preferred-size: 70%;
+        flex-basis: 70%;
+  }
+  
+  .c-app .sponsor-images {
+  margin-bottom: 1rem;
+  text-align: right;
+}
+  
+  .c-app .sponsor-text {
+    text-align: right;
+  }
+  
   .social-profile-buttons {
     margin: 2em 0 0 1.5em;
+  }
+    
+  .c-app .social-profile-buttons {
+    margin: 2em 0 0 0;
     width: 100%;
+    margin: 0;
+  }
+  
+  .c-app .winner {
+    height: 3rem;
+    margin-top: 2rem;
+    margin-left: 0;
   }
 
   footer {
@@ -1707,6 +1724,14 @@ footer #feedback {
 
   footer p {
     font-size: 12px;
+  }
+  
+  .c-app footer {
+    height: 12em;
+  }
+
+  .c-app footer p {
+    font-size: 16px;
   }
 }
 
