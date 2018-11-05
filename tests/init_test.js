@@ -3,10 +3,10 @@
 
   url = 'http://localhost:9001/build';
 
-  casper.test.begin('Title page', 5, function(test) {
+  casper.test.begin('Title page', 4, function(test) {
     return casper.start(url, function() {
       test.comment(this.getCurrentUrl());
-      test.assertHttpStatus(200, 'SEAP is up');
+      // test.assertHttpStatus(200, 'SEAP is up');
       test.assertTitle('ESA Assessment Support', 'ESA page title is the one expected');
       test.assertElementCount('header nav li a', 2, '2 header menu links');
       this.click('button[data-action="resume"]');
