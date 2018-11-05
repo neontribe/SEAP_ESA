@@ -3,7 +3,7 @@
 
   url = 'http://localhost:9001/build';
 
-  casper.test.begin('Title page', 5, function(test) {
+  casper.test.begin('Title page', 4, function(test) {
     return casper.start(url, function() {
       test.comment(this.getCurrentUrl());
       // test.assertHttpStatus(200, 'SEAP is up');
