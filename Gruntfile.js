@@ -4,7 +4,7 @@ module.exports = function(grunt){
 
     grunt.initConfig({
       pkg: grunt.file.readJSON('package.json'),
-      htmlhintplus: {
+      htmlhint: {
         build: {
             options: {
                 'tag-pair': true,
@@ -17,7 +17,14 @@ module.exports = function(grunt){
                 'head-script-disabled': false,
                 'style-disabled': true
             },
-            src: ['build/*.html', '!build/score-template.html', '!build/remember-template.html', '!build/stats-template.html', '!build/categories-template.html', '!build/about-buttons-template.html']
+            src: [
+              'build/*.html',
+              '!build/score-template.html',
+              '!build/remember-template.html',
+              '!build/stats-template.html',
+              '!build/categories-template.html',
+              '!build/about-buttons-template.html'
+            ]
         }
       },
       watch: {
@@ -118,7 +125,7 @@ module.exports = function(grunt){
       }
     });
 
-    grunt.registerTask('generate', ['clean:initial', 'copy','compile-handlebars','bake', 'htmlhintplus', 'jshint', 'concat', 'autoprefixer', 'clean:tidyup']);
+    grunt.registerTask('generate', ['clean:initial', 'copy','compile-handlebars','bake', 'htmlhint', 'jshint', 'concat', 'autoprefixer', 'clean:tidyup']);
     grunt.registerTask('test', ['generate', 'connect', 'casperjs']);
-    grunt.registerTask('generate-production', ['clean:initial','compile-handlebars', 'htmlhintplus', 'jshint', 'copy', 'concat', 'uglify', 'autoprefixer','cssmin', 'clean:tidyup']);
+    grunt.registerTask('generate-production', ['clean:initial','compile-handlebars', 'htmlhint', 'jshint', 'copy', 'concat', 'uglify', 'autoprefixer','cssmin', 'clean:tidyup']);
 };

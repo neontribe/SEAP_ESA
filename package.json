@@ -28,6 +28,6 @@
   "devDependencies": {
     "grunt-casperjs": "^2.1.0",
     "grunt-contrib-connect": "^2.1.0",
-    "grunt-htmlhint-plus": "^0.6.0"
+    "grunt-htmlhint": "^0.9.13"
   }
 }
