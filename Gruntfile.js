@@ -4,7 +4,7 @@ module.exports = function(grunt){
 
     grunt.initConfig({
       pkg: grunt.file.readJSON('package.json'),
-      htmlhint: {
+      htmlhintplus: {
         build: {
             options: {
               rules: {
@@ -127,7 +127,7 @@ module.exports = function(grunt){
       }
     });
 
-    grunt.registerTask('generate', ['clean:initial', 'copy','compile-handlebars','bake', 'htmlhint', 'jshint', 'concat', 'autoprefixer', 'clean:tidyup']);
+    grunt.registerTask('generate', ['clean:initial', 'copy','compile-handlebars','bake', 'htmlhintplus', 'jshint', 'concat', 'autoprefixer', 'clean:tidyup']);
     grunt.registerTask('test', ['generate', 'connect', 'casperjs']);
-    grunt.registerTask('generate-production', ['clean:initial','compile-handlebars', 'htmlhint', 'jshint', 'copy', 'concat', 'uglify', 'autoprefixer','cssmin', 'clean:tidyup']);
+    grunt.registerTask('generate-production', ['clean:initial','compile-handlebars', 'htmlhintplus', 'jshint', 'copy', 'concat', 'uglify', 'autoprefixer','cssmin', 'clean:tidyup']);
 };
