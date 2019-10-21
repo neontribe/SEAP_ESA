@@ -12,7 +12,10 @@
     "seap_core": "git://github.com/neontribe/seap_core.git"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "handlebars-loader": "^1.7.1",
     "html-webpack-plugin": "^3.2.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.2",

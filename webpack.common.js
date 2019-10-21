@@ -18,6 +18,23 @@ module.exports = {
                     "style-loader", //2. Injects styles into DOM
                     "css-loader" // 1. Turns CSS into common JS
                 ]
+            },
+            {   test: /\.handlebars$/,
+                use: {
+                    loader: "handlebars-loader",
+                    query: { inlineRequires: '\/images\/' }
+                }
+
+            },
+            {
+                test: /\.(svg|png|jpg)$/,
+                use: {
+                    loader: "file-loader",
+                    options: {
+                        name: '[name].[hash].[ext]',
+                        outputPath: 'images'
+                    }
+                }
             }
         ]
     }
