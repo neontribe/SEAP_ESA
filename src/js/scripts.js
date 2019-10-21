@@ -1,4 +1,11 @@
 import '../../node_modules/seap_core/src/style.css';
+import '../../node_modules/seap_core/src/helpers/sluggify.js';
+import '../../node_modules/seap_core/src/js/jquery.js';
+import '../../node_modules/seap_core/src/js/underscore.js';
+import '../../node_modules/seap_core/src/js/jquery.waypoints.js';
+import '../../node_modules/seap_core/src/js/storageapi.js';
+import '../../node_modules/seap_core/src/js/handlebars.js';
+import '../../node_modules/seap_core/src/js/seap-analytics.js';
 $(function() {
     if ( document.location.href.indexOf('neontribe.github.io') > -1 ) {
         $('.staging-banner').append("<p>This is our test site<br/>Please visit<br/> www.esa-assessment.support</p>").show();
