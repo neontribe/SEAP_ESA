@@ -2,13 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
-    devtool: 'none',
     entry: './src/js/scripts.js',
-    output: {
-        filename: 'scripts.[contentHash].js',
-        path: path.resolve(__dirname, 'build')
-    },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Custom template using Handlebars',
