@@ -5,9 +5,13 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "webpack"
+    "start": "webpack --config webpack.config.js"
   },
   "dependencies": {
     "seap_core": "git://github.com/neontribe/seap_core.git"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
   }
 }
