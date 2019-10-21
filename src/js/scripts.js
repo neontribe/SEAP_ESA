@@ -1,3 +1,4 @@
+import '../../node_modules/seap_core/src/style.css';
 $(function() {
     if ( document.location.href.indexOf('neontribe.github.io') > -1 ) {
         $('.staging-banner').append("<p>This is our test site<br/>Please visit<br/> www.esa-assessment.support</p>").show();
