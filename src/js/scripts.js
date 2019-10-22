@@ -1,12 +1,3 @@
-import '../../node_modules/seap_core/src/style.css';
-import '../../node_modules/seap_core/src/helpers/sluggify';
-import '../../node_modules/seap_core/src/js/underscore';
-import '../../node_modules/seap_core/src/js/handlebars';
-import '../../node_modules/seap_core/src/js/seap-analytics';
-import '../../node_modules/seap_core/src/js/jquery';
-import '../../node_modules/seap_core/src/js/jquery.waypoints';
-// import '../../node_modules/seap_core/src/js/storageapi';
-
 $(function() {
     if ( document.location.href.indexOf('neontribe.github.io') > -1 ) {
         $('.staging-banner').append("<p>This is our test site<br/>Please visit<br/> www.esa-assessment.support</p>").show();
