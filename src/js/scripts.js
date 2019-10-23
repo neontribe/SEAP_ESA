@@ -1,3 +1,8 @@
+import Handlebars from 'handlebars';
+import '../../node_modules/seap_core/src/js/jquery.waypoints';
+import '../../node_modules/seap_core/src/js/seap-analytics';
+import '../../node_modules/seap_core/src/js/storageapi';
+
 $(function() {
     if ( document.location.href.indexOf('neontribe.github.io') > -1 ) {
         $('.staging-banner').append("<p>This is our test site<br/>Please visit<br/> www.esa-assessment.support</p>").show();
@@ -726,7 +731,7 @@ function sluggify(string) {
 // sets up the video player
 function setPlayer() {
   var iframe1 = $('#video-iframe')[0];
-      player1 = iframe1.contentWindow;
+  let player1 = iframe1.contentWindow;
 
   db.set('esaAss.videoLoaded', true);
 
@@ -814,7 +819,7 @@ $('body').on('click', '[data-action="break"]', function() {
 
   // If we are on one of these pages when we take a break, save our place.
   var validBreakReturn = ['your-assessment', 'about-esa', 'transcript'];
-    currentContext = db.get('esaAss.context');
+  let currentContext = db.get('esaAss.context');
 
   // If we are taking a break from excluded page but want to save our place
   if (_.contains(validBreakReturn, db.get('esaAss.context'))) {
@@ -1096,7 +1101,7 @@ $(window).on('hashchange', function(e) {
 
   // If we've gone to a question fragment but we haven't
   // pressed a "pick a question" button to get there...
-  slideType = null;
+  let slideType = null;
   if (window.location.hash.substr(0, 9) === '#question') {
     slideType = 'question';
   }

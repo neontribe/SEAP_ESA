@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     entry: {
@@ -18,7 +19,14 @@ module.exports = {
                 to: 'images/[name].[ext]?[hash]',
                 test: /\.(svg|png|jpg|ico)$/
             }
-        ])
+        ]),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            _: 'underscore',
+            Handlebars: 'handlebars'
+        })
     ],
     module: {
         rules: [

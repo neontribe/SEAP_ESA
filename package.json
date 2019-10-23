@@ -9,7 +9,9 @@
     "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
-    "seap_core": "git://github.com/neontribe/seap_core.git"
+    "jquery": "1.11.2",
+    "seap_core": "git://github.com/neontribe/seap_core.git",
+    "underscore": "^1.8.2"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
