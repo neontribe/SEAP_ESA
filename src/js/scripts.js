@@ -1000,8 +1000,8 @@ $('body').on('change', '[type="radio"]', function() {
   }
 
   var triggerButtons = ['Most of the time', 'Not very often'];
-  triggerQuestion = "Can / Could you travel to your face-to-face assessment?";
-  triggerText = $(':checked', '#' + context).next().text();
+  var triggerQuestion = "Can / Could you travel to your face-to-face assessment?";
+  var triggerText = $(':checked', '#' + context).next().text();
 
   if (question === triggerQuestion) {
     if (triggerText === 'No') {
