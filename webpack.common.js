@@ -4,7 +4,8 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        main: './src/index.js'
+        main: './src/index.js',
+        vendor: './src/vendor.js'
     },
     plugins: [
         new CopyPlugin([
