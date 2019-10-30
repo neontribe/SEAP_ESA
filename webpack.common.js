@@ -39,7 +39,7 @@ module.exports = {
                 test: /\.handlebars$/,
                 loader: 'handlebars-loader',
                 query: {
-                    inlineRequires: '/node_modules/seap_core/src/images/',
+                    // inlineRequires: '/node_modules/seap_core/src/images/',
                     helperDirs: path.join(__dirname, 'node_modules/seap_core/src/helpers'),
                     precompileOptions: {
                         knownHelpersOnly: false

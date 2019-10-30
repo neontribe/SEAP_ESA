@@ -1,4 +1,9 @@
 import '../../node_modules/seap_core/src/js/storageapi';
+import scoreTemplate from '../score-template.handlebars';
+import statsTemplate from '../stats-template.handlebars';
+import aboutButtonsTemplate from '../about-buttons-template.handlebars';
+import rememberTemplate from '../remember-template.handlebars';
+import catTemplate from '../categories-template.handlebars';
 
 $(function() {
     if ( document.location.href.indexOf('neontribe.github.io') > -1 ) {
@@ -511,7 +516,7 @@ function isNumeric(num) {
 }
 
 function compileScore() {
-  var template = Handlebars.compile(document.getElementById("score-template").innerHTML);
+  var template = scoreTemplate;
   var esaAssData = db.get('esaAss');
   var output = template(esaAssData);
   $('#slide-score-content').html(output);
@@ -533,7 +538,7 @@ function compileStats() {
 
   // template up the stats with handlebars and
   // write to the stats container
-  var template = Handlebars.compile(document.getElementById("stats-template").innerHTML);
+  var template = statsTemplate;
   var esaAssData = db.get('esaAss');
   var output = template(esaAssData);
   $('#stats-content').html(output).trigger('stats-analytic-event');
@@ -561,7 +566,7 @@ function doneCats() {
 }
 
 function compileAboutButtons() {
-  var template = Handlebars.compile(document.getElementById("about-buttons-template").innerHTML);
+  var template = aboutButtonsTemplate;
   var esaAssData = db.get('esaAss');
   var output = template(esaAssData);
   $('.expandies.information .about-buttons-content').html(output);
@@ -570,7 +575,7 @@ function compileAboutButtons() {
 }
 
 function compileRemember() {
-  var template = Handlebars.compile(document.getElementById("remember-template").innerHTML);
+  var template = rememberTemplate;
   var esaAssData = db.get('esaAss');
   var output = template(esaAssData);
   $('#remember-slide-content').html(output);
@@ -581,7 +586,7 @@ function compileCategories() {
 
   // template up the stats with handlebars and
   // write to the categories container
-  var template = Handlebars.compile(document.getElementById("categories-template").innerHTML);
+  var template = catTemplate;
   var esaAssData = db.get('esaAss');
   var output = template(esaAssData);
   $('#categories-content').html(output);
