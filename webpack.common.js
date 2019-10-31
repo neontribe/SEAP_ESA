@@ -4,8 +4,7 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        main: './src/index.js',
-        vendor: './src/vendor.js'
+        main: './src/index.js'
     },
     plugins: [
         new CopyPlugin([
@@ -36,10 +35,13 @@ module.exports = {
                 }
             },
             {
+                test: /\.txt/,
+                loader: 'raw-loader'
+            },
+            {
                 test: /\.handlebars$/,
                 loader: 'handlebars-loader',
                 query: {
-                    // inlineRequires: '/node_modules/seap_core/src/images/',
                     helperDirs: path.join(__dirname, 'node_modules/seap_core/src/helpers'),
                     precompileOptions: {
                         knownHelpersOnly: false

@@ -1,9 +1,18 @@
-import '../../node_modules/seap_core/src/js/storageapi';
-import scoreTemplate from '../score-template.handlebars';
-import statsTemplate from '../stats-template.handlebars';
-import aboutButtonsTemplate from '../about-buttons-template.handlebars';
-import rememberTemplate from '../remember-template.handlebars';
-import catTemplate from '../categories-template.handlebars';
+import 'seap_core/src/js/storageapi';
+import 'seap_core/src/js/storageapi';
+import 'seap_core/src/js/jquery.waypoints';
+import 'seap_core/src/js/seap-analytics';
+import scoreTemplateString from '../score-template.handlebars.txt';
+import statsTemplateString from '../stats-template.handlebars.txt';
+import aboutButtonsTemplateString from '../about-buttons-template.handlebars.txt';
+import rememberTemplateString from '../remember-template.handlebars.txt';
+import catTemplateString from '../categories-template.handlebars.txt';
+
+const scoreTemplate = Handlebars.compile(scoreTemplateString)
+const statsTemplate = Handlebars.compile(statsTemplateString)
+const aboutButtonsTemplate = Handlebars.compile(aboutButtonsTemplateString)
+const rememberTemplate = Handlebars.compile(rememberTemplateString)
+const catTemplate = Handlebars.compile(catTemplateString)
 
 $(function() {
     if ( document.location.href.indexOf('neontribe.github.io') > -1 ) {
@@ -23,7 +32,7 @@ if (!Array.prototype.indexOf) {
 }
 
 // define the database
-var db = $.localStorage;
+window.db = $.localStorage;
 
 window.hashHistory = [];
 

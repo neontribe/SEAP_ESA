@@ -1242,19 +1242,17 @@
     window.allQuestions = [{{#each questions}}{ question: 'question-{{sluggify question}}', category: '{{category}}'}, {{/each}}];
     window.allCategories = [{{#each questions}}'{{category}}',{{/each}}];
   </script>
-  <script id="stats-template" type="text/x-handlebars-template">
+  {{!-- <script id="stats-template" type="text/x-handlebars-template">
 
   </script>
   <script id="categories-template" type="text/x-handlebars-template">
-  {{!-- is the below needed here? --}}
-    {{ categoriesTemplate }}
   </script>
   <script id="about-buttons-template" type="text/x-handlebars-template">
   </script>
   <script id="score-template" type="text/x-handlebars-template">
   </script>
   <script id="remember-template" type="text/x-handlebars-template">
-  </script>
+  </script> --}}
 </body>
 
 </html>
