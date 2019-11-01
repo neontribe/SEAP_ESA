@@ -8,12 +8,6 @@ import aboutButtonsTemplateString from '../about-buttons-template.handlebars.txt
 import rememberTemplateString from '../remember-template.handlebars.txt';
 import catTemplateString from '../categories-template.handlebars.txt';
 
-const scoreTemplate = Handlebars.compile(scoreTemplateString)
-const statsTemplate = Handlebars.compile(statsTemplateString)
-const aboutButtonsTemplate = Handlebars.compile(aboutButtonsTemplateString)
-const rememberTemplate = Handlebars.compile(rememberTemplateString)
-const catTemplate = Handlebars.compile(catTemplateString)
-
 $(function() {
     if ( document.location.href.indexOf('neontribe.github.io') > -1 ) {
         $('.staging-banner').append("<p>This is our test site<br/>Please visit<br/> www.esa-assessment.support</p>").show();
@@ -525,7 +519,7 @@ function isNumeric(num) {
 }
 
 function compileScore() {
-  var template = scoreTemplate;
+  var template = Handlebars.compile(scoreTemplateString);
   var esaAssData = db.get('esaAss');
   var output = template(esaAssData);
   $('#slide-score-content').html(output);
@@ -547,7 +541,7 @@ function compileStats() {
 
   // template up the stats with handlebars and
   // write to the stats container
-  var template = statsTemplate;
+  var template = Handlebars.compile(statsTemplateString);
   var esaAssData = db.get('esaAss');
   var output = template(esaAssData);
   $('#stats-content').html(output).trigger('stats-analytic-event');
@@ -575,7 +569,7 @@ function doneCats() {
 }
 
 function compileAboutButtons() {
-  var template = aboutButtonsTemplate;
+  var template = Handlebars.compile(aboutButtonsTemplateString);
   var esaAssData = db.get('esaAss');
   var output = template(esaAssData);
   $('.expandies.information .about-buttons-content').html(output);
@@ -584,7 +578,7 @@ function compileAboutButtons() {
 }
 
 function compileRemember() {
-  var template = rememberTemplate;
+  var template = Handlebars.compile(rememberTemplateString);
   var esaAssData = db.get('esaAss');
   var output = template(esaAssData);
   $('#remember-slide-content').html(output);
@@ -595,7 +589,7 @@ function compileCategories() {
 
   // template up the stats with handlebars and
   // write to the categories container
-  var template = catTemplate;
+  var template = Handlebars.compile(catTemplateString);
   var esaAssData = db.get('esaAss');
   var output = template(esaAssData);
   $('#categories-content').html(output);
