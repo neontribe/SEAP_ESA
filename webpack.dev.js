@@ -27,5 +27,10 @@ module.exports = merge(common, {
                 ]
             },
         ]
-    }
+    },
+    devServer: {
+        port: 9001,
+        inline: true,
+        stats: { colors: true },
+    },
 });
