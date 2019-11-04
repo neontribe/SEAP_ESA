@@ -12,7 +12,7 @@
       this.click('button[data-action="resume"]');
       return this.click('a[data-action="menu"]');
     }).then(function() {
-      return test.assertElementCount('.flow.loaded button', 2, '2 buttons in view');
+      return test.assertElementCount('.big-buttons button', 2, '2 buttons in view');
     }).then(function() {
       return test.assertSelectorHasText('footer .privacy-link a', 'Privacy & terms of use', 'Found privacy link in footer');
     }).run(function() {
