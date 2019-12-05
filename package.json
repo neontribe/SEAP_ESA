@@ -18,9 +18,11 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-remove": "^0.1.0",
     "matchdep": "*",
+    "npm-force-resolutions": "0.0.3",
     "seap_core": "git://github.com/neontribe/seap_core.git"
   },
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "build": "grunt generate",
     "postinstall": "npm run build",
     "test": "grunt test"
@@ -29,5 +31,9 @@
     "grunt-casperjs": "^2.1.0",
     "grunt-contrib-connect": "^2.1.0",
     "grunt-htmlhint-plus": "^0.6.0"
+  },
+  "resolutions": {
+    "cryptiles": "^4.1.2",
+    "hoek": "^5.0.3"
   }
 }
